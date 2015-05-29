@@ -29,6 +29,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  margin: 0;
 }
 ol, ul {
   list-style: none;
@@ -59,10 +60,14 @@ table {
 /** {
 	outline: pink solid 1px;
 }*/
-
 * {
 	background-color: rgba(255, 0, 0, 0.2);
-	border: 1px solid rgb(0,0,255);
+	outline: 1px solid rgb(0,0,255);
+}
+
+canvas {
+	width: 100%; 
+	height: 100%;
 }
 
 /*  ===========================
@@ -73,7 +78,7 @@ table {
 	/* Positioning */
 	/* Box-model */
 	width: 100%;
-	height: 100%;
+	height: auto;
 	/* Typography */
 	/* Visual */
 	/* Misc */
@@ -86,10 +91,11 @@ table {
 
 .column-l {
 	/* Positioning */
-	float: left;
+	position: absolute;
+	top: 0;
+	bottom: 0;
 	/* Box-model */	
 	width: 30%;
-	height: 100%;
 	/* Typography */
 	/* Visual */
 	/* Misc */
@@ -97,14 +103,17 @@ table {
 }
 
 /*  ========================
-	column-r
+	links-in
     ======================== */
 
-.column-r {
+.links-in {
 	/* Positioning */
-	float: right;
+	position: absolute;
+	top: 0;
+	left: 30%;
+	bottom: 0;
 	/* Box-model */
-	width: 70%;
+	width: 50%;
 	height: 100%;
 	/* Typography */
 	/* Visual */
@@ -115,22 +124,14 @@ table {
 	visual
     ======================== */
 
-.links-in {
-	/* Positioning */
-	float: left;
-	/* Box-model */
-	width: 70%;
-	/* Typography */
-	/* Visual */
-	/* Misc */
-	
-}
-
 .visual {
 	/* Positioning */
-	float: right;
+	position: absolute;
+	top: 0;
+	left: 80%;
+	bottom: 0;
 	/* Box-model */
-	width: 30%;
+	width: 20%;
 	/* Typography */
 	/* Visual */
 	/* Misc */
