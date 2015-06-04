@@ -33,6 +33,8 @@ function init() {
 	var geometry = new THREE.BoxGeometry( 50, 30, 40 );
 	var material = new THREE.MeshPhongMaterial({color: 0x696969, emissive: 0x696969, specular:0x696969, shininess: 15, side: THREE.DoubleSide});
 	cube = new THREE.Mesh( geometry, material );
+	cube.rotation.x = .5;
+	cube.rotation.y = 4;
 	scene.add( cube );
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
@@ -69,12 +71,9 @@ function animate() {
 }	
 
 function render() {
-	light1.position.x += mouseX / 900;
-	light1.position.y += - mouseY / 900;
-
-	console.log(light1.position.x);
-
-	camera.lookAt( scene.position );
+	light1.position.set ( (mouseX - light1.position.x) * 0.075, - (mouseY - light1.position.y) * 0.075, 50);
+	console.log(mouseX);
+	console.log(light1.position);
 
 	renderer.render(scene, camera);
 };
