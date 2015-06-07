@@ -61,8 +61,8 @@ table {
 	outline: pink solid 1px;
 }*/
 * {
-	background-color: rgba(255, 0, 0, 0.2);
-	outline: 1px solid rgb(0,0,255);
+	/*background-color: rgba(255, 0, 0, 0.2);*/
+	/*outline: 1px solid rgb(0,0,255);*/
 }
 
 canvas {
@@ -93,7 +93,7 @@ canvas {
 	/* Positioning */
 	position: absolute;
 	top: 0;
-	bottom: 0;
+	bottom: 4%;
 	/* Box-model */	
 	width: 30%;
 	/* Typography */
@@ -111,13 +111,88 @@ canvas {
 	position: absolute;
 	top: 0;
 	left: 30%;
-	bottom: 0;
+	bottom: 40%;
 	/* Box-model */
 	width: 50%;
 	height: 100%;
 	/* Typography */
 	/* Visual */
 	/* Misc */
+}
+
+.link-container {
+	/* Positioning */
+	position: absolute;
+	top: 20%;
+	left: 5%;
+	/* Box-model */
+	width: 90%;
+	height: 60%;
+	/* Typography */
+	text-align: center;
+	font-size: 30pt;
+	color: rgba(255, 255, 255, 0);
+	-webkit-text-stroke: 1px black;
+	/* Visual */
+	border: 1px solid blue;
+  	background-color: rgba(255, 255, 255, 0.2);
+  	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	/* Misc */
+}
+
+.rw-title {
+	/* Positioning */
+	margin: 40px auto 20px auto;
+	/* Box-model */
+	width: 60%;
+	padding: 10px;
+	/* Typography */
+	/* Visual */
+	border: 1px solid blue;
+	/* Misc */
+}
+
+.link-container a:link,
+.link-container a:visited  {
+	/* Positioning */
+	/* Box-model */
+	margin-bottom: 40px;
+	/* Typography */
+	color: rgba(255, 255, 255, 0);
+	-webkit-text-stroke: 1px black;
+	text-decoration: none;
+	/* Visual */
+	/* Misc */
+	
+}
+
+.link-container a:hover  {
+	/* Positioning */
+	/* Box-model */
+	margin-bottom: 40px;
+	/* Typography */
+	color: rgba(255, 255, 255, 1);
+	-webkit-text-stroke: 0px black;
+	text-decoration: none;
+	/* Visual */
+	background-color: blue;
+	/* Misc */
+	
+}
+
+.extra-l-padding {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.extra-l-padding-x {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.d {
+	margin-bottom: 15px;
+
 }
 
 /*  ========================
@@ -129,11 +204,27 @@ canvas {
 	position: absolute;
 	top: 0;
 	left: 80%;
-	bottom: 0;
+	bottom: 4%;
 	/* Box-model */
 	width: 20%;
 	/* Typography */
 	/* Visual */
 	/* Misc */
 	
-}	
+}
+
+/*  ========================
+	footer
+    ======================== */
+
+.footer {
+	/* Positioning */
+	position: absolute;
+	top: 96%;
+	bottom: 0;
+	/* Box-model */
+	width: 100%;
+	/* Typography */
+	/* Visual */
+	/* Misc */	
+}
