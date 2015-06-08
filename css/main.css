@@ -92,13 +92,14 @@ canvas {
 .column-l {
 	/* Positioning */
 	position: absolute;
-	top: 12%;
+	top: 9%;
 	bottom: 7%;
 	left: 15px;
 	/* Box-model */	
 	width: 30%;
 	/* Typography */
 	/* Visual */
+	border-radius: 13px;
 	background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7)); /* For Safari 5.1 to 6.0 */
 	background: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7)); /* For Opera 11.1 to 12.0 */
 	background: -moz-linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7));  /* For Firefox 3.6 to 15 */
@@ -111,16 +112,17 @@ canvas {
 	/* Positioning */
 	position: absolute;
 	top: 5%;
-	bottom: 7%;
+	bottom: 10px;
 	left: 10px;
-	/* Box-model */	
-	width: 80%;
+	right: 20px;
+	/* Box-model */
 	padding: 10px;
 	/* Typography */
-	font-size: 18px;
+	font-size: 19px;
 	color: white;
 	/* Visual */
 	border: 1px solid white;
+	border-radius: 6px;
 	overflow-y: scroll;
 	/* Misc */
 }
