@@ -92,14 +92,37 @@ canvas {
 .column-l {
 	/* Positioning */
 	position: absolute;
-	top: 0;
-	bottom: 4%;
+	top: 12%;
+	bottom: 7%;
+	left: 15px;
 	/* Box-model */	
 	width: 30%;
 	/* Typography */
 	/* Visual */
+	background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7));  /* For Firefox 3.6 to 15 */
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7));  /* Standard syntax */
 	/* Misc */
 	
+}
+
+.column-l-text {
+	/* Positioning */
+	position: absolute;
+	top: 5%;
+	bottom: 7%;
+	left: 10px;
+	/* Box-model */	
+	width: 80%;
+	padding: 10px;
+	/* Typography */
+	font-size: 18px;
+	color: white;
+	/* Visual */
+	border: 1px solid white;
+	overflow-y: scroll;
+	/* Misc */
 }
 
 /*  ========================
@@ -136,7 +159,7 @@ canvas {
 	/* Visual */
 	border: 1px solid blue;
   	background-color: rgba(255, 255, 255, 0.2);
-  	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 	/* Misc */
 }
 
@@ -186,8 +209,13 @@ canvas {
 }
 
 .extra-l-padding-x {
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.extra-l-padding-x1 {
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .d {
@@ -220,11 +248,32 @@ canvas {
 .footer {
 	/* Positioning */
 	position: absolute;
-	top: 96%;
-	bottom: 0;
+	top: 90%;
+	left: 20%;
 	/* Box-model */
-	width: 100%;
+	width: 60%;
+	padding: 10px;
 	/* Typography */
 	/* Visual */
+	border: 1px solid blue;
+  	background-color: rgb(255, 255, 255);
+  	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 	/* Misc */	
+}
+
+.footer-text {
+	/* Positioning */
+	/* Box-model */
+	/* Typography */
+	font-family: monospace;
+	text-align: center;
+	font-size: 10pt;
+	color: rgb(0, 0, 255);
+	
+	/* Visual */
+	/* Misc */
+}
+
+.footer-underline {
+	text-decoration: underline;
 }
