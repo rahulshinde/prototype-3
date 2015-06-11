@@ -92,18 +92,18 @@ canvas {
 .column-l {
 	/* Positioning */
 	position: absolute;
-	top: 9%;
-	bottom: 7%;
+	top: 7%;
+	bottom: 8%;
 	left: 15px;
 	/* Box-model */	
 	width: 30%;
 	/* Typography */
 	/* Visual */
 	border-radius: 13px;
-	background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7)); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7)); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7));  /* For Firefox 3.6 to 15 */
-	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7));  /* Standard syntax */
+	background: -webkit-linear-gradient(rgb(89, 89, 89), rgb( 189, 189, 189)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(rgb(89, 89, 89), rgb( 189, 189, 189)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(rgb(89, 89, 89), rgb( 189, 189, 189));  /* For Firefox 3.6 to 15 */
+	background: linear-gradient(rgb(89, 89, 89), rgb( 189, 189, 189));  /* Standard syntax */
 	/* Misc */
 	
 }
@@ -169,7 +169,7 @@ canvas {
 	/* Positioning */
 	margin: 40px auto 20px auto;
 	/* Box-model */
-	width: 60%;
+	max-width: 80%;
 	padding: 10px;
 	/* Typography */
 	/* Visual */
@@ -196,13 +196,17 @@ canvas {
 	/* Box-model */
 	margin-bottom: 40px;
 	/* Typography */
-	color: rgba(255, 255, 255, 1);
+	color: rgba(255,255,255,1);
 	-webkit-text-stroke: 0px black;
 	text-decoration: none;
 	/* Visual */
 	background-color: blue;
 	/* Misc */
 	
+}
+
+.link-container a:hover > .d {
+	color: rgba(0, 0, 255, 1);
 }
 
 .extra-l-padding {
@@ -276,6 +280,18 @@ canvas {
 	/* Misc */
 }
 
-.footer-underline {
-	text-decoration: underline;
+
+.footer-text a:link,
+.footer-text a:visited {
+	padding: 5px;
+	font-family: monospace;
+	text-align: center;
+	font-size: 10pt;
+	color: rgb(0, 0, 255);
+}
+
+.footer-text a:hover {
+	padding: 2px 5px;
+	color: white;
+	background-color: blue;
 }
