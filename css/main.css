@@ -54,6 +54,24 @@ table {
 /* Misc */
 
 /*  ===============================================
+    ADDING FONTS
+    =============================================== */
+
+@font-face {
+    font-family: 'martelbold';
+    src: url('../fonts/martel/martel-bold-webfont.eot');
+    src: url('../fonts/martel/martel-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/martel/martel-bold-webfont.woff2') format('woff2'),
+         url('../fonts/martel/martel-bold-webfont.woff') format('woff'),
+         url('../fonts/martel/martel-bold-webfont.ttf') format('truetype'),
+         url('../fonts/martel/martel-bold-webfont.svg#martelbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*  ===============================================
     BEGIN AUTHOR STYLING
     =============================================== */
 a
@@ -149,12 +167,9 @@ canvas {
 	left: 5%;
 	/* Box-model */
 	width: 90%;
-	height: 60%;
 	/* Typography */
 	text-align: center;
-	font-size: 30pt;
-	color: rgba(255, 255, 255, 0);
-	-webkit-text-stroke: 1px black;
+	font-size: 25pt;
 	/* Visual */
 	border: 1px solid blue;
   	background-color: rgba(255, 255, 255, 0.2);
@@ -162,15 +177,18 @@ canvas {
 	/* Misc */
 }
 
-.rw-title {
+#rw-title {
 	/* Positioning */
-	margin: 40px auto 20px auto;
+	margin: 25px auto 15px auto;
 	/* Box-model */
-	max-width: 80%;
-	padding: 10px;
+	max-width: 75%;
+	padding-top: 16px;
+	padding-bottom:9px;
 	/* Typography */
+	color: white;
 	/* Visual */
-	border: 1px solid blue;
+	background-color: blue;
+	box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
 	/* Misc */
 }
 
@@ -178,10 +196,10 @@ canvas {
 .link-container a:visited  {
 	/* Positioning */
 	/* Box-model */
-	margin-bottom: 40px;
 	/* Typography */
+
 	color: rgba(255, 255, 255, 0);
-	-webkit-text-stroke: 1px black;
+	-webkit-text-stroke: 1px rgba( 0, 0, 0, .5);
 	text-decoration: none;
 	/* Visual */
 	/* Misc */
@@ -191,38 +209,47 @@ canvas {
 .link-container a:hover  {
 	/* Positioning */
 	/* Box-model */
-	margin-bottom: 40px;
 	/* Typography */
 	color: rgba(255,255,255,1);
 	-webkit-text-stroke: 0px black;
 	text-decoration: none;
 	/* Visual */
-	background-color: blue;
 	/* Misc */
 	
 }
 
-.link-container a:hover > .d {
-	color: rgba(0, 0, 255, 1);
+a:hover .name-hover-padding{
+	background-color: blue;
 }
 
-.extra-l-padding {
-	padding-left: 10px;
-	padding-right: 10px;
+.name-hover-padding {
+	margin: 0 auto;
+	max-width: 75%;
+	
 }
 
-.extra-l-padding-x {
-	padding-left: 16px;
-	padding-right: 16px;
+#name-top {
+	padding-top: 7px;
 }
 
-.extra-l-padding-x1 {
-	padding-left: 15px;
-	padding-right: 15px;
+#name-bottom {
+	padding-bottom: 7px;
 }
 
-.d {
-	margin-bottom: 15px;
+#name {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	margin-bottom: 20px;
+}
+
+.martel {
+	padding-top: 5px;
+	font-family: 'martelbold';
+}
+
+.project-wrap {
+	height: 60%;
+	overflow-y:scroll;
 
 }
 
