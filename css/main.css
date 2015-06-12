@@ -70,6 +70,19 @@ table {
 
 }
 
+@font-face {
+    font-family: 'habibiregular';
+    src: url('../fonts/habibi/habibi-regular-webfont.eot');
+    src: url('../fonts/habibi/habibi-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/habibi/habibi-regular-webfont.woff2') format('woff2'),
+         url('../fonts/habibi/habibi-regular-webfont.woff') format('woff'),
+         url('../fonts/habibi/habibi-regular-webfont.ttf') format('truetype'),
+         url('../fonts/habibi/habibi-regular-webfont.svg#habibiregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 /*  ===============================================
     BEGIN AUTHOR STYLING
@@ -114,11 +127,9 @@ canvas {
 	width: 30%;
 	/* Typography */
 	/* Visual */
-	border-radius: 13px;
-	background: -webkit-linear-gradient(rgba(110, 110, 110, 0.8), rgba( 189, 189, 189, 0.6)); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(rgba(110, 110, 110, 0.8), rgba( 189, 189, 189, 0.6)); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(rgba(110, 110, 110, 0.8), rgba( 189, 189, 189, 0.6));  /* For Firefox 3.6 to 15 */
-	background: linear-gradient(rgba(110, 110, 110, 0.8), rgba( 189, 189, 189, 0.6));  /* Standard syntax */
+	border: 2px solid rgba( 186, 186, 186, .5);
+	-webkit-perspective: 100;
+	
 	/* Misc */
 	
 }
@@ -133,11 +144,16 @@ canvas {
 	/* Box-model */
 	padding: 10px;
 	/* Typography */
-	font-size: 19px;
+	font-family: 'habibiregular';
+	font-size: 16px;
+	line-height: 18px;
 	color: white;
 	/* Visual */
-	border: 1px solid white;
 	border-radius: 6px;
+	background: -webkit-linear-gradient(rgba(110, 110, 110, 0.8), rgba( 189, 189, 189, 0.6)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(rgba(110, 110, 110, 0.8), rgba( 189, 189, 189, 0.6)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(rgba(110, 110, 110, 0.8), rgba( 189, 189, 189, 0.6));  /* For Firefox 3.6 to 15 */
+	background: linear-gradient(rgba(110, 110, 110, 0.8), rgba( 189, 189, 189, 0.6));  /* Standard syntax */
 	overflow-y: scroll;
 	/* Misc */
 }
