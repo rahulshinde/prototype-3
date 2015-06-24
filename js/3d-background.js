@@ -6,9 +6,7 @@ var scene,
 
 var mouseX = 0, mouseY = 0;
 
-var cubex = .5,
-	cubey = 4,
-	accX,
+var accX,
 	accY,
 	xA,
 	yA;
@@ -92,8 +90,21 @@ function render() {
 	console.log(mouseX);
 	console.log(light1.position);
 
-	cube.rotation.x = cubex + xA;
-	cube.rotation.y = cubey + yA;
+	var cubex = .5,
+		cubey = 4;
+
+	window.setInterval(function () {
+        // increase by num 1, reset to 0 at 4
+        cubex = cubex + xA;
+
+        cubey = cubey + yA;
+
+        // -600 * 1 = -600, -600 * 2 = -1200, etc 
+        cube.rotation.x = cubex + xA;
+		cube.rotation.y = cubey + yA;
+
+    }, 500); // repeat forever, polling every 3 seconds
+	
 
 
 
