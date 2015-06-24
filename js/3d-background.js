@@ -6,6 +6,11 @@ var scene,
 
 var mouseX = 0, mouseY = 0;
 
+var accX,
+	accY,
+	xA,
+	yA;
+
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
@@ -62,6 +67,18 @@ function onDocumentMouseMove( event ) {
 
 }
 
+window.ondevicemotion = function(event) {
+
+    accX = Math.round(event.accelerationIncludingGravity.x*10) / 10;  
+    accY = Math.round(event.accelerationIncludingGravity.y*10) / 10;  
+		    
+    movement = 10;
+		    
+    xA = -(accX / 10) * movement;
+    yA = -(accY / 10) * movement;
+
+}
+
 function animate() {
 
 	requestAnimationFrame( animate );
@@ -74,6 +91,11 @@ function render() {
 	light1.position.set ( (mouseX - light1.position.x) * 0.075, - (mouseY - light1.position.y) * 0.075, 50);
 	console.log(mouseX);
 	console.log(light1.position);
+
+	cube.rotation.x = xA;
+	cube.rotation.y = yA;
+
+
 
 	renderer.render(scene, camera);
 };
