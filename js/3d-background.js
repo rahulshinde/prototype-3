@@ -69,10 +69,10 @@ function onDocumentMouseMove( event ) {
 
 window.ondevicemotion = function(event) {
 
-    accX = Math.round(event.accelerationIncludingGravity.x*10) / 10;  
-    accY = Math.round(event.accelerationIncludingGravity.y*10) / 10;  
+    accX = event.accelerationIncludingGravity.x;  
+    accY = event.accelerationIncludingGravity.y;  
 		    
-    movement = 2;
+    movement = 10;
 		    
     xA = -(accX / 10) * movement;
     yA = -(accY / 10) * movement;
