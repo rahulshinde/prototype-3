@@ -95,14 +95,12 @@ function render() {
 
 	window.setInterval(function () {
         cubex = cubex + xA;
-
-        cubey = cubey + yA;
-
-        // -600 * 1 = -600, -600 * 2 = -1200, etc 
+        cubey = cubey + yA; 
+        
         cube.rotation.x = cubex + xA;
 		cube.rotation.y = cubey + yA;
 
-    }, 500); // repeat forever, polling every 3 seconds
+    }, 500); 
 	
 
 
