@@ -6,7 +6,9 @@ var scene,
 
 var mouseX = 0, mouseY = 0;
 
-var accX,
+var cubex = .5,
+	cubey = 4,
+	accX,
 	accY,
 	xA,
 	yA;
@@ -38,8 +40,8 @@ function init() {
 	var geometry = new THREE.BoxGeometry( 50, 30, 40 );
 	var material = new THREE.MeshPhongMaterial({color: 0x696969, emissive: 0x696969, specular:0x696969, shininess: 15, side: THREE.DoubleSide});
 	cube = new THREE.Mesh( geometry, material );
-	cube.rotation.x = .5;
-	cube.rotation.y = 4;
+	// cube.rotation.x = .5;
+	// cube.rotation.y = 4;
 	scene.add( cube );
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
@@ -92,8 +94,8 @@ function render() {
 	console.log(mouseX);
 	console.log(light1.position);
 
-	cube.rotation.x = xA;
-	cube.rotation.y = yA;
+	cube.rotation.x = cubex + xA;
+	cube.rotation.y = cubey + yA;
 
 
 
