@@ -74,10 +74,8 @@ window.ondevicemotion = function(event) {
     accX = event.accelerationIncludingGravity.x;  
     accY = event.accelerationIncludingGravity.y;  
 		    
-    movement = 10;
-		    
-    xA = -(accX / 10) * movement;
-    yA = -(accY / 10) * movement;
+    xA = -(accX / 10);
+    yA = -(accY / 10);
 
 }
 
