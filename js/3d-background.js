@@ -69,8 +69,8 @@ function onDocumentMouseMove( event ) {
 
 window.ondevicemotion = function(event) {
 
-    accX = event.accelerationIncludingGravity.x;  
-    accY = event.accelerationIncludingGravity.y;  
+    accX = event.acceleration.x;  
+    accY = event.acceleration.y;  
 		    
     xA = -(accX / 10);
     yA = -(accY / 10);
@@ -90,11 +90,10 @@ function render() {
 	console.log(mouseX);
 	console.log(light1.position);
 
-	var cubex = .5,
-		cubey = 4;
+	var cubex = 0,
+		cubey = 0;
 
 	window.setInterval(function () {
-        // increase by num 1, reset to 0 at 4
         cubex = cubex + xA;
 
         cubey = cubey + yA;
