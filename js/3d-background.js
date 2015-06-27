@@ -38,8 +38,8 @@ function init() {
 	var geometry = new THREE.BoxGeometry( 50, 30, 40 );
 	var material = new THREE.MeshPhongMaterial({color: 0x696969, emissive: 0x696969, specular:0x696969, shininess: 15, side: THREE.DoubleSide});
 	cube = new THREE.Mesh( geometry, material );
-	// cube.rotation.x = .5;
-	// cube.rotation.y = 4;
+	cube.rotation.x = .5;
+	cube.rotation.y = 4;
 	scene.add( cube );
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
@@ -72,8 +72,8 @@ window.ondevicemotion = function(event) {
     accX = event.acceleration.x;  
     accY = event.acceleration.y;  
 		    
-    xA = -(accX / 100);
-    yA = -(accY / 100);
+    xA = -(accX / 10);
+    yA = -(accY / 10);
 
 }
 
@@ -89,18 +89,10 @@ function render() {
 	light1.position.set ( (mouseX - light1.position.x) * 0.075, - (mouseY - light1.position.y) * 0.075, 50);
 	console.log(mouseX);
 	console.log(light1.position);
-
-	var cubex = 0,
-		cubey = 0;
-
-	window.setInterval(function () {
-        cubex = cubex + xA;
-        cubey = cubey + yA; 
         
-        cube.rotation.x = cubex + xA;
-		cube.rotation.y = cubey + yA;
+    cube.rotation.x = cube.rotation.x + xA;
+	cube.rotation.y = cube.rotation.y + yA;
 
-    }, 500); 
 	
 
 
