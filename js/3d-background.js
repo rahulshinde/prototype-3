@@ -8,11 +8,14 @@ var mouseX = 0, mouseY = 0;
 
 var accX,
 	accY,
+	accZ,
 	xA,
-	yA;
+	yA,
+	zA;
 
 var cubex = .5,
 	cubey = 4;
+	cubez = 2;
 
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
@@ -73,13 +76,16 @@ function onDocumentMouseMove( event ) {
 window.ondevicemotion = function(event) {
 
     accX = event.acceleration.x;  
-    accY = event.acceleration.y;  
+    accY = event.acceleration.y;
+    accZ = event.acceleration.z;  
 		    
-    xA = -(accX / 10);
-    yA = -(accY / 10);
+    xA = -(accX / 100);
+    yA = -(accY / 100);
+    zA = -(accZ / 100);
 
     cubex = cubex + xA;
-    cubey = cubey + yA; 
+    cubey = cubey + yA;
+    cubez = cubez + zA; 
 
 }
 
@@ -99,6 +105,7 @@ function render() {
         
     cube.rotation.x = cubex;
 	cube.rotation.y = cubey;
+	cube.rotation.z = cubez;
 
 	
 
