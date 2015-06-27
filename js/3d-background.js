@@ -1,8 +1,10 @@
 var scene,
 	camera,
 	light1,
+	light2,
 	renderer,
-	cube;
+	cube,
+	cube2;
 
 var mouseX = 0, mouseY = 0;
 
@@ -30,10 +32,15 @@ function init() {
 
 	var sphere = new THREE.SphereGeometry( 0.4, 16, 8 );
 
-	light1 = new THREE.PointLight( 0x2defff, 2, 9000 );
+	light1 = new THREE.PointLight( 0x2defff, 1, 4500 );
 	light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0x2defff } ) ) );
 	light1.position.set( 0, 0, 50 );
 	scene.add( light1 );
+
+	light2 = new THREE.PointLight( 0xf8ffa8, 1, 4500 );
+	light2.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xf8ffa8 } ) ) );
+	light2.position.set( 10, 0, 50 );
+	scene.add( light2 );
 
 	scene.add( new THREE.AmbientLight( 0x000000 ) );
 
@@ -44,9 +51,17 @@ function init() {
 	var geometry = new THREE.BoxGeometry( 50, 30, 40 );
 	var material = new THREE.MeshPhongMaterial({color: 0x696969, emissive: 0x696969, specular:0x696969, shininess: 15, side: THREE.DoubleSide});
 	cube = new THREE.Mesh( geometry, material );
-	// cube.rotation.x = .5;
-	// cube.rotation.y = 4;
 	scene.add( cube );
+
+	var geometry2 = new THREE.BoxGeometry( 10, 10, 15 );
+	cube2 = new THREE.Mesh( geometry2, material );
+
+	cube.rotation.x = .5;
+	cube.rotation.y = 4;
+
+	cube2.position.set( 30, 0, 25 );
+
+	scene.add( cube2 );
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
@@ -101,6 +116,8 @@ function render() {
 	light1.position.set ( (mouseX - light1.position.x) * 0.075, - (mouseY - light1.position.y) * 0.075, 50);
 	console.log(mouseX);
 	console.log(light1.position);
+
+	light2.position.set ( (mouseX - light1.position.x + 90) * 0.05, - (mouseY - light1.position.y) * 0.05, 50);
 
         
     cube.rotation.x = cubex;
