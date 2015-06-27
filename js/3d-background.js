@@ -15,7 +15,7 @@ var accX,
 
 var cubex = .5,
 	cubey = 4;
-	cubez = 2;
+	cubez = .2;
 
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
