@@ -229,11 +229,11 @@ a {
 
 .footer {
     /* Positioning */
-    position: absolute;
-    top: 90%;
-    left: 20%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 3%;
     /* Box-model */
-    width: 60%;
+    width: 50%;
     padding: 10px;
     /* Typography */
     /* Visual */
