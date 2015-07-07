@@ -82,7 +82,7 @@ a {
     text-align: center;
     font-size: 26px;
     /* Visual */
-    background-color: blue;
+    background-color: #fc293f;
     color: white;
     /* Misc */
 }
@@ -94,7 +94,7 @@ a {
     padding: 0.5%;
     /* Typography */
     /* Visual */
-    border: 1px solid blue;
+    border: 1px solid #fc293f;
     /* Misc */
 }
 
@@ -181,7 +181,7 @@ a {
     width: 39.5%;
     /* Typography */
     /* Visual */
-    background-color: blue;
+    background-color: #fc293f;
     /* Misc */
 }
 
@@ -218,7 +218,7 @@ a {
     padding: 0 2px 0 2px;
     /* Typography */
     /* Visual */
-    color: blue;
+    color: #fc293f;
     background-color: white;
     /* Misc */
 }
@@ -237,8 +237,8 @@ a {
     padding: 10px;
     /* Typography */
     /* Visual */
-    border: 1px solid blue;
-    background-color: rgb(255, 255, 255);
+    border: 1px solid #fc293f;
+    background-color: #fc293f;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     /* Misc */  
 }
@@ -250,7 +250,7 @@ a {
     font-family: monospace;
     text-align: center;
     font-size: 10pt;
-    color: rgb(0, 0, 255);
+    color: #fc293f;
     
     /* Visual */
     /* Misc */
@@ -263,11 +263,11 @@ a {
     font-family: monospace;
     text-align: center;
     font-size: 10pt;
-    color: rgb(0, 0, 255);
+    color: #fc293f;
 }
 
 .footer-text a:hover {
     padding: 2px 5px;
     color: white;
-    background-color: blue;
+    background-color: #fc293f;
 }
