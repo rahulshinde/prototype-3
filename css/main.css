@@ -83,7 +83,7 @@ a {
     font-size: 26px;
     /* Visual */
     background-color: #fc293f;
-    color: white;
+    color: #cc99cc;
     /* Misc */
 }
 
@@ -120,7 +120,7 @@ a {
     /* Typography */
     /* Visual */
     box-shadow:inset 1px 1px 40px 0 rgba(0,0,0,.45);
-    background:url(http://ianfarb.com/wp-content/uploads/2013/10/nicholas-hodag.jpg);
+    background:url(http://placecage.com/c/300/450);
     background-size:cover;
     overflow:hidden;
     /* Misc */
@@ -171,10 +171,10 @@ a {
 
 #sl-title{
     padding-top: 70px; 
-    font-family:'martelbold';
-    color:rgba(255,255,255,1);
+    font-family: 'Martel Sans', sans-serif;
+    color: #66cccc;
     font-size:36px;
-    text-shadow: 2px 2px #ff0000;
+    text-shadow: 3px 3px rgba(0,0,0,.4);
 }
 
 /*  ========================
@@ -193,6 +193,10 @@ a {
     -moz-box-shadow: 0 7px 7px rgba(0, 0, 0, 0.5);  /* Firefox 3.5 - 3.6 */
     box-shadow: 0 7px 7px rgba(0, 0, 0, 0.5);
     /* Misc */
+}
+
+.rw-height {
+    height: 130px;
 }
 
 #rw-overlay{
@@ -216,7 +220,7 @@ a {
 #rw-title{
     padding-top: 55px; 
     font-family:'martelbold';
-    color:rgba(255,255,255,1);
+    color:#cc99cc;
     font-size:13px;
 }
 
@@ -258,7 +262,7 @@ a {
     /* Typography */
     /* Visual */
     color: white;
-    border: 1px solid white;
+    border: 1px solid #cc99cc;
     /* Misc */
 }
 
@@ -269,7 +273,7 @@ a {
     /* Typography */
     /* Visual */
     color: #fc293f;
-    background-color: white;
+    background-color: #cc99cc;
     /* Misc */
 }
 
