@@ -35,9 +35,9 @@
 }
 
 
-/*  ===============================================
+/*  =================================================================
     BEGIN AUTHOR STYLING
-    =============================================== */
+    ================================================================= */
 * {
 	/*background-color: rgba(255, 0, 0, 0.2);*/
 	/*outline: 1px solid rgb(0,0,255);*/
@@ -233,7 +233,7 @@ a {
     /* Positioning */
     float: left;
     margin-left: 1%;
-    margin-bottom: 60px;
+    margin-bottom: 75px;
     /* Box-model */
     padding-top:6px;
     width: 98%;
@@ -285,11 +285,11 @@ a {
 .footer {
     /* Positioning */
     position: fixed;
-    top: 93%;
+    top: 90%;
     left: 15%;
     /* Box-model */
     width: 64%;
-    padding: 10px 3% 10px 3%;
+    padding: 15px 3% 15px 3%;
     /* Typography */
     /* Visual */
     border: 1px solid #fc293f;
@@ -314,7 +314,7 @@ a {
 
 .footer-text a:link,
 .footer-text a:visited {
-    padding: 5px;
+    padding: 10px;
     font-family: monospace;
     text-align: center;
     font-size: 10pt;
@@ -322,7 +322,123 @@ a {
 }
 
 .footer-text a:hover {
-    padding: 2px 5px;
+    padding: 10px;
     color: white;
     background-color: #fc293f;
+}
+
+/*  ========================================================
+    MEDIA QUERIES
+    ======================================================== */
+@media screen and (min-width: 1281) {
+
+/*  ========================
+    story-links
+    ======================== */
+
+/*  ========================
+    recent-work
+    ======================== */
+
+/*  ========================
+    about
+    ======================== */
+
+/*  ========================
+    footer
+    ======================== */
+
+}
+
+@media screen and (max-width: 1280px) {
+
+/*  ========================
+    story-links
+    ======================== */
+
+/*  ========================
+    recent-work
+    ======================== */
+
+/*  ========================
+    about
+    ======================== */
+
+/*  ========================
+    footer
+    ======================== */
+    .footer {
+        /* Positioning */
+        left: 15%;
+        /* Box-model */
+        width: 64%;
+        /* Typography */
+        /* Visual */
+        /* Misc */  
+    }
+
+}
+
+@media screen and (max-width: 839px) {
+
+/*  ========================
+    story-links
+    ======================== */
+
+/*  ========================
+    recent-work
+    ======================== */
+
+/*  ========================
+    about
+    ======================== */
+
+    .about {
+        margin-left: 0%;
+        width: 100%;
+    }
+
+/*  ========================
+    footer
+    ======================== */
+
+    .footer {
+        /* Positioning */
+        left: 6%;
+        /* Box-model */
+        width: 82%;
+        /* Typography */
+        /* Visual */
+        /* Misc */  
+    }
+    
+}
+
+@media screen and (max-width: 599px) {
+
+    .section-container {
+        border: 0px solid #fc293f;
+    }
+
+    .project-link {
+        box-shadow:none;
+        background: none;
+    }
+
+/*  ========================
+    story-links
+    ======================== */
+
+/*  ========================
+    recent-work
+    ======================== */
+
+/*  ========================
+    about
+    ======================== */
+
+/*  ========================
+    footer
+    ======================== */
+
 }
