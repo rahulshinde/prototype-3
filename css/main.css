@@ -327,9 +327,14 @@ a {
     background-color: #fc293f;
 }
 
+.ft-mobile {
+    display: none;
+}
+
 /*  ========================================================
     MEDIA QUERIES
     ======================================================== */
+
 @media screen and (min-width: 1281) {
 
 /*  ========================
@@ -384,10 +389,35 @@ a {
 /*  ========================
     story-links
     ======================== */
+    .story-links {
+        /* Positioning */
+        float: left;
+        /* Box-model */
+        width: 96%;
+        margin-left: 1.5%;
+        /* Typography */
+        /* Visual */
+        border: none;
+        /* Misc */
+    }
 
 /*  ========================
     recent-work
     ======================== */
+    .recent-work {
+        /* Positioning */
+        float: left;
+        /* Box-model */
+        width: 98.5%;
+        margin: 0;
+        /* Typography */
+        /* Visual */
+        border: none;
+        -webkit-box-shadow: none;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+        -moz-box-shadow: none;  /* Firefox 3.5 - 3.6 */
+        box-shadow: none;
+        /* Misc */
+    }
 
 /*  ========================
     about
@@ -432,13 +462,75 @@ a {
 /*  ========================
     recent-work
     ======================== */
+    .recent-work {
+        /* Positioning */
+        /* Box-model */
+        /* Typography */
+        /* Visual */
+        /* Misc */
+    }
 
 /*  ========================
     about
     ======================== */
 
+    .about {
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        font-size: 24px;
+        line-height: 35px;
+    }
+
 /*  ========================
     footer
     ======================== */
+    .footer {
+        position: relative;
+        float: left;
+    }
 
+    .ft-web {
+        display: none;
+    }
+
+    .ft-mobile {
+        display: block;
+
+    }
+
+    .footer-text{
+        line-height: 40px;
+    }
+
+    .footer-text a:link,
+    .footer-text a:visited {
+        padding: 10px 30px;
+        font-family: monospace;
+        text-align: center;
+        font-size: 10pt;
+        color: #ffffff;
+    }
+
+    .CV-container {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 10px;
+        background-color: #fc293f;
+    }
+
+    .TR-container {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 10px;
+        background-color: #fc293f;
+    }
+    
+    .GH-container {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 10px;
+        background-color: #fc293f;
+    }
 }
