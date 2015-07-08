@@ -76,14 +76,14 @@ a {
     /* Positioning */
     /* Box-model */
     margin-bottom: 10px;
-    padding: 10px 0 5px 0;
+    padding: 25px 0 20px 0;
     /* Typography */
     font-family: 'martelbold';
     text-align: center;
-    font-size: 26px;
+    font-size: 14px;
     /* Visual */
     background-color: #fc293f;
-    color: #cc99cc;
+    color: #ffffff;
     /* Misc */
 }
 
@@ -172,7 +172,7 @@ a {
 #sl-title{
     padding-top: 70px; 
     font-family: 'Martel Sans', sans-serif;
-    color: #66cccc;
+    color: #ffffff;
     font-size:36px;
     text-shadow: 3px 3px rgba(0,0,0,.4);
 }
@@ -218,10 +218,11 @@ a {
 }
 
 #rw-title{
-    padding-top: 55px; 
+    padding-top: 50px; 
     font-family:'martelbold';
     color:#cc99cc;
-    font-size:13px;
+    font-size:14px;
+    line-height: 19px;
 }
 
 /*  ========================
