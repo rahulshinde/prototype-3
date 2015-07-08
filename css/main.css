@@ -98,6 +98,18 @@ a {
     /* Misc */
 }
 
+#environment {
+    /* Positioning */
+    display: block;
+    margin: 0 auto 10px auto;
+    /* Box-model */
+    width: 100%;
+    height: auto;
+    /* Typography */
+    /* Visual */
+    /* Misc */   
+}
+
 
 /*  ========================
     story-links
@@ -130,17 +142,6 @@ a {
     /* Misc */     
 }
 
-#story-environment {
-    /* Positioning */
-    display: block;
-    margin: 0 auto 10px auto;
-    /* Box-model */
-    max-width: 100%;
-    /* Typography */
-    /* Visual */
-    /* Misc */   
-}
-
 /*  ========================
     work-links
     ======================== */
@@ -159,13 +160,46 @@ a {
     /* Misc */
 }
 
-.links-wrap {
+.project-link {
     /* Positioning */
+     margin:0 auto 7px auto; 
     /* Box-model */
-    overflow-y:scroll;
+    display: inline-block;
+    width:100%;
+    height:130px;
     /* Typography */
     /* Visual */
+    box-shadow:inset 1px 1px 40px 0 rgba(0,0,0,.45);
+    background:url(http://ianfarb.com/wp-content/uploads/2013/10/nicholas-hodag.jpg);
+    background-size:cover;
+    overflow:hidden;
     /* Misc */
+}
+
+#overlay{
+    /* Positioning */
+    /* Box-model */
+    width: 100%;
+    height: 100%;
+    /* Typography */
+    /* Visual */
+    /* Misc */  
+    background:#fc293f;
+    text-align:center;
+    /*padding:45px 0 66px 0;*/
+    opacity:0;
+    -webkit-transition: opacity .25s ease;
+    -moz-transition: opacity .25s ease;}
+
+.project-link:hover #overlay {
+    opacity:1;
+}
+
+#plus{
+    padding-top: 55px; 
+    font-family:'martelbold';
+    color:rgba(255,255,255,1);
+    font-size:13px;
 }
 
 /*  ========================
@@ -182,6 +216,7 @@ a {
     /* Typography */
     /* Visual */
     background-color: #fc293f;
+    border: 1px solid #fc293f;
     /* Misc */
 }
 
@@ -238,7 +273,7 @@ a {
     /* Typography */
     /* Visual */
     border: 1px solid #fc293f;
-    background-color: #fc293f;
+    background-color: #ffffff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     /* Misc */  
 }
