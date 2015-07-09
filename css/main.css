@@ -233,7 +233,7 @@ a {
     /* Positioning */
     float: left;
     margin-left: 1%;
-    margin-bottom: 75px;
+    margin-bottom: 85px;
     /* Box-model */
     padding-top:6px;
     width: 98%;
@@ -243,6 +243,14 @@ a {
     /* Misc */
 }
 
+.about-title {
+    width: 120px;
+    padding: 12px;
+    margin: 11px auto 10px auto;
+    border: 1px solid #cc99cc;
+    color: #cc99cc;
+}
+
 .about-text {
     /* Positioning */
     /* Box-model */
@@ -250,7 +258,7 @@ a {
     /* Typography */
     font-family: 'habibiregular';
     font-size: 34px;
-    line-height: 42px;
+    line-height: 48px;
     /* Visual */
     color: white;
     /* Misc */
@@ -294,6 +302,8 @@ a {
     /* Visual */
     border: 1px solid #fc293f;
     background-color: #ffffff;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     /* Misc */  
 }
@@ -401,6 +411,10 @@ a {
         /* Misc */
     }
 
+    #sl-overlay {
+        opacity: 1;
+    }
+
 /*  ========================
     recent-work
     ======================== */
@@ -408,8 +422,10 @@ a {
         /* Positioning */
         float: left;
         /* Box-model */
-        width: 98.5%;
-        margin: 0;
+        width: 96%;
+        margin-left: 1.5%;
+        margin-top: 0;
+        margin-bottom: 20px;
         /* Typography */
         /* Visual */
         border: none;
@@ -417,6 +433,17 @@ a {
         -moz-box-shadow: none;  /* Firefox 3.5 - 3.6 */
         box-shadow: none;
         /* Misc */
+    }
+
+    #rw-overlay {
+        width: 97%;
+        height: 80%;
+        margin: 11px auto;
+        opacity: 1;
+    }
+
+    #rw-title {
+        padding-top: 40px;
     }
 
 /*  ========================
@@ -451,23 +478,31 @@ a {
     }
 
     .project-link {
-        box-shadow:none;
+        box-shadow: none;
         background: none;
     }
 
 /*  ========================
     story-links
     ======================== */
+    
+    #sl-overlay {
+        width: 99.6%;
+        height: 99.1%;
+        opacity: 1;
+        border: 1px solid #fc293f;
+    }
 
 /*  ========================
     recent-work
     ======================== */
-    .recent-work {
-        /* Positioning */
-        /* Box-model */
-        /* Typography */
-        /* Visual */
-        /* Misc */
+
+    #rw-overlay {
+        margin-top: 0;
+        height: 93%;
+        -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
     }
 
 /*  ========================
@@ -507,9 +542,6 @@ a {
     .footer-text a:link,
     .footer-text a:visited {
         padding: 10px 30px;
-        font-family: monospace;
-        text-align: center;
-        font-size: 10pt;
         color: #ffffff;
     }
 
