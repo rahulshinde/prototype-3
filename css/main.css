@@ -82,9 +82,6 @@ a {
     margin-bottom: 10px;
     padding: 25px 0 20px 0;
     /* Typography */
-    font-family: 'martelbold';
-    text-align: center;
-    font-size: 14px;
     /* Visual */
     color: #ffffff;
     /* Misc */
@@ -92,9 +89,16 @@ a {
 
 #rw-title,
 .section-title {
-    -ms-transform: skewX(-30deg); /* IE 9 */
-    -webkit-transform: skewX(-30deg); /* Safari */
-    transform: skewX(-30deg);
+    font-family: 'martelbold';
+    text-align: center;
+    font-size: 14px;
+    -ms-transform: skewX(-35deg); /* IE 9 */
+    -webkit-transform: skewX(-35deg); /* Safari */
+    transform: skewX(-35deg);
+}
+
+#rw-title {
+    padding-left: 30px;
 }
 
 .section-container {
@@ -181,7 +185,7 @@ a {
 
 #sl-title{
     padding-top: 70px; 
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Sarala', serif;
     color: #ffffff;
     font-size:36px;
     text-shadow: 3px 3px rgba(0,0,0,.4);
@@ -255,9 +259,14 @@ a {
 
 .about-title {
     width: 120px;
-    padding: 12px;
+    height: 50px;
     margin: 11px auto 10px auto;
     border: 1px solid #cc99cc;
+    color: #cc99cc;
+}
+
+.about-tt {
+    margin-top: -5px;
     color: #cc99cc;
 }
 
