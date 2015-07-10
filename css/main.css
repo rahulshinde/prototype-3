@@ -72,6 +72,10 @@ a {
     /* Misc */    
 }
 
+.title-container {
+    background-color: #fc293f;
+}
+
 .section-title {
     /* Positioning */
     /* Box-model */
@@ -82,9 +86,15 @@ a {
     text-align: center;
     font-size: 14px;
     /* Visual */
-    background-color: #fc293f;
     color: #ffffff;
     /* Misc */
+}
+
+#rw-title,
+.section-title {
+    -ms-transform: skewX(-30deg); /* IE 9 */
+    -webkit-transform: skewX(-30deg); /* Safari */
+    transform: skewX(-30deg);
 }
 
 .section-container {
