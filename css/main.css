@@ -343,7 +343,7 @@ a {
 
 .footer-text a:link,
 .footer-text a:visited {
-    padding: 10px;
+    padding: 5px 10px;
     font-family: monospace;
     text-align: center;
     font-size: 10pt;
@@ -351,7 +351,7 @@ a {
 }
 
 .footer-text a:hover {
-    padding: 10px;
+    padding: 5px 10px;
     color: white;
     background-color: #fc293f;
 }
