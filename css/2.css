@@ -84,10 +84,10 @@ canvas {
 	/* Positioning */
 	/* Box-model */
 	/* Typography */
-	text-decoration: line-through;
 	/* Visual */
-	background-color: #d8c8ab;
-	color: white;
+	background: url(../img/2/line.png);
+	background-size: 100%;
+	border: 1px solid black;
 	cursor: pointer;
 	/* Misc */
 }
@@ -163,9 +163,6 @@ canvas {
 }
 
 #minimize:hover {
-	color:white; 
-	background-color: blue;
-	border: 1px solid black;
 	cursor:pointer;
 }
 
