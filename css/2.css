@@ -23,6 +23,76 @@ canvas {
 }
 
 /*  ========================
+    intro
+    ======================== */
+
+.intro {
+	/* Positioning */
+	/* Box-model */
+	width: 60%;
+	margin: 40px auto 0 auto;
+	/* Typography */
+	/* Visual */
+	overflow: hidden;
+	border: 3px solid black;
+	/* Misc */
+}
+
+.back {
+	/* Positioning */
+	float: left;
+	/* Box-model */
+	/* Typography */
+	/* Visual */
+	/* Misc */
+}
+
+#enter {
+	/* Positioning */
+	float: right;
+	/* Box-model */
+	/* Typography */
+	/* Visual */
+	/* Misc */
+}
+
+/*  ========================
+    close
+    ======================== */
+
+#close {
+	/* Positioning */
+	position: fixed;
+	top: 18px;
+	right: 15px;
+	/* Box-model */
+	padding-left:12px; 
+	padding-right:12px;
+	/* Typography */
+	text-align: center;
+	font-size: 14px;
+	font-family: monospace;
+	/* Visual */
+	color: black;
+	border: 1px solid black;
+	background-color: white;
+	display: none;
+	/* Misc */
+}
+
+#close:hover {
+	/* Positioning */
+	/* Box-model */
+	/* Typography */
+	text-decoration: line-through;
+	/* Visual */
+	background-color: #d8c8ab;
+	color: white;
+	cursor: pointer;
+	/* Misc */
+}
+
+/*  ========================
     story-container
     ======================== */
 
@@ -30,12 +100,13 @@ canvas {
 	/* Positioning */
 	position: fixed;
 	left: 15px;
-	bottom: 15px;
+	top: 15px;
 	/* Box-model */
 	width: 500px;
 	height: auto;
 	/* Typography */
 	/* Visual */
+	display: none;
 	/* Misc */
 }
 
@@ -45,7 +116,7 @@ canvas {
 	height: 23px;
 	/* Typography */
 	/* Visual */
-	background-color: black;
+	background: url('../img/2/top-bar.png');
 	/* Misc */	
 }
 
@@ -57,15 +128,17 @@ canvas {
 	/* Positioning */
 	float: left;
 	/* Box-model */
-	width: 120px;
+	width: 140px;
 	margin-top: 3px;
-	margin-left: 190px;
+	margin-left: 193px;
 	/* Typography */
 	text-align: center;
 	font-size: 14px;
 	font-family: monospace;
 	/* Visual */
-	color: white;
+	color: black;
+	border: 1px solid black;
+	background-color: white;
 	/* Misc */	
 }
 
@@ -74,7 +147,7 @@ canvas {
 	float: right;
 	/* Box-model */
 	margin-top:3px; 
-	margin-right: 10px;
+	margin-right: 6px;
 	padding-left:5px;
 	padding-bottom: 1px;
 	padding-right:4px; 
@@ -83,15 +156,16 @@ canvas {
 	font-size: 12px;
 	font-weight: bolder;
 	/* Visual */
-	border: 1px solid white;
-	color: white;
+	color: black;
+	border: 1px solid black;
+	background-color: white;
 	/* Misc */
 }
 
 #minimize:hover {
-	border: 1px solid white;
-	color:blue; 
-	background-color: white;
+	color:white; 
+	background-color: blue;
+	border: 1px solid black;
 	cursor:pointer;
 }
 
@@ -102,6 +176,7 @@ canvas {
 	height: 300px;
 	width: auto;
 	/* Typography */
+	font-family: monospace;
 	/* Visual */
 	border-right: 1px dotted black;
 	border-bottom: 1px dotted black;
