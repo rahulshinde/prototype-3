@@ -29,10 +29,11 @@ canvas {
 #story-container {
 	/* Positioning */
 	position: fixed;
-	top: 2%;
-	left: 2%;
+	left: 15px;
+	bottom: 15px;
 	/* Box-model */
 	width: 500px;
+	height: auto;
 	/* Typography */
 	/* Visual */
 	/* Misc */
@@ -41,10 +42,10 @@ canvas {
 .top-bar {
 	/* Positioning */
 	/* Box-model */
-	height: 25px;
+	height: 23px;
 	/* Typography */
 	/* Visual */
-	background-color: blue;
+	background-color: black;
 	/* Misc */	
 }
 
@@ -56,12 +57,13 @@ canvas {
 	/* Positioning */
 	float: right;
 	/* Box-model */
-	height: 16px;
-	margin-top:3px; 
+	margin-top:2px; 
 	margin-right: 10px;
 	padding-left:5px;
+	padding-bottom: 1px;
 	padding-right:4px; 
 	/* Typography */
+	font-family: monospace;
 	font-size: 12px;
 	font-weight: bolder;
 	/* Visual */
@@ -70,12 +72,24 @@ canvas {
 	/* Misc */
 }
 
+#minimize:hover {
+	border: 1px solid white;
+	color:blue; 
+	background-color: white;
+	cursor:pointer;
+}
+
 #text {
 	/* Positioning */
 	/* Box-model */
+	padding: 10px 15px 15px 15px;
 	height: 300px;
+	width: auto;
 	/* Typography */
 	/* Visual */
+	border-right: 1px dotted black;
+	border-bottom: 1px dotted black;
+	border-left: 1px dotted black;	
 	overflow-y:scroll;
 	/* Misc */	
 }
