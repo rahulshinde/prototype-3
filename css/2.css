@@ -26,3 +26,56 @@ canvas {
     story-container
     ======================== */
 
+#story-container {
+	/* Positioning */
+	position: fixed;
+	top: 2%;
+	left: 2%;
+	/* Box-model */
+	width: 500px;
+	/* Typography */
+	/* Visual */
+	/* Misc */
+}
+
+.top-bar {
+	/* Positioning */
+	/* Box-model */
+	height: 25px;
+	/* Typography */
+	/* Visual */
+	background-color: blue;
+	/* Misc */	
+}
+
+.top-bar:hover {
+	cursor: move;
+}
+
+#minimize {
+	/* Positioning */
+	float: right;
+	/* Box-model */
+	height: 16px;
+	margin-top:3px; 
+	margin-right: 10px;
+	padding-left:5px;
+	padding-right:4px; 
+	/* Typography */
+	font-size: 12px;
+	font-weight: bolder;
+	/* Visual */
+	border: 1px solid white;
+	color: white;
+	/* Misc */
+}
+
+#text {
+	/* Positioning */
+	/* Box-model */
+	height: 300px;
+	/* Typography */
+	/* Visual */
+	overflow-y:scroll;
+	/* Misc */	
+}
