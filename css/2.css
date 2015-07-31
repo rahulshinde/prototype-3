@@ -53,11 +53,27 @@ canvas {
 	cursor: move;
 }
 
+.story-title {
+	/* Positioning */
+	float: left;
+	/* Box-model */
+	width: 120px;
+	margin-top: 3px;
+	margin-left: 190px;
+	/* Typography */
+	text-align: center;
+	font-size: 14px;
+	font-family: monospace;
+	/* Visual */
+	color: white;
+	/* Misc */	
+}
+
 #minimize {
 	/* Positioning */
 	float: right;
 	/* Box-model */
-	margin-top:2px; 
+	margin-top:3px; 
 	margin-right: 10px;
 	padding-left:5px;
 	padding-bottom: 1px;
