@@ -82,7 +82,14 @@ canvas {
 }
 
 .controls {
-	
+	/* Positioning */
+	/* Box-model */
+	/* Typography */
+	font-family: 'Sarala';
+	font-size: 18px;
+	/* Visual */
+	background-color: white;
+	/* Misc */
 }
 
 .back {
