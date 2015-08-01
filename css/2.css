@@ -81,6 +81,10 @@ canvas {
 	/* Misc */
 }
 
+.controls {
+	
+}
+
 .back {
 	/* Positioning */
 	float: left;
@@ -105,8 +109,6 @@ canvas {
 	letter-spacing: 5px;
 	/* Visual */
 	border: 1px solid white;
-	color:black; 
-	background-color: white
 	/* Misc */
 }
 
