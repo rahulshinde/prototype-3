@@ -60,7 +60,7 @@ canvas {
 .back,
 #enter {
 	color: white;
-	font-family: 'Sarala';
+	
 
 }
 
@@ -71,6 +71,7 @@ canvas {
 	margin-bottom: 20px;
 	margin-left:21px;
 	/* Typography */
+	font-family: 'Sarala';
 	font-size: 24px;
 	/* Visual */
 	-o-transform: skewX(-35deg); /* Opera */
@@ -95,14 +96,17 @@ canvas {
 #enter {
 	/* Positioning */
 	/* Box-model */
-	padding: 0px 7px 0px 10px;
+	padding: 3px 7px 0px 10px;
 	margin-bottom: 20px;
 	/* Typography */
+	font-family: 'martelbold';
 	text-decoration: none;
-	font-size: 16px;
+	font-size: 12px;
 	letter-spacing: 5px;
 	/* Visual */
 	border: 1px solid white;
+	color:black; 
+	background-color: white
 	/* Misc */
 }
 
