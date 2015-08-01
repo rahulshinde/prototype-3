@@ -92,6 +92,7 @@ a {
     font-family: 'martelbold';
     text-align: center;
     font-size: 14px;
+    -o-transform: skewX(-35deg); /* Opera */
     -ms-transform: skewX(-35deg); /* IE 9 */
     -webkit-transform: skewX(-35deg); /* Safari */
     transform: skewX(-35deg);

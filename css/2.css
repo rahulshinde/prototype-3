@@ -4,6 +4,23 @@
 /* Visual */
 /* Misc */
 
+/*  ===============================================
+    ADDING FONTS
+    =============================================== */
+
+@font-face {
+    font-family: 'martelbold';
+    src: url('../fonts/martel/martel-bold-webfont.eot');
+    src: url('../fonts/martel/martel-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/martel/martel-bold-webfont.woff2') format('woff2'),
+         url('../fonts/martel/martel-bold-webfont.woff') format('woff'),
+         url('../fonts/martel/martel-bold-webfont.ttf') format('truetype'),
+         url('../fonts/martel/martel-bold-webfont.svg#martelbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /*  =================================================================
     BEGIN AUTHOR STYLING
     ================================================================= */
@@ -43,14 +60,23 @@ canvas {
 .back,
 #enter {
 	color: white;
+	font-family: 'Sarala';
+
 }
 
 .title {
 	/* Positioning */
 	/* Box-model */
+	margin-top:20px;
+	margin-bottom: 20px;
 	margin-left:21px;
 	/* Typography */
+	font-size: 24px;
 	/* Visual */
+	-o-transform: skewX(-35deg); /* Opera */
+    -ms-transform: skewX(-35deg); /* IE 9 */
+    -webkit-transform: skewX(-35deg); /* Safari */
+    transform: skewX(-35deg);
 	/* Misc */
 }
 
@@ -69,10 +95,12 @@ canvas {
 #enter {
 	/* Positioning */
 	/* Box-model */
-	padding: 5px 10px;
+	padding: 0px 7px 0px 10px;
 	margin-bottom: 20px;
 	/* Typography */
 	text-decoration: none;
+	font-size: 16px;
+	letter-spacing: 5px;
 	/* Visual */
 	border: 1px solid white;
 	/* Misc */
@@ -85,6 +113,18 @@ canvas {
 	margin-right: 20px;
 	/* Typography */
 	/* Visual */
+	/* Misc */
+}
+
+#enter:hover,
+.back:hover {
+	/* Positioning */
+	/* Box-model */
+	/* Typography */
+	/* Visual */
+	cursor: pointer;
+	background-color: white;
+	color: black;
 	/* Misc */
 }
 
