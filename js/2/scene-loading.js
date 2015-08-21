@@ -2,9 +2,9 @@ $(document).ready(function(){
  	$('#enter').click(function() {
  		$('.intro').fadeToggle('fast', function() {});
 
- 		$('#close').fadeToggle('slow', function() {});
+ 		$('#three-container').fadeToggle('fast', function() {});
 
- 		$('#three-container').fadeToggle('slow', function() {});
+ 		$('#close').fadeToggle('slow', function() {});
 
 		$('#story-container').fadeToggle('slow', function() {});
 

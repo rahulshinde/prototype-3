@@ -21,6 +21,8 @@ var cubex = .5,
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
+var container = document.getElementById( 'three-container' );
+
 init();
 animate();
 
@@ -45,22 +47,15 @@ function init() {
 
 	renderer = new THREE.WebGLRenderer({ alpha: true });
 	renderer.setSize( window.innerWidth, window.innerHeight );
-	document.body.appendChild( renderer.domElement );
+	container.appendChild( renderer.domElement );
 
 	var geometry = new THREE.BoxGeometry( 50, 30, 40 );
 	var material = new THREE.MeshPhongMaterial({color: 0x696969, emissive: 0x696969, specular:0x696969, shininess: 15, side: THREE.DoubleSide});
 	cube = new THREE.Mesh( geometry, material );
 	scene.add( cube );
 
-	var geometry2 = new THREE.BoxGeometry( 10, 10, 15 );
-	cube2 = new THREE.Mesh( geometry2, material );
-
 	cube.rotation.x = .5;
 	cube.rotation.y = 4;
-
-	cube2.position.set( 30, 0, 25 );
-
-	scene.add( cube2 );
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 

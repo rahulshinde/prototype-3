@@ -31,6 +31,7 @@
 
 html, body {
     height: 100%;
+    overflow: hidden;
 }
 
 
@@ -265,4 +266,8 @@ canvas {
 	border-left: 1px dotted black;	
 	overflow-y:scroll;
 	/* Misc */	
+}
+
+#three-container {
+	display: none;
 }
