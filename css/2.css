@@ -46,9 +46,11 @@ canvas {
 
 .intro {
 	/* Positioning */
+	position: fixed;
+	left: 20%;
 	/* Box-model */
 	width: 60%;
-	margin: 40px auto 0 auto;
+	margin-top:40px;
 	/* Typography */
 	/* Visual */
 	overflow: hidden;
@@ -192,12 +194,12 @@ canvas {
 	height: auto;
 	/* Typography */
 	/* Visual */
-	background:-moz-linear-gradient(top, #a8e9ff 0%, #052afc 25%,#ff8d00 100%);
-	background:linear-gradient(top, #a8e9ff 0%, #052afc 25%,#ff8d00 100%);
-	background:-webkit-linear-gradient(top, #a8e9ff 0%, #052afc 25%,#ff8d00 100%);
-	background:-o-linear-gradient(top, #a8e9ff 0%, #052afc 25%,#ff8d00 100%);
-	background:-ms-linear-gradient(top, #a8e9ff 0%, #052afc 25%,#ff8d00 100%);
-	background:-webkit-gradient(linear, right top, right bottom, color-stop(0%,#a8e9ff), color-stop(25%,#052afc),color-stop(100%,#ff8d00));
+	background:-moz-linear-gradient(top, rgba(255,255,255, 0.5) 0%, rgba(255,240,240, 1) 50%,rgba(255,255,255,0.5) 100%);
+	background:linear-gradient(top, rgba(255,255,255, 0.5) 0%, rgba(255,240,240, 1) 50%,rgba(255,255,255,0.5) 100%);
+	background:-webkit-linear-gradient(top, rgba(255,255,255, 0.5) 0%, rgba(255,240,240, 1) 50%,rgba(255,255,255,0.5) 100%);
+	background:-o-linear-gradient(top, rgba(255,255,255, 0.5) 0%, rgba(255,240,240, 1) 50%,rgba(255,255,255,0.5) 100%);
+	background:-ms-linear-gradient(top, rgba(255,255,255, 0.5) 0%, rgba(255,240,240, 1) 50%,rgba(255,255,255,0.5) 100%);
+	background:-webkit-gradient(linear, right top, right bottom, color-stop(0%,rgba(255,255,255, 0.5)), color-stop(50%,rgba(255,240,240, 1)),color-stop(100%,rgba(255,255,255,0.5)));
 	display: none;
 	/* Misc */
 }
