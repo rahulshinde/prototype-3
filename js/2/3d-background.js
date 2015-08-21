@@ -3,8 +3,7 @@ var scene,
 	light1,
 	light2,
 	renderer,
-	cube,
-	cube2;
+	cube;
 
 var mouseX = 0, mouseY = 0;
 
