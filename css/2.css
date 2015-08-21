@@ -192,6 +192,12 @@ canvas {
 	height: auto;
 	/* Typography */
 	/* Visual */
+	background:-moz-linear-gradient(top, #a8e9ff 0%, #052afc 25%,#ff8d00 100%);
+	background:linear-gradient(top, #a8e9ff 0%, #052afc 25%,#ff8d00 100%);
+	background:-webkit-linear-gradient(top, #a8e9ff 0%, #052afc 25%,#ff8d00 100%);
+	background:-o-linear-gradient(top, #a8e9ff 0%, #052afc 25%,#ff8d00 100%);
+	background:-ms-linear-gradient(top, #a8e9ff 0%, #052afc 25%,#ff8d00 100%);
+	background:-webkit-gradient(linear, right top, right bottom, color-stop(0%,#a8e9ff), color-stop(25%,#052afc),color-stop(100%,#ff8d00));
 	display: none;
 	/* Misc */
 }

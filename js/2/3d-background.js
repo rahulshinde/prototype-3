@@ -23,6 +23,8 @@ var windowHalfY = window.innerHeight / 2;
 
 var container = document.getElementById( 'three-container' );
 
+var cameraControls;
+
 init();
 animate();
 
@@ -30,6 +32,16 @@ function init() {
 	scene = new THREE.Scene();
 	camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 1000 );
 	camera.position.z = 100;
+
+	renderer = new THREE.WebGLRenderer({ alpha: true });
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	container.appendChild( renderer.domElement );
+
+	cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
+	cameraControls.target.set( 0, 0, 0);
+	cameraControls.maxDistance = 400;
+	cameraControls.minDistance = 30;
+	cameraControls.update();
 
 	var sphere = new THREE.SphereGeometry( 0.4, 16, 8 );
 
@@ -44,10 +56,6 @@ function init() {
 	scene.add( light2 );
 
 	scene.add( new THREE.AmbientLight( 0x000000 ) );
-
-	renderer = new THREE.WebGLRenderer({ alpha: true });
-	renderer.setSize( window.innerWidth, window.innerHeight );
-	container.appendChild( renderer.domElement );
 
 	var geometry = new THREE.BoxGeometry( 50, 30, 40 );
 	var material = new THREE.MeshPhongMaterial({color: 0x696969, emissive: 0x696969, specular:0x696969, shininess: 15, side: THREE.DoubleSide});
