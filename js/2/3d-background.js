@@ -14,7 +14,7 @@ var windowHalfY = window.innerHeight / 2;
 
 var mouseX = 0, mouseY = 0;
 
-var californiaPts = [];
+var pts = [];
 
 var container = document.getElementById( 'three-container' );
 
@@ -67,43 +67,33 @@ function init() {
 		// 3d shape
 
 		var geometry = new THREE.ExtrudeGeometry( shape, extrudeSettings );
+		var material = new THREE.MeshPhongMaterial({ map:THREE.ImageUtils.loadTexture('../../textures/arch.jpg') , shininess: 15, side: THREE.DoubleSide});
 
-		var mesh = new THREE.Mesh( geometry, new THREE.MeshPhongMaterial( { color: color } ) );
-		mesh.position.set( x, y, z - 25 );
+		var mesh = new THREE.Mesh( geometry, material );
+		mesh.position.set( x, y, z);
 		mesh.rotation.set( rx, ry, rz );
 		mesh.scale.set( s, s, s );
 		group.add( mesh );
-
-		// vertices from real points
-
-		var pgeo = points.clone();
-		var particles = new THREE.PointCloud( pgeo, new THREE.PointCloudMaterial( { color: color, size: 4 } ) );
-		particles.position.set( x, y, z + 25 );
-		particles.rotation.set( rx, ry, rz );
-		particles.scale.set( s, s, s );
-		group.add( particles );
 
 	}
 
 	// California
 
-	californiaPts.push( new THREE.Vector2 ( 20, 30 ) );
-	californiaPts.push( new THREE.Vector2 ( -20, 30 ) );
-	californiaPts.push( new THREE.Vector2 ( 0, -30 ) );
+	pts.push( new THREE.Vector2 ( 20, 30 ) );
+	pts.push( new THREE.Vector2 ( -20, 30 ) );
+	pts.push( new THREE.Vector2 ( 0, -30 ) );
+	pts.push( new THREE.Vector2 ( 10, -30 ) );
 
-	var californiaShape = new THREE.Shape( californiaPts );
+	var shape = new THREE.Shape( pts );
 
 	var closedSpline = new THREE.ClosedSplineCurve3( [
-		new THREE.Vector3( 0, 0,  0 ),
-		new THREE.Vector3( 0, 10,  10 ),
-		new THREE.Vector3( 1, 5,  20 ),
-		new THREE.Vector3( 10, 15,  -20 ),
-		new THREE.Vector3( 10, 15,  -20 ),
+		new THREE.Vector3( -10, 0, 10 ),
+		new THREE.Vector3( -10, 0, -20 ),
 	] );
 
 	var extrudeSettings = { amount: 8, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 1, bevelThickness: 1, extrudePath: closedSpline };
 
-	addShape( californiaShape,  extrudeSettings, 0xf08000, 0, 0, 0, 0, 0, 0, 1 );
+	addShape( shape,  extrudeSettings, 0xf08000, 0, 0, 0, 0, 0, 0, 1 );
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
