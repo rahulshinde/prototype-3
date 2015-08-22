@@ -12,16 +12,7 @@ var windowHalfY = window.innerHeight / 2;
 
 //variables for movable light
 
-var mouseXL = 0, mouseY = 0;
-
-//variables for canvas rotation
-
-var targetRotation = 0;
-var targetRotationOnMouseDown = 0;
-
-var mouseX = 0;
-var mouseXOnMouseDown = 0;
-
+var mouseX = 0, mouseY = 0;
 
 var container = document.getElementById( 'three-container' );
 
@@ -67,71 +58,13 @@ function onWindowResize() {
 
 }
 
-function onDocumentMouseDown( event ) {
-
-	event.preventDefault();
-
-	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-	document.addEventListener( 'mouseup', onDocumentMouseUp, false );
-	document.addEventListener( 'mouseout', onDocumentMouseOut, false );
-
-	mouseXOnMouseDown = event.clientX - windowHalfX;
-	targetRotationOnMouseDown = targetRotation;
-
-}
-
 function onDocumentMouseMove( event ) {
 
-	mouseX = event.clientX - windowHalfX;
-
-	targetRotation = targetRotationOnMouseDown + ( mouseX - mouseXOnMouseDown ) * 0.02;
-
-	mouseXL = ( event.clientX - windowHalfX );
+	mouseX = ( event.clientX - windowHalfX );
 	mouseY = ( event.clientY - windowHalfY );
 
 }
 
-function onDocumentMouseUp( event ) {
-
-	document.removeEventListener( 'mousemove', onDocumentMouseMove, false );
-	document.removeEventListener( 'mouseup', onDocumentMouseUp, false );
-	document.removeEventListener( 'mouseout', onDocumentMouseOut, false );
-
-}
-
-function onDocumentMouseOut( event ) {
-
-	document.removeEventListener( 'mousemove', onDocumentMouseMove, false );
-	document.removeEventListener( 'mouseup', onDocumentMouseUp, false );
-	document.removeEventListener( 'mouseout', onDocumentMouseOut, false );
-
-}
-
-function onDocumentTouchStart( event ) {
-
-	if ( event.touches.length == 1 ) {
-
-		event.preventDefault();
-
-		mouseXOnMouseDown = event.touches[ 0 ].pageX - windowHalfX;
-		targetRotationOnMouseDown = targetRotation;
-
-	}
-
-}
-
-function onDocumentTouchMove( event ) {
-
-	if ( event.touches.length == 1 ) {
-
-		event.preventDefault();
-
-		mouseX = event.touches[ 0 ].pageX - windowHalfX;
-		targetRotation = targetRotationOnMouseDown + ( mouseX - mouseXOnMouseDown ) * 0.05;
-
-	}
-
-}
 
 function animate() {
 
@@ -143,7 +76,5 @@ function animate() {
 
 function render() {
 	light1.position.set ( (mouseX - light1.position.x) * 0.075, - (mouseY - light1.position.y) * 0.075, 50);
-	group.rotation.y += ( targetRotation - group.rotation.y ) * 0.05;
-
 	renderer.render(scene, camera);
 };
