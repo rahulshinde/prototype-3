@@ -23,11 +23,20 @@ function init() {
 	scene = new THREE.Scene();
 	camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 1000 );
 	camera.position.z = 100;
+	var cameraControls;
 
 	renderer = new THREE.WebGLRenderer({ alpha: true });
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	container.appendChild( renderer.domElement );
 
+	cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
+	cameraControls.target.set( 0, 0, 0);
+	cameraControls.maxDistance = 400;
+	cameraControls.minDistance = 30;
+	cameraControls.update();
+
+
+	//adding lights, sphere is just to check light position.
 	var sphere = new THREE.SphereGeometry( 0.4, 16, 8 );
 
 	light1 = new THREE.PointLight( 0x2defff, 1, 4500 );
@@ -42,6 +51,30 @@ function init() {
 
 	scene.add( new THREE.AmbientLight( 0x000000 ) );
 
+	// adding main object
+
+	var material = new THREE.LineBasicMaterial({
+		color: 0x0000ff
+	});
+
+	var geometry = new THREE.Geometry();
+	geometry.vertices.push(
+		new THREE.Vector3( -10, 0, -10 ),
+		new THREE.Vector3( 0, 10, 10 ),
+		new THREE.Vector3( 10, 0, 2 ),
+		new THREE.Vector3( 20, 40, 30 ),
+		new THREE.Vector3( -10, 0, -10 )
+	);
+
+	geometry.faces.push( new THREE.Face3( 0, 1, 2, 3, 4, 5, 6 ) );
+	geometry.computeFaceNormals();
+
+	// var line = new THREE.Line( geometry, material );
+	// scene.add( line );
+
+	var mesh = new THREE.Mesh( geometry, material );
+	scene.add( mesh );
+	mesh.position.x = 10;
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
