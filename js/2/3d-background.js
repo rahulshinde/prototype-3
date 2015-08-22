@@ -37,60 +37,6 @@ function init() {
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	container.appendChild( renderer.domElement );
 
-	group = new THREE.Group();
-	group.position.y = 50;
-	scene.add( group );
-
-	function addShape( shape, extrudeSettings, color, x, y, z, rx, ry, rz, s ) {
-		var points = shape.createPointsGeometry();
-		var spacedPoints = shape.createSpacedPointsGeometry( 50 );
-
-		// 3d shape
-
-		var geometry = new THREE.ExtrudeGeometry( shape, extrudeSettings );
-
-		var mesh = new THREE.Mesh( geometry, new THREE.MeshPhongMaterial( { color: color } ) );
-		mesh.position.set( x, y, z );
-		mesh.rotation.set( rx, ry, rz );
-		mesh.scale.set( s, s, s );
-		group.add( mesh );
-
-		// vertices from real points
-
-		var pgeo = points.clone();
-		var particles = new THREE.PointCloud( pgeo, new THREE.PointCloudMaterial( { color: color, size: 2 } ) );
-		particles.position.set( x, y, z + 30 );
-		particles.rotation.set( rx, ry, rz );
-		particles.scale.set( s, s, s );
-		group.add( particles );
-
-		// solid line
-
-		var line = new THREE.Line( points, new THREE.LineBasicMaterial( { color: color, linewidth: 3 } ) );
-		line.position.set( x, y, z - 30 );
-		line.rotation.set( rx, ry, rz );
-		line.scale.set( s, s, s );
-		group.add( line );
-
-
-	}
-
-	var objectPts = [];
-
-	objectPts.push( new THREE.Vector2 ( 20, 40 ) );
-	objectPts.push( new THREE.Vector3 ( 0, 0, -10 ) );
-	objectPts.push( new THREE.Vector3 ( -20, 40, 10 ) );
-
-	for( var i = 0; i < objectPts.length; i ++ ) objectPts[ i ].multiplyScalar( 0.25 );
-
-	var objectShape = new THREE.Shape( objectPts );
-
-	var extrudeSettings = { amount: 8, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 1, bevelThickness: 1 };
-
-	// addShape( shape, color, x, y, z, rx, ry,rz, s );
-
-	addShape( objectShape,  extrudeSettings, 0xf08000, 0, -60, 0, 0, 0, 0, 1 );
-
 	var sphere = new THREE.SphereGeometry( 0.4, 16, 8 );
 
 	light1 = new THREE.PointLight( 0x2defff, 1, 4500 );
@@ -104,6 +50,7 @@ function init() {
 	scene.add( light2 );
 
 	scene.add( new THREE.AmbientLight( 0x000000 ) );
+
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
@@ -196,8 +143,6 @@ function animate() {
 
 function render() {
 	light1.position.set ( (mouseX - light1.position.x) * 0.075, - (mouseY - light1.position.y) * 0.075, 50);
-	console.log(mouseX);
-	console.log(light1.position);
 	group.rotation.y += ( targetRotation - group.rotation.y ) * 0.05;
 
 	renderer.render(scene, camera);
