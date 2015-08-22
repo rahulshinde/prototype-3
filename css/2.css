@@ -59,6 +59,7 @@ canvas {
 	overflow: hidden;
 	background-color: black;
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+	z-index: 50;
 	/* Misc */
 }
 
@@ -168,6 +169,7 @@ canvas {
 	border: 1px solid black;
 	background-color: white;
 	display: none;
+	z-index: 150;
 	/* Misc */
 }
 
@@ -282,4 +284,35 @@ canvas {
 
 #three-container {
 	display: none;
+}
+
+.video-wrapper {
+	position: fixed;
+	opacity: 0;
+	bottom: 15px;
+	right: 20%;
+	width:35%;
+	z-index: 0;
+
+	transform: rotateX(60deg);
+	-webkit-transform: rotateX(60deg);
+	-moz-transform: rotateX(60deg);
+	-o-transform: rotateX(60deg);
+
+	transform: rotateY(40deg);
+	-webkit-transform: rotateY(40deg);
+	-moz-transform: rotateY(40deg);
+	-o-transform: rotateY(40deg);
+}
+
+.h_iframe {
+	position:relative; 
+	padding-top: 80%;
+}
+
+.h_iframe iframe {
+	position:absolute;
+	top:0;left:0;
+	width:100%; 
+	height:100%;
 }
