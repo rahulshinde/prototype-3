@@ -1,3 +1,5 @@
+//general scene variables
+
 var scene,
 	camera,
 	light1,
@@ -5,21 +7,21 @@ var scene,
 	renderer,
 	cube;
 
-var mouseX = 0, mouseY = 0;
-
-var accX,
-	accY,
-	accZ,
-	xA,
-	yA,
-	zA;
-
-var cubex = .5,
-	cubey = 4;
-	cubez = .2;
-
 var windowHalfX = window.innerWidth / 2;
-var windowHalfY = window.innerHeight / 2;
+var windowHalfY = window.innerHeight / 2;	
+
+//variables for movable light
+
+var mouseXL = 0, mouseY = 0;
+
+//variables for canvas rotation
+
+var targetRotation = 0;
+var targetRotationOnMouseDown = 0;
+
+var mouseX = 0;
+var mouseXOnMouseDown = 0;
+
 
 var container = document.getElementById( 'three-container' );
 
@@ -76,8 +78,8 @@ function init() {
 	var objectPts = [];
 
 	objectPts.push( new THREE.Vector2 ( 20, 40 ) );
-	objectPts.push( new THREE.Vector2 ( 0, 0 ) );
-	objectPts.push( new THREE.Vector2 ( -20, 40 ) );
+	objectPts.push( new THREE.Vector3 ( 0, 0, -10 ) );
+	objectPts.push( new THREE.Vector3 ( -20, 40, 10 ) );
 
 	for( var i = 0; i < objectPts.length; i ++ ) objectPts[ i ].multiplyScalar( 0.25 );
 
@@ -87,7 +89,7 @@ function init() {
 
 	// addShape( shape, color, x, y, z, rx, ry,rz, s );
 
-	addShape( objectShape,  extrudeSettings, 0xf08000, 0, -20, 0, 0, 0, 0, 1 );
+	addShape( objectShape,  extrudeSettings, 0xf08000, 0, -60, 0, 0, 0, 0, 1 );
 
 	var sphere = new THREE.SphereGeometry( 0.4, 16, 8 );
 
@@ -118,26 +120,69 @@ function onWindowResize() {
 
 }
 
+function onDocumentMouseDown( event ) {
+
+	event.preventDefault();
+
+	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+	document.addEventListener( 'mouseup', onDocumentMouseUp, false );
+	document.addEventListener( 'mouseout', onDocumentMouseOut, false );
+
+	mouseXOnMouseDown = event.clientX - windowHalfX;
+	targetRotationOnMouseDown = targetRotation;
+
+}
+
 function onDocumentMouseMove( event ) {
 
-	mouseX = ( event.clientX - windowHalfX );
+	mouseX = event.clientX - windowHalfX;
+
+	targetRotation = targetRotationOnMouseDown + ( mouseX - mouseXOnMouseDown ) * 0.02;
+
+	mouseXL = ( event.clientX - windowHalfX );
 	mouseY = ( event.clientY - windowHalfY );
 
 }
 
-window.ondevicemotion = function(event) {
+function onDocumentMouseUp( event ) {
 
-    accX = event.acceleration.x;  
-    accY = event.acceleration.y;
-    accZ = event.acceleration.z;  
-		    
-    xA = -(accX / 100);
-    yA = -(accY / 100);
-    zA = -(accZ / 100);
+	document.removeEventListener( 'mousemove', onDocumentMouseMove, false );
+	document.removeEventListener( 'mouseup', onDocumentMouseUp, false );
+	document.removeEventListener( 'mouseout', onDocumentMouseOut, false );
 
-    cubex = cubex + xA;
-    cubey = cubey + yA;
-    cubez = cubez + zA; 
+}
+
+function onDocumentMouseOut( event ) {
+
+	document.removeEventListener( 'mousemove', onDocumentMouseMove, false );
+	document.removeEventListener( 'mouseup', onDocumentMouseUp, false );
+	document.removeEventListener( 'mouseout', onDocumentMouseOut, false );
+
+}
+
+function onDocumentTouchStart( event ) {
+
+	if ( event.touches.length == 1 ) {
+
+		event.preventDefault();
+
+		mouseXOnMouseDown = event.touches[ 0 ].pageX - windowHalfX;
+		targetRotationOnMouseDown = targetRotation;
+
+	}
+
+}
+
+function onDocumentTouchMove( event ) {
+
+	if ( event.touches.length == 1 ) {
+
+		event.preventDefault();
+
+		mouseX = event.touches[ 0 ].pageX - windowHalfX;
+		targetRotation = targetRotationOnMouseDown + ( mouseX - mouseXOnMouseDown ) * 0.05;
+
+	}
 
 }
 
@@ -153,6 +198,7 @@ function render() {
 	light1.position.set ( (mouseX - light1.position.x) * 0.075, - (mouseY - light1.position.y) * 0.075, 50);
 	console.log(mouseX);
 	console.log(light1.position);
+	group.rotation.y += ( targetRotation - group.rotation.y ) * 0.05;
 
 	renderer.render(scene, camera);
 };
