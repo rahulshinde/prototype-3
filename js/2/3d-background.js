@@ -15,6 +15,9 @@ var windowHalfY = window.innerHeight / 2;
 var mouseX = 0, mouseY = 0;
 
 var pts = [];
+var closedSpline;
+
+var x = 20;
 
 var container = document.getElementById( 'three-container' );
 
@@ -77,7 +80,7 @@ function init() {
 
 	}
 
-	// California
+	// Shape
 
 	pts.push( new THREE.Vector2 ( 20, 30 ) );
 	pts.push( new THREE.Vector2 ( -20, 30 ) );
@@ -86,12 +89,13 @@ function init() {
 
 	var shape = new THREE.Shape( pts );
 
-	var closedSpline = new THREE.ClosedSplineCurve3( [
-		new THREE.Vector3( -10, 0, 10 ),
-		new THREE.Vector3( -10, 0, -20 ),
+	closedSpline = new THREE.ClosedSplineCurve3( [
+		new THREE.Vector3( 0, 0, 0 ),
+		new THREE.Vector3( 10, 10, -10 ),
+		new THREE.Vector3( 20, -10, -20 )
 	] );
 
-	var extrudeSettings = { amount: 8, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 1, bevelThickness: 1, extrudePath: closedSpline };
+	var extrudeSettings = { amount: 100, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 1, bevelThickness: 1, extrudePath: closedSpline };
 
 	addShape( shape,  extrudeSettings, 0xf08000, 0, 0, 0, 0, 0, 0, 1 );
 
@@ -114,14 +118,19 @@ function onDocumentMouseMove( event ) {
 
 	mouseX = ( event.clientX - windowHalfX );
 	mouseY = ( event.clientY - windowHalfY );
+	modularPoints();
 
 }
 
+function modularPoints () {
+	console.log(closedSpline.points[0]);
+	pts[0].set( x +=1 , 30);
+	x + 1;
+}
 
 function animate() {
 
 	requestAnimationFrame( animate );
-
 	render();
 
 }	
