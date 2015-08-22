@@ -8,11 +8,13 @@ var scene,
 	cube;
 
 var windowHalfX = window.innerWidth / 2;
-var windowHalfY = window.innerHeight / 2;	
+var windowHalfY = window.innerHeight / 2;
 
 //variables for movable light
 
 var mouseX = 0, mouseY = 0;
+
+var californiaPts = [];
 
 var container = document.getElementById( 'three-container' );
 
@@ -53,28 +55,55 @@ function init() {
 
 	// adding main object
 
-	var material = new THREE.LineBasicMaterial({
-		color: 0x0000ff
-	});
+	group = new THREE.Group();
+	scene.add( group );
 
-	var geometry = new THREE.Geometry();
-	geometry.vertices.push(
-		new THREE.Vector3( -10, 0, -10 ),
-		new THREE.Vector3( 0, 10, 10 ),
-		new THREE.Vector3( 10, 0, 2 ),
-		new THREE.Vector3( 20, 40, 30 ),
-		new THREE.Vector3( -10, 0, -10 )
-	);
 
-	geometry.faces.push( new THREE.Face3( 0, 1, 2, 3, 4, 5, 6 ) );
-	geometry.computeFaceNormals();
+	function addShape( shape, extrudeSettings, color, x, y, z, rx, ry, rz, s ) {
 
-	// var line = new THREE.Line( geometry, material );
-	// scene.add( line );
+		var points = shape.createPointsGeometry();
+		var spacedPoints = shape.createSpacedPointsGeometry( 50 );
 
-	var mesh = new THREE.Mesh( geometry, material );
-	scene.add( mesh );
-	mesh.position.x = 10;
+		// 3d shape
+
+		var geometry = new THREE.ExtrudeGeometry( shape, extrudeSettings );
+
+		var mesh = new THREE.Mesh( geometry, new THREE.MeshPhongMaterial( { color: color } ) );
+		mesh.position.set( x, y, z - 25 );
+		mesh.rotation.set( rx, ry, rz );
+		mesh.scale.set( s, s, s );
+		group.add( mesh );
+
+		// vertices from real points
+
+		var pgeo = points.clone();
+		var particles = new THREE.PointCloud( pgeo, new THREE.PointCloudMaterial( { color: color, size: 4 } ) );
+		particles.position.set( x, y, z + 25 );
+		particles.rotation.set( rx, ry, rz );
+		particles.scale.set( s, s, s );
+		group.add( particles );
+
+	}
+
+	// California
+
+	californiaPts.push( new THREE.Vector2 ( 20, 30 ) );
+	californiaPts.push( new THREE.Vector2 ( -20, 30 ) );
+	californiaPts.push( new THREE.Vector2 ( 0, -30 ) );
+
+	var californiaShape = new THREE.Shape( californiaPts );
+
+	var closedSpline = new THREE.ClosedSplineCurve3( [
+		new THREE.Vector3( 0, 0,  0 ),
+		new THREE.Vector3( 0, 10,  10 ),
+		new THREE.Vector3( 1, 5,  20 ),
+		new THREE.Vector3( 10, 15,  -20 ),
+		new THREE.Vector3( 10, 15,  -20 ),
+	] );
+
+	var extrudeSettings = { amount: 8, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 1, bevelThickness: 1, extrudePath: closedSpline };
+
+	addShape( californiaShape,  extrudeSettings, 0xf08000, 0, 0, 0, 0, 0, 0, 1 );
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
@@ -109,5 +138,6 @@ function animate() {
 
 function render() {
 	light1.position.set ( (mouseX - light1.position.x) * 0.075, - (mouseY - light1.position.y) * 0.075, 50);
+
 	renderer.render(scene, camera);
 };
