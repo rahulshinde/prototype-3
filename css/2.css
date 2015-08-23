@@ -286,7 +286,11 @@ canvas {
 	display: none;
 }
 
-.video-wrapper {
+/*  ========================
+    video
+    ======================== */
+
+.video-wrapper1 {
 	position: fixed;
 	opacity: 0;
 	top: 0;
@@ -297,7 +301,7 @@ canvas {
 
 .h_iframe {
 	position:relative; 
-	padding-top: 80%;
+	padding-top: 63%;
 }
 
 .h_iframe iframe {
