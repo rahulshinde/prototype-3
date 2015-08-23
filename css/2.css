@@ -290,18 +290,18 @@ canvas {
     video
     ======================== */
 
-.video-wrapper1 {
+.video-wrapper {
 	position: fixed;
 	opacity: 0;
-	top: 0;
-	left: 10%;
-	width:80%;
+	top: -40px;
+	left: 5%;
+	width:90%;
 	z-index: 0;
 }
 
 .h_iframe {
 	position:relative; 
-	padding-top: 63%;
+	padding-top: 62.5%;
 }
 
 .h_iframe iframe {
