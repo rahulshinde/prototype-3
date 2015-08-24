@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 		if ($('#marker-2').offset().top - 23 < $('#text').height() / 2) {
 			console.log();
-			$('#flag-1').fadeTo('fast', 0, function() {});
+			$('#flag-1').fadeTo('fast', 0, function() {});s
 
 			function srcChange () {
 				var src1 = $('#iframe1').attr('src');
