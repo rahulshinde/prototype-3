@@ -19,7 +19,7 @@ $(document).ready(function(){
  		$('#three-container').fadeToggle('fast', function() {});
 
 		$('#story-container').fadeToggle('fast', function() {});
-		$('#flag-1').fadeTo('fast', 0, function() {});
+		$('.video-wrapper').fadeTo('fast', 0, function() {});
 
 		$('.intro').fadeToggle('slow', function() {});
 	});      
