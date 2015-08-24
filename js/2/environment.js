@@ -192,10 +192,11 @@ function init() {
 
 
 	//scene
+
 	var material = new THREE.MeshPhongMaterial( { color: 0xffffff, wireframe: true } );
 
 	var geometry = new THREE.BoxGeometry( 10, 7, 0.1 );
-	var cube1 = new THREE.Mesh( geometry, material1 );
+	var cube1 = new THREE.Mesh( geometry, material );
 	scene.add( cube1 );
 	cube1.position.y = 10;
 	cube1.position.z = -10;
@@ -255,17 +256,7 @@ function animate() {
 		}
 
 		controls.getObject().translateX( velocity.x * delta );
-		controls.getObject().translateY( velocity.y * delta );
 		controls.getObject().translateZ( velocity.z * delta );
-
-		if ( controls.getObject().position.y < 10 ) {
-
-			velocity.y = 0;
-			controls.getObject().position.y = 10;
-
-			canJump = true;
-
-		}
 
 		prevTime = time;
 
