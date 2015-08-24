@@ -292,10 +292,10 @@ canvas {
 
 .video-wrapper {
 	position: fixed;
-	opacity: 0;
 	top: -30px;
 	left: 10%;
 	width:80%;
+	opacity: 0;
 	z-index: 0;
 }
 
