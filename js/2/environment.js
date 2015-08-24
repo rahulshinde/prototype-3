@@ -9,6 +9,7 @@ var raycaster;
 
 var blocker = document.getElementById( 'blocker' );
 var instructions = document.getElementById( 'instructions' );
+var click = document.getElementById( 'click' );
 
 // http://www.html5rocks.com/en/tutorials/pointerlock/intro/
 
@@ -56,7 +57,7 @@ if ( havePointerLock ) {
 	document.addEventListener( 'mozpointerlockerror', pointerlockerror, false );
 	document.addEventListener( 'webkitpointerlockerror', pointerlockerror, false );
 
-	instructions.addEventListener( 'click', function ( event ) {
+	click.addEventListener( 'click', function ( event ) {
 
 		instructions.style.display = 'none';
 
@@ -205,24 +206,113 @@ function init() {
 	var wall1 = new THREE.Mesh( geometry2, material );
 	scene.add( wall1 );
 	wall1.position.y = 12;
-	wall1.position.x = 13;
+	wall1.position.x = 13.33;
 	wall1.position.z = -40;
 
 	var geometry3 = new THREE.BoxGeometry( 10, 15, 2 );
 	var wall2 = new THREE.Mesh( geometry3, material );
 	scene.add( wall2 );
+
+	wall2.position.x = 9.3;
 	wall2.position.y = 12;
-	wall2.position.x = 9;
 	wall2.position.z = -51;
 
 	// C O U C H
 
-	var geometry4 = new THREE.BoxGeometry( 4, 1, 7 );
-	var wall1 = new THREE.Mesh( geometry4, material );
-	scene.add( wall1 );
-	wall1.position.y = 7;
-	wall1.position.x = 10;
-	wall1.position.z = -40;
+	// base
+	var geometry4 = new THREE.BoxGeometry( 3.5, 0.5, 7 );
+	var couchBase = new THREE.Mesh( geometry4, material );
+	scene.add( couchBase );
+
+	couchBase.position.x = 10.5;
+	couchBase.position.y = 5.9;
+	couchBase.position.z = -40;
+
+	// cushions
+	var geometry5 = new THREE.CylinderGeometry( .6, .6, 3.2, 7 );
+	var cushion1 = new THREE.Mesh( geometry5, material );
+	scene.add( cushion1 );
+
+	cushion1.rotation.x = 20.42;
+
+	cushion1.position.x = 11.5;
+	cushion1.position.y = 6.8;
+	cushion1.position.z = -41.8;
+
+	var cushion2 = new THREE.Mesh( geometry5, material );
+	scene.add( cushion2 );
+
+	cushion2.rotation.x = 20.42;
+
+	cushion2.position.x = 11.5;
+	cushion2.position.y = 6.8;
+	cushion2.position.z = -38.2;
+
+	// legs
+
+	var geometryLeg = new THREE.CylinderGeometry( .1, .05, 1.2, 7 );
+	var leg1 = new THREE.Mesh( geometryLeg, material );
+	scene.add( leg1 );
+
+	leg1.position.x = 9;
+	leg1.position.y = 4.95;
+	leg1.position.z = -37;
+
+	var leg2 = new THREE.Mesh( geometryLeg, material );
+	scene.add( leg2 );
+
+	leg2.position.x = 9;
+	leg2.position.y = 4.95;
+	leg2.position.z = -43;
+
+	var leg3 = new THREE.Mesh( geometryLeg, material );
+	scene.add( leg3 );
+
+	leg3.position.x = 12;
+	leg3.position.y = 4.95;
+	leg3.position.z = -43;
+
+	var leg4 = new THREE.Mesh( geometryLeg, material );
+	scene.add( leg4 );
+
+	leg4.position.x = 12;
+	leg4.position.y = 4.95;
+	leg4.position.z = -37;
+
+	// S H E L F
+
+	var geometryShelf = new THREE.BoxGeometry( 4, 0.1, 2 );
+	var shelf = new THREE.Mesh( geometryShelf, material );
+	scene.add( shelf );
+
+	shelf.position.x = 9;
+	shelf.position.y = 9.5;
+	shelf.position.z = -49;
+
+	// V A S E
+
+
+	var points = [];
+
+	points.push( new THREE.Vector3(0.4, 0, 2));
+	points.push( new THREE.Vector3(0.3, 0, 2.5));
+	points.push( new THREE.Vector3(1, 0, 3.5));
+	points.push( new THREE.Vector3(0.85, 0, 3.9));
+	points.push( new THREE.Vector3(0.7, 0, 4.3));
+	points.push( new THREE.Vector3(0.55, 0, 4.5));
+	points.push( new THREE.Vector3(0.3, 0, 4.7));
+	points.push( new THREE.Vector3(0, 0, 4.7));
+
+	var geometryVase = new THREE.LatheGeometry( points );
+	var vase1 = new THREE.Mesh( geometryVase, material );
+	scene.add( vase1 );
+
+	vase1.rotation.x = 20.42;
+	vase1.position.x = 0;
+	vase1.position.y = 11.5;
+	vase1.position.z = -20;
+
+
 
 
 	renderer = new THREE.WebGLRenderer();
