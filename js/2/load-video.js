@@ -1,32 +1,23 @@
 $(document).ready(function(){
 
+	var flag1 = '#flag1',
+		flag2 = '#flag-2'
+
 
 	$('#text').scroll( function() {
-		console.log($('#marker-2').offset().top - 23);
+		console.log($('#marker-4').offset().top - 23);
 		console.log($('#text').height());
 
-		if ($('#marker-2').offset().top - 23 < $('#text').height() / 2) {
-			console.log();
-			$('#flag-1').fadeTo('fast', 0, function() {});s
+		if ($('#marker-2').offset().top - 23 < $('#text').height() / 2 && $('#marker-3').offset().top - 23 > $('#text').height() / 2)  {
+			$(flag1).fadeTo('slow', 0, function() {});
+			$(flag2).fadeTo('fast', 1, function() {});
 
-			function srcChange () {
-				var src1 = $('#iframe1').attr('src');
-				$('#iframe1').attr('src', src1.replace("autoplay=1", "autoplay=0"));
-				var src2 = $('#iframe2').attr('src');
-				$('#iframe2').attr('src', src2.replace("autoplay=0", "autoplay=1"));
-			}
-
-			$.when( srcChange() ).done(function() {
-    			$('#flag-2').fadeTo('slow', 1, function() {});
-  			});
-
-  			srcChange();
-
-    	} else {
-			
-			return;
+    	} else if ($('#marker-3').offset().top - 23 < $('#text').height() / 2 && $('#marker-4').offset().top - 23 > $('#text').height() / 2) {
+    		$(flag2).fadeTo('slow', 0, function() {});
+			console.log('hello');
 
     	}
+
 	});
      
 });

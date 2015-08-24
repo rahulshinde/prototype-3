@@ -9,7 +9,6 @@ $(document).ready(function(){
 		$('#story-container').fadeToggle('slow', function() {});
 
 		$('#flag-1').fadeTo('slow', 1, function() {});
-
 	});
 
 	$('#close').click(function() {
