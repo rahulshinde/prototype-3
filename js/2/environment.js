@@ -393,10 +393,11 @@ function init() {
 	scene.add (paperGroup);
 
 
+	paperGroup.rotation.y = -1;
 
-	paperGroup.position.x = 5;
+	paperGroup.position.x = 9.8;
 	paperGroup.position.y = 9;
-	paperGroup.position.z = -50;
+	paperGroup.position.z = -47.9;
 
 
 
