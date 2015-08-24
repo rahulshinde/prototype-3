@@ -220,9 +220,9 @@ function init() {
 	var geometry4 = new THREE.BoxGeometry( 4, 1, 7 );
 	var wall1 = new THREE.Mesh( geometry4, material );
 	scene.add( wall1 );
-	wall1.position.y = 4;
-	wall1.position.x = 0;
-	wall1.position.z = -20;
+	wall1.position.y = 7;
+	wall1.position.x = 10;
+	wall1.position.z = -40;
 
 
 	renderer = new THREE.WebGLRenderer();
