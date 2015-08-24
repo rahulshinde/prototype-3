@@ -178,7 +178,7 @@ canvas {
 	/* Box-model */
 	/* Typography */
 	/* Visual */
-	background: url(../img/2/line.png);
+	background: url(../img/1/line.png);
 	background-size: 100%;
 	border: 1px solid black;
 	cursor: pointer;
@@ -216,7 +216,7 @@ canvas {
 	height: 23px;
 	/* Typography */
 	/* Visual */
-	background: url('../img/2/top-bar.png');
+	background: url('../img/1/top-bar.png');
 	/* Misc */	
 }
 
