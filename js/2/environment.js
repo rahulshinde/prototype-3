@@ -318,7 +318,7 @@ function init() {
 
 	vase1.rotation.x = 20.42;
 
-	vase1.position.x = 10.2;
+	vase1.position.x = 8.5;
 	vase1.position.y = 13;
 	vase1.position.z = -49;
 
@@ -387,17 +387,45 @@ function init() {
 	var paperBottom = new THREE.Line( geometryPaper4, paperMaterial );
 	paperGroup.add( paperBottom );
 
-
-
-
 	scene.add (paperGroup);
 
 
 	paperGroup.rotation.y = -1;
 
-	paperGroup.position.x = 9.8;
+	paperGroup.position.x = 8.1;
 	paperGroup.position.y = 9;
 	paperGroup.position.z = -47.9;
+
+	// B O O K S
+
+	var bookGroup = new THREE.Group();
+
+	var bookGeometry1 = new THREE.BoxGeometry( 2, 0.3, 1 );
+	var book1 = new THREE.Mesh( bookGeometry1, material );
+	bookGroup.add(book1)
+
+	var bookGeometry2 = new THREE.BoxGeometry( 1.75, 0.2, 0.75 );
+	var book2 = new THREE.Mesh( bookGeometry2, material );
+	book2.position.x = 0.15;
+	book2.position.y = 0.3;
+	book2.position.z = 0.1;
+	bookGroup.add(book2);
+
+	var bookGeometry3 = new THREE.BoxGeometry( 1.75, 0.2, 0.75 );
+	var book3 = new THREE.Mesh( bookGeometry3, material );
+	book3.position.x = 0.15;
+	book3.position.y = 0.5;
+	book3.position.z = 0.1;
+	bookGroup.add(book3);
+
+	scene.add( bookGroup );
+
+	bookGroup.position.x = 10.5;
+	bookGroup.position.y = 9.7;
+	bookGroup.position.z = -48.6;
+
+
+
 
 
 
