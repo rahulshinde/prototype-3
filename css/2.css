@@ -290,7 +290,8 @@ canvas {
     video
     ======================== */
 
-.video-wrapper {
+.video-wrapper,
+.video-wrapper2 {
 	position: fixed;
 	opacity: 0;
 	top: -30px;
@@ -301,7 +302,7 @@ canvas {
 
 .h_iframe {
 	position:relative; 
-	padding-top: 62.5%;
+	padding-top: 75%;
 }
 
 .h_iframe iframe {

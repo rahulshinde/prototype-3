@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 		$('#story-container').fadeToggle('slow', function() {});
 
-		$('.video-wrapper').fadeTo('slow', 1, function() {});
+		$('#flag-1').fadeTo('slow', 1, function() {});
 
 	});
 
@@ -19,7 +19,7 @@ $(document).ready(function(){
  		$('#three-container').fadeToggle('fast', function() {});
 
 		$('#story-container').fadeToggle('fast', function() {});
-		$('.video-wrapper').fadeTo('fast', 0, function() {});
+		$('#flag-1').fadeTo('fast', 0, function() {});
 
 		$('.intro').fadeToggle('slow', function() {});
 	});      
