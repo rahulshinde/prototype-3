@@ -185,33 +185,44 @@ function init() {
 
 	raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, - 1, 0 ), 0, 10 );
 
-	/////////
-	//scene//
-	/////////
-	
+	////////////////////////
+	//////////scene/////////
+	////////////////////////
+
 	var material = new THREE.MeshPhongMaterial( { color: 0xffffff, wireframe: true } );
 
-	//video-screen
+	// S C R E E N
 
 	var geometry1 = new THREE.BoxGeometry( 10, 7, 0.1 );
 	var cube1 = new THREE.Mesh( geometry1, material );
 	scene.add( cube1 );
-	cube1.position.y = 10;
+	cube1.position.y = 13;
 	cube1.position.z = -10;
+
+	// W A L L S
 
 	var geometry2 = new THREE.BoxGeometry( 2, 15, 20 );
 	var wall1 = new THREE.Mesh( geometry2, material );
 	scene.add( wall1 );
-	wall1.position.y = 15;
+	wall1.position.y = 12;
 	wall1.position.x = 13;
 	wall1.position.z = -40;
 
 	var geometry3 = new THREE.BoxGeometry( 10, 15, 2 );
-	var wall1 = new THREE.Mesh( geometry3, material );
+	var wall2 = new THREE.Mesh( geometry3, material );
+	scene.add( wall2 );
+	wall2.position.y = 12;
+	wall2.position.x = 9;
+	wall2.position.z = -51;
+
+	// C O U C H
+
+	var geometry4 = new THREE.BoxGeometry( 4, 1, 7 );
+	var wall1 = new THREE.Mesh( geometry4, material );
 	scene.add( wall1 );
-	wall1.position.y = 15;
-	wall1.position.x = 9;
-	wall1.position.z = -52;
+	wall1.position.y = 4;
+	wall1.position.x = 0;
+	wall1.position.z = -20;
 
 
 	renderer = new THREE.WebGLRenderer();
