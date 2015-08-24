@@ -217,6 +217,15 @@ function init() {
 	wall2.position.y = 12;
 	wall2.position.z = -51;
 
+	// S Y M B O L
+
+	var geometrySnake = new THREE.BoxGeometry( 0.1, 7, 12 );
+	var snake = new THREE.Mesh( geometrySnake, material );
+	scene.add( snake );
+	snake.position.y = 12;
+	snake.position.x = 12.2;
+	snake.position.z = -40;
+
 	// C O U C H
 
 	// base
@@ -281,7 +290,7 @@ function init() {
 
 	// S H E L F
 
-	var geometryShelf = new THREE.BoxGeometry( 4, 0.1, 2 );
+	var geometryShelf = new THREE.BoxGeometry( 5, 0.1, 2 );
 	var shelf = new THREE.Mesh( geometryShelf, material );
 	scene.add( shelf );
 
@@ -294,23 +303,100 @@ function init() {
 
 	var points = [];
 
-	points.push( new THREE.Vector3(0.4, 0, 2));
-	points.push( new THREE.Vector3(0.3, 0, 2.5));
-	points.push( new THREE.Vector3(1, 0, 3.5));
-	points.push( new THREE.Vector3(0.85, 0, 3.9));
-	points.push( new THREE.Vector3(0.7, 0, 4.3));
-	points.push( new THREE.Vector3(0.55, 0, 4.5));
-	points.push( new THREE.Vector3(0.3, 0, 4.7));
-	points.push( new THREE.Vector3(0, 0, 4.7));
+	points.push( new THREE.Vector3(0.3, 0, 1));
+	points.push( new THREE.Vector3(0.2, 0, 1.3));
+	points.push( new THREE.Vector3(.9, 0, 2.25));
+	points.push( new THREE.Vector3(0.75, 0, 2.85));
+	points.push( new THREE.Vector3(0.6, 0, 3.2));
+	points.push( new THREE.Vector3(0.45, 0, 3.4));
+	points.push( new THREE.Vector3(0.3, 0, 3.5));
+	points.push( new THREE.Vector3(0, 0, 3.5));
 
 	var geometryVase = new THREE.LatheGeometry( points );
 	var vase1 = new THREE.Mesh( geometryVase, material );
 	scene.add( vase1 );
 
 	vase1.rotation.x = 20.42;
-	vase1.position.x = 0;
-	vase1.position.y = 11.5;
-	vase1.position.z = -20;
+
+	vase1.position.x = 10.2;
+	vase1.position.y = 13;
+	vase1.position.z = -49;
+
+	// P A P E R
+
+	var paperGroup = new THREE.Group();
+
+	var paperMaterial = new THREE.LineBasicMaterial( { color : 0xffffff } );
+
+
+	//top
+	var curve = new THREE.CubicBezierCurve3(
+		new THREE.Vector3( -1.5, 2, 0 ),
+		new THREE.Vector3( -1, 1.9, 0 ),
+		new THREE.Vector3( -0.45, 2, 0 ),
+		new THREE.Vector3( -0.45, 2, 0 )
+	);
+
+	var geometryPaper1 = new THREE.Geometry();
+	geometryPaper1.vertices = curve.getPoints( 50 );
+
+	var paperTop = new THREE.Line( geometryPaper1, paperMaterial );
+	paperGroup.add( paperTop );
+
+	//left
+	var curve2 = new THREE.CubicBezierCurve3(
+		new THREE.Vector3( -1.5, 2, 0 ),
+		new THREE.Vector3( -1.5, 1.7, 0.05 ),
+		new THREE.Vector3( -1.5, 1.1, 0.07 ),
+		new THREE.Vector3( -1.5, 0.6, 0.6 ),
+		new THREE.Vector3( -1.5, 0.6, 0.6 )
+	);
+
+	var geometryPaper2 = new THREE.Geometry();
+	geometryPaper2.vertices = curve2.getPoints( 50 );
+
+	var paperLeft = new THREE.Line( geometryPaper2, paperMaterial );
+	paperGroup.add( paperLeft );
+
+	//right
+	var curve3 = new THREE.CubicBezierCurve3(
+		new THREE.Vector3( -.45, 2, 0 ),
+		new THREE.Vector3( -.45, 1.7, 0.05 ),
+		new THREE.Vector3( -.45, 1.1, 0.07 ),
+		new THREE.Vector3( -.45, 0.6, 0.6 ),
+		new THREE.Vector3( -.45, 0.6, 0.6 )
+	);
+
+	var geometryPaper3 = new THREE.Geometry();
+	geometryPaper3.vertices = curve3.getPoints( 50 );
+
+	var paperRight = new THREE.Line( geometryPaper3, paperMaterial );
+	paperGroup.add( paperRight );
+
+	//bottom
+	var curve4 = new THREE.CubicBezierCurve3(
+		new THREE.Vector3( -1.5, 0.6, 0.6 ),
+		new THREE.Vector3( -1, 0.6, 0.6 ),
+		new THREE.Vector3( -0.45, 0.6, 0.6),
+		new THREE.Vector3( -0.45, 0.6, 0.6 )
+	);
+
+	var geometryPaper4 = new THREE.Geometry();
+	geometryPaper4.vertices = curve4.getPoints( 50 );
+
+	var paperBottom = new THREE.Line( geometryPaper4, paperMaterial );
+	paperGroup.add( paperBottom );
+
+
+
+
+	scene.add (paperGroup);
+
+
+
+	paperGroup.position.x = 5;
+	paperGroup.position.y = 9;
+	paperGroup.position.z = -50;
 
 
 
@@ -354,11 +440,11 @@ function animate() {
 		velocity.x -= velocity.x * 10.0 * delta;
 		velocity.z -= velocity.z * 10.0 * delta;
 
-		if ( moveForward ) velocity.z -= 70.0 * delta;
-		if ( moveBackward ) velocity.z += 70.0 * delta;
+		if ( moveForward ) velocity.z -= 500.0 * delta;
+		if ( moveBackward ) velocity.z += 500.0 * delta;
 
-		if ( moveLeft ) velocity.x -= 70.0 * delta;
-		if ( moveRight ) velocity.x += 70.0 * delta;
+		if ( moveLeft ) velocity.x -= 500.0 * delta;
+		if ( moveRight ) velocity.x += 500.0 * delta;
 
 		controls.getObject().translateX( velocity.x * delta );
 		controls.getObject().translateZ( velocity.z * delta );
