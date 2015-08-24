@@ -288,17 +288,7 @@ canvas {
 
 /*  ========================
     video
-    ======================== */
-
-#loading-screen {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	width: 100%;
-	background: white;
-	z-index: 20;
-	opacity: 0;
-}    
+    ======================== */    
 
 .video-wrapper {
 	position: fixed;
