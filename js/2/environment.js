@@ -192,15 +192,17 @@ function init() {
 
 
 	//scene
+	var material = new THREE.MeshPhongMaterial( { color: 0xffffff, wireframe: true } );
 
-	var geometry = new THREE.BoxGeometry( 10, 10, 1 );
-	var material1 = new THREE.MeshPhongMaterial({color: 0x696969, emissive: 0x696969, specular:0x696969, shininess: 15, side: THREE.DoubleSide});
+	var geometry = new THREE.BoxGeometry( 10, 7, 0.1 );
 	var cube1 = new THREE.Mesh( geometry, material1 );
 	scene.add( cube1 );
+	cube1.position.y = 10;
+	cube1.position.z = -10;
 
 
 	renderer = new THREE.WebGLRenderer();
-	renderer.setClearColor( 0xffffff );
+	renderer.setClearColor( 0x000000 );
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
