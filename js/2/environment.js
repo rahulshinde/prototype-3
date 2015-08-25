@@ -112,6 +112,9 @@ var moveRight = false;
 var prevTime = performance.now();
 var velocity = new THREE.Vector3();
 
+var clock = new THREE.Clock();
+// custom global variables
+var annie; // animators
 
 function init() {
 
@@ -188,19 +191,26 @@ function init() {
 
 	raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, - 1, 0 ), 0, 10 );
 
+	/////////////////////////////////////
+	//A N I M A T E D - T E X T U R E S//
+	/////////////////////////////////////
+	
+	var flagTexture = new THREE.ImageUtils.loadTexture( '../../img/2/snake.jpg' );
+	annie = new TextureAnimator( flagTexture, 19, 2, 38, 75 ); // texture, #horiz, #vert, #total, duration.
+	var flagMaterial = new THREE.MeshBasicMaterial( { map: flagTexture, side:THREE.DoubleSide } );
+
+	var flagGeometry = new THREE.BoxGeometry( 10, 7, 0.1 );
+	var cube1 = new THREE.Mesh( flagGeometry, flagMaterial );
+	scene.add( cube1 );
+	cube1.position.y = 13;
+	cube1.position.z = -10;
+	scene.add(cube1);
+
 	////////////////////////
 	//////////scene/////////
 	////////////////////////
 
 	var material = new THREE.MeshPhongMaterial( { color: 0xffffff, wireframe: true } );
-
-	// S C R E E N
-
-	var geometry1 = new THREE.BoxGeometry( 10, 7, 0.1 );
-	var cube1 = new THREE.Mesh( geometry1, material );
-	scene.add( cube1 );
-	cube1.position.y = 13;
-	cube1.position.z = -10;
 
 	// W A L L S
 
@@ -485,6 +495,59 @@ function animate() {
 
 	}
 
-	renderer.render( scene, camera );
+	render();		
+	update();
 
+}
+
+function render() 
+{
+	renderer.render( scene, camera );
+}
+
+function update()
+{
+	console.log(clock);
+	var delta = clock.getDelta(); 
+
+	annie.update(1000 * delta);
+}
+
+function TextureAnimator(texture, tilesHoriz, tilesVert, numTiles, tileDispDuration) 
+{	
+	// note: texture passed by reference, will be updated by the update function.
+		
+	this.tilesHorizontal = tilesHoriz;
+	this.tilesVertical = tilesVert;
+	// how many images does this spritesheet contain?
+	//  usually equals tilesHoriz * tilesVert, but not necessarily,
+	//  if there at blank tiles at the bottom of the spritesheet. 
+	this.numberOfTiles = numTiles;
+	texture.wrapS = texture.wrapT = THREE.RepeatWrapping; 
+	texture.repeat.set( 1 / this.tilesHorizontal, 1 / this.tilesVertical );
+
+	// how long should each image be displayed?
+	this.tileDisplayDuration = tileDispDuration;
+
+	// how long has the current image been displayed?
+	this.currentDisplayTime = 0;
+
+	// which image is currently being displayed?
+	this.currentTile = 0;
+		
+	this.update = function( milliSec )
+	{
+		this.currentDisplayTime += milliSec;
+		while (this.currentDisplayTime > this.tileDisplayDuration)
+		{
+			this.currentDisplayTime -= this.tileDisplayDuration;
+			this.currentTile++;
+			if (this.currentTile == this.numberOfTiles)
+				this.currentTile = 0;
+			var currentColumn = this.currentTile % this.tilesHorizontal;
+			texture.offset.x = currentColumn / this.tilesHorizontal;
+			var currentRow = Math.floor( this.currentTile / this.tilesHorizontal );
+			texture.offset.y = currentRow / this.tilesVertical;
+		}
+	};
 }
