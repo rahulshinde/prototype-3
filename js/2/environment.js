@@ -99,6 +99,10 @@ if ( havePointerLock ) {
 
 }
 
+var clock = new THREE.Clock();
+// custom global variables
+var annie; // animatorss
+
 init();
 animate();
 
@@ -111,10 +115,6 @@ var moveRight = false;
 
 var prevTime = performance.now();
 var velocity = new THREE.Vector3();
-
-var clock = new THREE.Clock();
-// custom global variables
-var annie; // animators
 
 function init() {
 
