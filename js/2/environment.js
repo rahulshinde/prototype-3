@@ -513,7 +513,6 @@ function render()
 
 function update()
 {
-	console.log(clock);
 	var delta = clock.getDelta(); 
 
 	annie.update(1000 * delta);
