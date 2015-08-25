@@ -100,8 +100,7 @@ if ( havePointerLock ) {
 }
 
 var clock = new THREE.Clock();
-// custom global variables
-var annie; // animatorss
+var annie;
 
 init();
 animate();
@@ -230,6 +229,8 @@ function init() {
 	wall2.position.z = -51;
 
 	// S Y M B O L
+
+	var snakeTexture = new THREE.ImageUtils.loadTexture( '../../img/2/snake.jpg' );
 
 	var geometrySnake = new THREE.BoxGeometry( 0.1, 7, 12 );
 	var snake = new THREE.Mesh( geometrySnake, material );
