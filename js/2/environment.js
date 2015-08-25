@@ -198,7 +198,7 @@ function init() {
 	annie = new TextureAnimator( flagTexture, 19, 2, 38, 75 ); // texture, #horiz, #vert, #total, duration.
 	var flagMaterial = new THREE.MeshBasicMaterial( { map: flagTexture, side:THREE.DoubleSide } );
 
-	var flagGeometry = new THREE.BoxGeometry( 10, 7, 0.1 );
+	var flagGeometry = new THREE.PlaneGeometry( 10, 7 );
 	var cube1 = new THREE.Mesh( flagGeometry, flagMaterial );
 	scene.add( cube1 );
 	cube1.position.y = 13;
@@ -230,11 +230,16 @@ function init() {
 
 	// S Y M B O L
 
-	var snakeTexture = new THREE.ImageUtils.loadTexture( '../../img/2/snake.jpg' );
+	var snakeTexture = new THREE.ImageUtils.loadTexture( '../../img/2/snake-01.png' );
 
-	var geometrySnake = new THREE.BoxGeometry( 0.1, 7, 12 );
-	var snake = new THREE.Mesh( geometrySnake, material );
+	var snakeMaterial = new THREE.MeshBasicMaterial( { map: snakeTexture, side:THREE.DoubleSide } );
+
+	var geometrySnake = new THREE.PlaneGeometry( 12, 7 );
+	var snake = new THREE.Mesh( geometrySnake, snakeMaterial );
 	scene.add( snake );
+
+	snake.rotation.y = 29.8;
+
 	snake.position.y = 12;
 	snake.position.x = 12.2;
 	snake.position.z = -40;
@@ -483,11 +488,11 @@ function animate() {
 		velocity.x -= velocity.x * 10.0 * delta;
 		velocity.z -= velocity.z * 10.0 * delta;
 
-		if ( moveForward ) velocity.z -= 500.0 * delta;
-		if ( moveBackward ) velocity.z += 500.0 * delta;
+		if ( moveForward ) velocity.z -= 100.0 * delta;
+		if ( moveBackward ) velocity.z += 100.0 * delta;
 
-		if ( moveLeft ) velocity.x -= 500.0 * delta;
-		if ( moveRight ) velocity.x += 500.0 * delta;
+		if ( moveLeft ) velocity.x -= 100.0 * delta;
+		if ( moveRight ) velocity.x += 100.0 * delta;
 
 		controls.getObject().translateX( velocity.x * delta );
 		controls.getObject().translateZ( velocity.z * delta );
