@@ -194,7 +194,7 @@ function init() {
 	//A N I M A T E D - T E X T U R E S//
 	/////////////////////////////////////
 	
-	var flagTexture = new THREE.ImageUtils.loadTexture( '../../img/2/snake.jpg' );
+	var flagTexture = new THREE.ImageUtils.loadTexture( 'snake.jpg' );
 	annie = new TextureAnimator( flagTexture, 19, 2, 38, 75 ); // texture, #horiz, #vert, #total, duration.
 	var flagMaterial = new THREE.MeshBasicMaterial( { map: flagTexture, side:THREE.DoubleSide } );
 
@@ -230,7 +230,7 @@ function init() {
 
 	// S Y M B O L
 
-	var snakeTexture = new THREE.ImageUtils.loadTexture( '../../img/2/snake-01.png' );
+	var snakeTexture = new THREE.ImageUtils.loadTexture( 'snake-01.png' );
 
 	var snakeMaterial = new THREE.MeshBasicMaterial( { map: snakeTexture, side:THREE.DoubleSide } );
 
