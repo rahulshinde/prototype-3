@@ -194,11 +194,11 @@ function init() {
 	//A N I M A T E D - T E X T U R E S//
 	/////////////////////////////////////
 	
-	var flagTexture = new THREE.ImageUtils.loadTexture( 'img/2/snake.jpg' );
+	var flagTexture = new THREE.ImageUtils.loadTexture( 'img/2/sujata-gif-01.png' );
 	annie = new TextureAnimator( flagTexture, 19, 2, 38, 75 ); // texture, #horiz, #vert, #total, duration.
 	var flagMaterial = new THREE.MeshBasicMaterial( { map: flagTexture, side:THREE.DoubleSide } );
 
-	var flagGeometry = new THREE.PlaneGeometry( 10, 7 );
+	var flagGeometry = new THREE.PlaneGeometry( 13, 8 );
 	var cube1 = new THREE.Mesh( flagGeometry, flagMaterial );
 	scene.add( cube1 );
 	cube1.position.y = 13;
