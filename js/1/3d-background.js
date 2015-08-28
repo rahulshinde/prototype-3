@@ -1,5 +1,7 @@
 //general scene variables
 
+console.log((Math.random()*20).toFixed(0));
+
 var scene,
 	camera,
 	light1,
@@ -60,7 +62,7 @@ function init() {
 		// 3d shape
 
 		var geometry = new THREE.ExtrudeGeometry( shape, extrudeSettings );
-		var material = new THREE.MeshPhongMaterial({transparent:true, opacity: 0.6, color: 0xc38e3c, emissive: 0xc38e3c, specular:0x696969, shininess: 5, side: THREE.DoubleSide});
+		var material = new THREE.MeshPhongMaterial({transparent:true, opacity: 0.6, color: 0xdd694e, emissive: 0xdd694e, specular:0x696969, shininess: 5, side: THREE.DoubleSide});
 
 		var mesh = new THREE.Mesh( geometry, material );
 		mesh.position.set( x, y, z);
