@@ -247,11 +247,11 @@ a {
 .about {
     /* Positioning */
     float: left;
-    margin-left: 1%;
-    margin-bottom: 85px;
+    margin-left: 0;
+    margin-bottom: 0px;
     /* Box-model */
     padding-top:6px;
-    width: 98%;
+    width: 100%;
     /* Typography */
     /* Visual */
     background-color: #fc293f;
@@ -274,7 +274,7 @@ a {
 .about-text {
     /* Positioning */
     /* Box-model */
-    margin: 0 20px 20px 20px;    
+    margin: 0 20px 80px 20px;    
     /* Typography */
     font-family: 'habibiregular';
     font-size: 34px;
