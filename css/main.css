@@ -313,7 +313,7 @@ a {
 .footer {
     /* Positioning */
     position: fixed;
-    top: 90%;
+    bottom: 20px;
     left: 15%;
     /* Box-model */
     width: 64%;
