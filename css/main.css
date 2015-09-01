@@ -45,6 +45,7 @@
 
 html, body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 
@@ -204,9 +205,13 @@ a {
     margin-right: 1%;
     /* Typography */
     /* Visual */
+    background-color: white;
     -webkit-box-shadow: 0 7px 7px rgba(0, 0, 0, 0.5);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow: 0 7px 7px rgba(0, 0, 0, 0.5);  /* Firefox 3.5 - 3.6 */
     box-shadow: 0 7px 7px rgba(0, 0, 0, 0.5);
+    
+    transform: rotateX(10deg);
+    transform: rotateZ(10deg); 
     /* Misc */
 }
 
