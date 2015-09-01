@@ -159,14 +159,13 @@ canvas {
 	right: 15px;
 	/* Box-model */
 	padding-left:12px; 
-	padding-right:12px;
+	padding-right:10px;
 	/* Typography */
 	text-align: center;
 	font-size: 14px;
 	font-family: monospace;
 	/* Visual */
 	color: black;
-	border: 1px solid black;
 	background-color: white;
 	display: none;
 	z-index: 150;
@@ -179,8 +178,8 @@ canvas {
 	/* Typography */
 	/* Visual */
 	background: url(../img/1/line.png);
-	background-size: 100%;
-	border: 1px solid black;
+	background-size: cover;
+	background-repeat: no-repeat;
 	cursor: pointer;
 	/* Misc */
 }
