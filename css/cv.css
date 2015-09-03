@@ -43,6 +43,14 @@ h1 {
     font-size: 32px;
 }
 
+h2 {
+    margin-top: 8px;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 
 /*  =================================================================
     BEGIN AUTHOR STYLING
@@ -82,7 +90,7 @@ canvas {
     /* Positioning */
     /* Box-model */
     margin-top: 40px;
-    padding-left: 20px;
+    padding-left: 30px;
     /* Typography */
     /* Visual */
     /* Misc */    
@@ -92,7 +100,7 @@ canvas {
     /* Positioning */
     float: left;
     /* Box-model */
-    width: 30%;
+    width: 20%;
     /* Typography */
     text-align: right;
     /* Visual */
@@ -101,14 +109,16 @@ canvas {
 
 #fill-target {
     float: right;
-    width: 69%;
+    margin-right: 5%;
+    width: 72%;
     height: 32px;
     border-bottom: 2px solid black;
 }
 
 .hover-target {
     float: left;
-    width: 100%;
+    margin-left: 5%;
+    width: 95%;
     height: 120px;
     margin-top: 10px;
     border: 1px solid black;
