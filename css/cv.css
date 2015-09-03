@@ -50,7 +50,7 @@ h1 {
 
 * {
     /*background-color: rgba(255, 0, 0, 0.2);*/
-    outline: 1px solid rgb(0,0,255);
+    /*outline: 1px solid rgb(0,0,255);*/
 }
 
 html, body {
@@ -111,6 +111,7 @@ canvas {
     width: 100%;
     height: 120px;
     margin-top: 10px;
+    border: 1px solid black;
 }
 
 .hover-target:hover {
