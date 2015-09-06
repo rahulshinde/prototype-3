@@ -50,9 +50,7 @@ canvas {
 .intro {
 	/* Positioning */
 	/* Box-model */
-	width: 60%;
-	margin-top:40px;
-	margin-left: 20%;
+	width: 100%;
 	/* Typography */
 	/* Visual */
 	overflow-y: hidden;
@@ -62,12 +60,13 @@ canvas {
 
 .background-img {
 	position: fixed;
-	width: 60%;
+	left: 0px;
+	bottom: 0px;
+	width: 20%;
 	height: auto;
 	z-index: 1;
 }
 
-.title,
 .back,
 #enter {
 	position: fixed;
@@ -77,35 +76,20 @@ canvas {
 
 }
 
-.title {
-	/* Positioning */
-	width: 90%;
-	left: 5%;
-	top: 100px;
-	/* Box-model */
-	/* Typography */
-	font-family: 'martel';
-	font-size: 85px;
-	text-align: center;
-	color: blue;
-	/* Visual */
-	/* Misc */
-}
-
-.controls {
-	/* Positioning */
-	/* Box-model */
-	/* Typography */
-	font-family: 'Sarala';
-	font-size: 18px;
-	/* Visual */
-	background-color: white;
-	/* Misc */
+.back-container {
+	position: absolute;
+	top: 75px;
+	bottom: 75px;
+	width: 50%;
+	border-right: 1px solid black;
 }
 
 .back {
 	/* Positioning */
-	bottom: 10px;
+	float: right;
+	position: relative;
+	top: 10px;
+	margin-right: 10px;
 	/* Box-model */
 	/* Typography */
 	/* Visual */
@@ -134,12 +118,21 @@ canvas {
 	font-size: 18px;
 }
 
+.enter-container {
+	position: absolute;
+	top: 75px;
+	right: 0;
+	bottom: 75px;
+	width: 50%;
+}
+
 #enter {
 	/* Positioning */
-	bottom: 10px;
-	right: 20%;
+	position: fixed;
+	padding-left: 20px;
+	bottom: 65px;
+	margin-left: 10px;
 	/* Box-model */
-	margin-right: 20px;
 	/* Typography */
 	/* Visual */
 	/* Misc */
@@ -152,7 +145,6 @@ canvas {
 	/* Typography */
 	/* Visual */
 	cursor: pointer;
-	background-color: white;
 	color: black;
 	/* Misc */
 }
