@@ -9,11 +9,15 @@ $(document).ready(function(){
 		$('#story-container').fadeToggle('slow', function() {});
 
 		$('#flag-1').fadeTo('slow', 1, function() {});
+
+		$('.drawing').fadeToggle('slow', function() {});
 	});
 
 	$('#close').click(function() {
 
 		$('#close').fadeToggle('fast', function() {});
+
+		$('.drawing').fadeToggle('fast', function() {});
 
  		$('#three-container').fadeToggle('fast', function() {});
 
