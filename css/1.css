@@ -129,6 +129,11 @@ canvas {
 	/* Misc */
 }
 
+.arrow-right {
+	position: relative;
+	font-size: 18px;
+}
+
 #enter {
 	/* Positioning */
 	bottom: 10px;
@@ -162,8 +167,6 @@ canvas {
 	top: 18px;
 	right: 15px;
 	/* Box-model */
-	padding-left:12px; 
-	padding-right:10px;
 	/* Typography */
 	text-align: center;
 	font-size: 14px;
@@ -172,6 +175,7 @@ canvas {
 	color: black;
 	background-color: white;
 	display: none;
+	border-bottom: 1px solid black;
 	z-index: 150;
 	/* Misc */
 }
@@ -196,7 +200,7 @@ canvas {
 	/* Positioning */
 	position: fixed;
 	left: 15px;
-	top: 15px;
+	top: 20px;
 	/* Box-model */
 	width: 50%;
 	height: auto;
