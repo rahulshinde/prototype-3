@@ -135,8 +135,9 @@ a {
     width:100%;
     /* Typography */
     /* Visual */
-    box-shadow:inset 1px 1px 40px 0 rgba(0,0,0,.45);
-    background:url(http://placecage.com/c/300/450);
+    background:url(http://placecage.com/c/400/250);
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
     background-size:cover;
     overflow:hidden;
     /* Misc */
@@ -159,9 +160,18 @@ a {
 }
 
 .story-title {
-    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);  /* Firefox 3.5 - 3.6 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    font-family: serif;
+    font-style: italic;
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 40px;
+    border-bottom: 1px solid black;
+}
+
+.story-title-container {
+    margin-top: 60px;
+    margin-bottom: 10px;
 }
 
 .sl-height {
@@ -193,14 +203,6 @@ a {
 .project-link:hover #sl-overlay {
     opacity:1;
     width: 100%;
-}
-
-#sl-title{
-    padding-top: 70px; 
-    font-family: 'Sarala', sans-serif;
-    color: #ffffff;
-    font-size:36px;
-    text-shadow: 3px 3px rgba(0,0,0,.4);
 }
 
 /*  ========================
