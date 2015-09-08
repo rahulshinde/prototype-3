@@ -249,6 +249,7 @@ a {
 .about {
     /* Positioning */
     float: left;
+    margin-top: 30px;
     margin-left: 0;
     margin-bottom: 0px;
     /* Box-model */
@@ -260,23 +261,10 @@ a {
     /* Misc */
 }
 
-.about-title {
-    width: 120px;
-    height: 50px;
-    margin: 11px auto 10px auto;
-    border: 1px solid #cc99cc;
-    color: #cc99cc;
-}
-
-.about-tt {
-    margin-top: -5px;
-    color: #cc99cc;
-}
-
 .about-text {
     /* Positioning */
     /* Box-model */
-    margin: 0 20px 80px 20px;    
+    margin: 20px 20px 80px 20px;    
     /* Typography */
     font-family: 'habibiregular';
     font-size: 34px;
