@@ -129,16 +129,15 @@ a {
 
 .project-link {
     /* Positioning */
-     margin:0 auto 10px auto; 
+    margin:0 auto 10px auto; 
     /* Box-model */
     display: inline-block;
     width:100%;
     /* Typography */
     /* Visual */
     background:url(http://placecage.com/c/400/250);
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    background-size:cover;
+    background-size: 100% 100%;
+    background-repeat: no-repeat-y;
     overflow:hidden;
     /* Misc */
 }
@@ -147,6 +146,19 @@ a {
 /*  ========================
     story-links
     ======================== */
+
+#sl-1 {
+    background: url(../img/index/sl-1-01.png) no-repeat top center;
+    background-size: contain;
+}
+
+#sl-2 {
+    background:url(img/);
+}
+
+#sl-3 {
+    background:url(img/);
+}
 
 .story-links {
     /* Positioning */
@@ -180,6 +192,9 @@ a {
 
 #sl-overlay{
     /* Positioning */
+    position:relative;
+    top: 0;
+    bottom: 0;
     /* Box-model */
     width: 0;
     height: 100%;
@@ -192,7 +207,7 @@ a {
     background: linear-gradient(to-left, rgba(255,255,255,0), yellow); /* Standard syntax */
     /*padding:45px 0 66px 0;*/
     opacity:0;
-
+    z-index: 100;
     -webkit-transition: width 0.25s; 
     -moz-transition: width 0.25s; 
     -ms-transition: width 0.25s; 
