@@ -178,34 +178,18 @@ a {
     margin-bottom: 10px;
 }
 
-.sl-text:link,
-.sl-text:visited {
-    color: black;
+.story-links > a:link,
+.story-links > a:visited {
+    color: blue;
 }
 
-#sl-overlay{
-    /* Positioning */
-    position:relative;
-    top: 0;
-    bottom: 0;
-    /* Box-model */
-    width: 0;
-    height: 100%;
-    /* Typography */
-    /* Visual */
-    /* Misc */
+
+#sl-2:hover,
+#sl-3:hover {
     background: -webkit-linear-gradient(right, rgba(255,255,255,0), yellow); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(left, rgba(255,255,255,0), yellow); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(left, rgba(255,255,255,0), yellow); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to-left, rgba(255,255,255,0), yellow); /* Standard syntax */
-    /*padding:45px 0 66px 0;*/
-    opacity:0;
-    z-index: 100;
-    -webkit-transition: width 0.25s; 
-    -moz-transition: width 0.25s; 
-    -ms-transition: width 0.25s; 
-    -o-transition: width 0.25s; 
-    transition: width 0.25s; 
+    background: linear-gradient(to-left, rgba(255,255,255,0), yellow); /* Standard syntax */ 
 }
 
 .project-link:hover #sl-overlay {
