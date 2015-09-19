@@ -192,10 +192,10 @@ a {
     /* Typography */
     text-align: center;
     /* Visual */
-    background: -webkit-linear-gradient(right, rgba(255,255,255,1), pink); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(left, rgba(255,255,255,1), pink); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(left, rgba(255,255,255,1), pink); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to-left, rgba(255,255,255,1), pink);
+    background: -webkit-linear-gradient(315deg, rgba(255,255,255,1), pink); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(315deg, rgba(255,255,255,1), pink); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(315deg, rgba(255,255,255,1), pink); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(315deg, rgba(255,255,255,1), pink);
     /* Misc */
 }
 
@@ -203,14 +203,83 @@ a {
 .recent-work > a:visited {
     display: block;
     margin-bottom: 10px;
-    width: 90%;
-    height: 50px;
+    width: 98%;
+    margin-left: 1%;
+    height: 100px;
     color: rgb(150,150,150);
     border:1px solid rgb(150,150,150);
 }
 
 .recent-work > a:hover {
-    
+    background: white;
+    color: black;
+    border:1px solid white;
+}
+
+#p1:link,
+#p1:visited {
+    background: -webkit-linear-gradient(right, rgba(255,255,255,1) 60%, pink); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, rgba(255,255,255,1) 60%, pink); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 60%, pink); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to-left, rgba(255,255,255,1) 60%, pink);
+}
+
+#p1:hover {
+    background: white;
+    color: black;
+    border:1px solid white; 
+}
+
+#p2:link,
+#p2:visited {
+    background: -webkit-linear-gradient(right, rgba(255,255,255,1) 45%, pink); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, rgba(255,255,255,1) 45%, pink); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 45%, pink); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to-left, rgba(255,255,255,1) 45%, pink);
+}
+
+#p2:hover {
+    background: white;
+    color: black;
+    border:1px solid white; 
+}
+
+#p3:link,
+#p3:visited {
+    background: -webkit-linear-gradient(right, rgba(255,255,255,1) 30%, pink); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, rgba(255,255,255,1) 30%, pink); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 30%, pink); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to-left, rgba(255,255,255,1) 30%, pink);
+}
+
+#p3:hover {
+    background: white;
+    color: black;
+    border:1px solid white; 
+}
+
+#p4:link,
+#p4:visited {
+    background: -webkit-linear-gradient(right, rgba(255,255,255,1) 15%, pink); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, rgba(255,255,255,1) 15%, pink); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 15%, pink); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to-left, rgba(255,255,255,1) 15%, pink);
+}
+
+#p4:hover {
+    background: white;
+    color: black;
+    border:1px solid white; 
+}
+
+.mt1 {
+    display: block;
+    margin-top: 15px;
+}
+
+.mt2 {
+    display: block;
+    margin-top: 10px;
 }
 
 /*  ========================
