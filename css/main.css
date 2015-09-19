@@ -143,58 +143,38 @@ a {
     story-links
     ======================== */
 
-#sl-1 {
-}
-
-#sl-2 {
-}
-
-#sl-3 {
-}
-
 .story-links {
-    /* Positioning */
-    float: left;
-    /* Box-model */
-    width: 60%;
-    margin-left: 4%;
-    /* Typography */
-    /* Visual */
-    /* Misc */
+    position: fixed;
+    width: 40%;
+    margin-top: 20px;
+    margin-left: 15%;
 }
 
 .story-title {
-    font-family: serif;
-    font-style: italic;
-    width: 80%;
-    margin: 20px auto;
-    text-align: center;
-    font-size: 40px;
+    width: 60%;
+    margin: 10px;
     border-bottom: 1px solid black;
-}
-
-.story-title-container {
-    margin-top: 60px;
-    margin-bottom: 10px;
 }
 
 .story-links > a:link,
 .story-links > a:visited {
-    color: blue;
+    /* Positioning */
+    display: block;
+    /* Box-model */
+    width: 60%;
+    margin: 10px;
+    /* Typography */
+    text-decoration: none;
+    /* Visual */
+    color: black;
+    /* Misc */
 }
 
-
-#sl-2:hover,
-#sl-3:hover {
+.story-links > a:hover {
     background: -webkit-linear-gradient(right, rgba(255,255,255,0), yellow); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(left, rgba(255,255,255,0), yellow); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(left, rgba(255,255,255,0), yellow); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to-left, rgba(255,255,255,0), yellow); /* Standard syntax */ 
-}
-
-.project-link:hover #sl-overlay {
-    opacity:1;
-    width: 100%;
+    background: linear-gradient(to-left, rgba(255,255,255,0), yellow);
 }
 
 /*  ========================
