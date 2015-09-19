@@ -55,7 +55,6 @@ canvas {
 }
 
 a {
-    color: white;
     text-decoration: none;
 }
 
@@ -145,18 +144,12 @@ a {
     ======================== */
 
 #sl-1 {
-    background: url(../img/index/sl-1-01.png) no-repeat top center;
-    background-size: contain;
 }
 
 #sl-2 {
-    background: url(../img/index/sl-1-01.png) no-repeat top center;
-    background-size: contain;
 }
 
 #sl-3 {
-    background: url(../img/index/sl-1-01.png) no-repeat top center;
-    background-size: contain; 
 }
 
 .story-links {
@@ -185,8 +178,9 @@ a {
     margin-bottom: 10px;
 }
 
-.sl-height {
-    height: 260px;
+.sl-text:link,
+.sl-text:visited {
+    color: black;
 }
 
 #sl-overlay{
@@ -240,12 +234,6 @@ a {
 .rw-height {
     height: 130px;
     border: 1px dotted black
-}
-
-.project-link:hover {
-    opacity:1;
-    background: url(http://www.placecage.com/gif/700/300) no-repeat top center;
-    background-size: cover; 
 }
 
 #rw-title{
