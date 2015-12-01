@@ -68,3 +68,22 @@ table {
 	height: 100%;
 	width: 100%;
 }
+
+.three-container {
+	height: 100%;
+	width: 100%;
+}
+
+.information {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.information h1 {
+	color: white;
+}
+
+.information p {
+	color: white;
+}

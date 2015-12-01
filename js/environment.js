@@ -21,7 +21,7 @@ var mouseX = 0, mouseY = 0;
 var pts = [];
 var closedSpline;
 
-var container = document.getElementById( 'container' );
+var container = document.getElementById( 'three-container' );
 
 init();
 animate();
