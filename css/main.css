@@ -76,14 +76,53 @@ table {
 
 .information {
 	position: fixed;
-	top: 0;
-	width: 100%;
+	top: 20px;
+	left: 3%;
 }
 
 .information h1 {
 	color: white;
+	font-family: 'Halant', serif;
+	font-weight: 600;
+	font-size: 30px;
 }
 
 .information p {
+	margin-top: 15px;
+	padding-left: 40px;
+	font-family: 'Halant', serif;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 13px;
 	color: white;
+}
+
+.san-italic {
+	font-size: 10px;
+	font-family: 'Rubik';
+	font-weight: 300;
+	font-style: italic;
+}
+/* 	===========================
+		BACK TO HOME
+	=========================== */
+
+.back {
+	margin-right: 40px;
+}
+
+.back a:link,
+.back a:visited {
+	position: fixed;
+	left: 3%;
+	bottom: 10px;
+	margin-top: 50px;
+	margin-right: 40px;
+	font-size: 14px;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 500;
+	color: white;
+
+	text-decoration: none;
+
 }
