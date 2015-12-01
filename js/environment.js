@@ -124,8 +124,6 @@ function init() {
 
 	scene.add( group );
 
-	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-
 	window.addEventListener( 'resize', onWindowResize, false );
 
 }
@@ -139,13 +137,6 @@ function onWindowResize() {
 
 }
 
-function onDocumentMouseMove( event ) {
-
-	mouseX = ( event.clientX - windowHalfX );
-	mouseY = ( event.clientY - windowHalfY );
-
-}
-
 function animate() {
 
 	requestAnimationFrame( animate );
@@ -154,7 +145,6 @@ function animate() {
 }	
 
 function render() {
-	light1.position.set ( (mouseX - light1.position.x) * 0.075, - (mouseY - light1.position.y) * 0.075, 50);
 
 	group.rotation.x += .002;
 	group.rotation.y += .002;
