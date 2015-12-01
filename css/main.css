@@ -1,609 +1,70 @@
-/* Positioning */
-/* Box-model */
-/* Typography */
-/* Visual */
-/* Misc */
+/* 	================= 
+		MAIN.CSS
+	================= */
 
-/*  ===============================================
-    ADDING FONTS
-    =============================================== */
 
-@font-face {
-    font-family: 'martelbold';
-    src: url('../fonts/martel/martel-bold-webfont.eot');
-    src: url('../fonts/martel/martel-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/martel/martel-bold-webfont.woff2') format('woff2'),
-         url('../fonts/martel/martel-bold-webfont.woff') format('woff'),
-         url('../fonts/martel/martel-bold-webfont.ttf') format('truetype'),
-         url('../fonts/martel/martel-bold-webfont.svg#martelbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+/* !!! CSS RESET !!! */
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-@font-face {
-    font-family: 'habibiregular';
-    src: url('../fonts/habibi/habibi-regular-webfont.eot');
-    src: url('../fonts/habibi/habibi-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/habibi/habibi-regular-webfont.woff2') format('woff2'),
-         url('../fonts/habibi/habibi-regular-webfont.woff') format('woff'),
-         url('../fonts/habibi/habibi-regular-webfont.ttf') format('truetype'),
-         url('../fonts/habibi/habibi-regular-webfont.svg#habibiregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
+/* 	==============================================
+		BEGIN AUTHOR STYLING
+	============================================== */
 
 
-/*  =================================================================
-    BEGIN AUTHOR STYLING
-    ================================================================= */
 * {
 	/*background-color: rgba(255, 0, 0, 0.2);*/
 	/*outline: 1px solid rgb(0,0,255);*/
 }
 
-html, body {
-    height: 100%;
-    overflow-x: hidden;
-}
-
-
-canvas {
-	width: 100%; 
+.container {
 	height: 100%;
-}
-
-a {
-    text-decoration: none;
-}
-
-/*  ===========================
-    INDEX.HTML
-    =========================== */
-
-.container  {
-    /* Positioning */
-    /* Box-model */
-    width: 100%;
-    max-height: 100%;
-    /* Typography */
-    /* Visual */
-    /* Misc */    
-}
-
-.title-container {
-    width: 50%;
-    margin: 0 auto;
-    border: 1px solid black;
-    margin-bottom: 10px;
-}
-
-.section-title {
-    /* Positioning */
-    /* Box-model */
-    padding: 25px 0 20px 0;
-    /* Typography */
-    /* Visual */
-    color: #000000;
-    /* Misc */
-}
-
-#rw-title,
-.section-title {
-    font-family: 'martelbold';
-    text-align: center;
-    font-size: 14px;
-    -o-transform: skewX(-35deg); /* Opera */
-    -ms-transform: skewX(-35deg); /* IE 9 */
-    -webkit-transform: skewX(-35deg); /* Safari */
-    transform: skewX(-35deg);
-}
-
-#rw-title {
-    padding-left: 30px;
-}
-
-.section-container {
-    /* Positioning */
-    /* Box-model */
-    margin-top: 20px;
-    margin-bottom: 15px;
-    /* Typography */
-    /* Visual */
-    /* Misc */
-}
-
-#environment {
-    /* Positioning */
-    display: block;
-    margin: 0 auto 10px auto;
-    /* Box-model */
-    width: 100%;
-    height: auto;
-    /* Typography */
-    /* Visual */
-    /* Misc */   
-}
-
-.project-link {
-    /* Positioning */
-    margin:0 auto 10px auto; 
-    /* Box-model */
-    display: inline-block;
-    width:100%;
-    /* Typography */
-    /* Visual */
-    overflow:hidden;
-    /* Misc */
-}
-
-
-/*  ========================
-    story-links
-    ======================== */
-
-.story-links {
-    float: left;
-    width: 30%;
-    margin-top: 150px;
-    margin-left: 15%;
-}
-
-.story-title {
-    width: 60%;
-    margin: 10px;
-    border-bottom: 1px solid black;
-}
-
-.story-links > a:link,
-.story-links > a:visited {
-    /* Positioning */
-    display: block;
-    /* Box-model */
-    width: 60%;
-    margin: 10px;
-    /* Typography */
-    text-decoration: none;
-    /* Visual */
-    color: black;
-    /* Misc */
-}
-
-.story-links > a:hover {
-    background: -webkit-linear-gradient(right, rgba(255,255,255,0), yellow); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(left, rgba(255,255,255,0), yellow); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(left, rgba(255,255,255,0), yellow); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to-left, rgba(255,255,255,0), yellow);
-}
-
-/*  ========================
-    recent-work
-    ======================== */
-
-.recent-work {
-    /* Positioning */
-    float: right;
-    /* Box-model */
-    width:35%;
-    padding: 0.5% 0.5% 0 0.5%;
-    margin-right: 15%;
-    margin-top: 40px;
-    /* Typography */
-    text-align: center;
-    /* Visual */
-    background: -webkit-linear-gradient(315deg, rgba(254,254,254,0.25) 60%, rgba(255,0,0,0.25)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(315deg, rgba(254,254,254,0.25) 60%, rgba(255,0,0,0.25)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(315deg, rgba(254,254,254,0.25) 60%, rgba(255,0,0,0.25)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(315deg, rgba(254,254,254,0.25) 60%, rgba(255,0,0,0.25));
-    /* Misc */
-    border-right: 1px solid rgb(150,150,150);
-    background: url(../img/index/past-projects-01.png); 
-    background-size: cover;
-}
-
-.recent-work > a:link,
-.recent-work > a:visited {
-    display: block;
-    width: 98%;
-    margin-left: 1%;
-    height: 80px;
-    
-    font-size: 14px;
-
-    color: rgb(150,150,150);
-    border-top:1px solid rgb(150,150,150);
-    border-right:1px solid rgb(150,150,150);
-    border-left:1px solid rgb(150,150,150);
-    transition: color 0.4s ease;
-    -webkit-transition: color 0.4s ease;
-    -moz-transition: color 0.4s ease;
-    -o-transition: color 0.4s ease;
-}
-
-.recent-work > a:hover {
-    color: white;
-    
-}
-
-#p1:link,
-#p1:visited {
-    background: -webkit-linear-gradient(right, rgba(255,255,255,0.5) 60%, rgba(255,0,0,0.25)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(left, rgba(255,255,255,0.5) 60%, rgba(255,0,0,0.25)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(left, rgba(255,255,255,0.5) 60%, rgba(255,0,0,0.25)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to-left, rgba(255,255,255,0.5) 60%, rgba(255,0,0,0.25));
-}
-
-#p2:link,
-#p2:visited {
-    background: -webkit-linear-gradient(right, rgba(255,255,255,0.5) 45%, rgba(255,0,0,0.25)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(left, rgba(255,255,255,0.5) 45%, rgba(255,0,0,0.25)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(left, rgba(255,255,255,0.5) 45%, rgba(255,0,0,0.25)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to-left, rgba(255,255,255,0.5) 45%, rgba(255,0,0,0.25));
-}
-
-#p3:link,
-#p3:visited {
-    background: -webkit-linear-gradient(right, rgba(255,255,255,0.5) 30%, rgba(255,0,0,0.25)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(left, rgba(255,255,255,0.5) 30%, rgba(255,0,0,0.25)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(left, rgba(255,255,255,0.5) 30%, rgba(255,0,0,0.25)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to-left, rgba(255,255,255,0.5) 30%, rgba(255,0,0,0.25));
-}
-
-#p4:link,
-#p4:visited {
-    background: -webkit-linear-gradient(right, rgba(255,255,255,0.5) 15%, rgba(255,0,0,0.25)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(left, rgba(255,255,255,0.5) 15%, rgba(255,0,0,0.25)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(left, rgba(255,255,255,0.5) 15%, rgba(255,0,0,0.25)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to-left, rgba(255,255,255,0.5) 15%, rgba(255,0,0,0.25));
-}
-
-.mt1 {
-    display: block;
-    margin-top: 30px;
-}
-
-.mt2 {
-    display: block;
-    margin-top: 22px;
-}
-
-/*  ========================
-    about
-    ======================== */
-
-.about {
-    /* Positioning */
-    float: left;
-    margin-top: 30px;
-    margin-left: 0;
-    margin-bottom: 0px;
-    /* Box-model */
-    padding-top:6px;
-    width: 100%;
-    /* Typography */
-    /* Visual */
-    background-color: #fc293f;
-    /* Misc */
-}
-
-.about-text {
-    /* Positioning */
-    /* Box-model */
-    margin: 20px 20px 80px 20px;    
-    /* Typography */
-    font-family: 'habibiregular';
-    font-size: 34px;
-    line-height: 48px;
-    /* Visual */
-    color: white;
-    /* Misc */
-}
-
-.text-link {
-    /* Positioning */
-    /* Box-model */
-    padding: 0 2px 2px 2px;
-    /* Typography */
-    /* Visual */
-    color: white;
-    border: 1px solid #cc99cc;
-    /* Misc */
-}
-
-.text-link:hover {
-    /* Positioning */
-    /* Box-model */
-    padding: 0 2px 0 2px;
-    /* Typography */
-    /* Visual */
-    color: #fc293f;
-    background-color: #cc99cc;
-    /* Misc */
-}
-
-/*  ========================
-    footer
-    ======================== */
-
-.footer {
-    /* Positioning */
-    position: fixed;
-    bottom: 20px;
-    left: 15%;
-    /* Box-model */
-    width: 64%;
-    padding: 13px 3% 13px 3%;
-    /* Typography */
-    /* Visual */
-    border: 1px solid #fc293f;
-    background-color: #ffffff;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    /* Misc */  
-}
-
-.footer-text {
-    /* Positioning */
-    /* Box-model */
-    /* Typography */
-    font-family: monospace;
-    text-align: center;
-    font-size: 10pt;
-    color: #fc293f;
-    
-    /* Visual */
-    /* Misc */
-}
-
-
-.footer-text a:link,
-.footer-text a:visited {
-    padding: 5px 10px;
-    font-family: monospace;
-    text-align: center;
-    font-size: 10pt;
-    color: #fc293f;
-}
-
-.footer-text a:hover {
-    padding: 5px 10px;
-    color: white;
-    background-color: #fc293f;
-}
-
-.ft-mobile {
-    display: none;
-}
-
-/*  ========================================================
-    MEDIA QUERIES
-    ======================================================== */
-
-@media screen and (min-width: 1281) {
-
-/*  ========================
-    story-links
-    ======================== */
-
-/*  ========================
-    recent-work
-    ======================== */
-
-/*  ========================
-    about
-    ======================== */
-
-/*  ========================
-    footer
-    ======================== */
-
-}
-
-@media screen and (max-width: 1280px) {
-
-/*  ========================
-    story-links
-    ======================== */
-
-/*  ========================
-    recent-work
-    ======================== */
-
-/*  ========================
-    about
-    ======================== */
-
-/*  ========================
-    footer
-    ======================== */
-    .footer {
-        /* Positioning */
-        left: 15%;
-        /* Box-model */
-        width: 64%;
-        /* Typography */
-        /* Visual */
-        /* Misc */  
-    }
-
-}
-
-@media screen and (max-width: 839px) {
-
-/*  ========================
-    story-links
-    ======================== */
-    .story-links {
-        /* Positioning */
-        float: left;
-        /* Box-model */
-        width: 96%;
-        margin-left: 1.5%;
-        /* Typography */
-        /* Visual */
-        border: none;
-        /* Misc */
-    }
-
-    #sl-overlay {
-        opacity: 1;
-    }
-
-/*  ========================
-    recent-work
-    ======================== */
-    .recent-work {
-        /* Positioning */
-        float: left;
-        /* Box-model */
-        width: 96%;
-        margin-left: 1.5%;
-        margin-top: 0;
-        margin-bottom: 20px;
-        /* Typography */
-        /* Visual */
-        border: none;
-        -webkit-box-shadow: none;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-        -moz-box-shadow: none;  /* Firefox 3.5 - 3.6 */
-        box-shadow: none;
-        /* Misc */
-    }
-
-    #rw-overlay {
-        width: 97%;
-        height: 80%;
-        margin: 11px auto;
-        opacity: 1;
-    }
-
-    #rw-title {
-        padding-top: 40px;
-    }
-
-/*  ========================
-    about
-    ======================== */
-
-    .about {
-        margin-left: 0%;
-        width: 100%;
-    }
-
-/*  ========================
-    footer
-    ======================== */
-
-    .footer {
-        /* Positioning */
-        left: 6%;
-        /* Box-model */
-        width: 82%;
-        /* Typography */
-        /* Visual */
-        /* Misc */  
-    }
-    
-}
-
-@media screen and (max-width: 599px) {
-
-    .section-container {
-        border: 0px solid #fc293f;
-    }
-
-    .project-link {
-        box-shadow: none;
-        background: none;
-    }
-
-/*  ========================
-    story-links
-    ======================== */
-    
-    #sl-overlay {
-        width: 99.6%;
-        height: 99.1%;
-        opacity: 1;
-        border: 1px solid #fc293f;
-    }
-
-    #sl-title {
-        font-size: 21px;
-        text-shadow: 1px 1px rgba(0,0,0,.4);
-    }
-
-/*  ========================
-    recent-work
-    ======================== */
-
-    #rw-overlay {
-        margin-top: 0;
-        height: 93%;
-        -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
-        -moz-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
-        box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
-    }
-
-/*  ========================
-    about
-    ======================== */
-
-    .about {
-        margin-bottom: 20px;
-    }
-
-    .about-text {
-        font-size: 21px;
-        line-height: 30px;
-    }
-
-/*  ========================
-    footer
-    ======================== */
-    .footer {
-        position: relative;
-        float: left;
-    }
-
-    .ft-web {
-        display: none;
-    }
-
-    .ft-mobile {
-        display: block;
-
-    }
-
-    .footer-text{
-        line-height: 40px;
-    }
-
-    .footer-text a:link,
-    .footer-text a:visited {
-        padding: 10px 30px;
-        color: #ffffff;
-    }
-
-    .CV-container {
-        width: 80%;
-        margin-left: 10%;
-        margin-bottom: 10px;
-        background-color: #fc293f;
-    }
-
-    .TR-container {
-        width: 80%;
-        margin-left: 10%;
-        margin-bottom: 10px;
-        background-color: #fc293f;
-    }
-    
-    .GH-container {
-        width: 80%;
-        margin-left: 10%;
-        margin-bottom: 10px;
-        background-color: #fc293f;
-    }
+	width: 100%;
 }
