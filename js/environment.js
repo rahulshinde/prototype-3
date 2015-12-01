@@ -12,6 +12,8 @@ var scene,
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
+var spinSpeed = 0.002;
+
 //variables for movable light
 
 var mouseX = 0, mouseY = 0;
@@ -29,9 +31,17 @@ function init() {
 	camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 1000 );
 	camera.position.z = 125;
 
+	var cameraControls;
+
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	container.appendChild( renderer.domElement );
+
+	cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
+	cameraControls.target.set( 0, 0, 0);
+	cameraControls.maxDistance = 400;
+	cameraControls.minDistance = 30;
+	cameraControls.update();
 
 	//adding lights, sphere is just to check light position.
 	var sphere = new THREE.SphereGeometry( 0.4, 16, 8 );
@@ -126,6 +136,9 @@ function init() {
 
 	window.addEventListener( 'resize', onWindowResize, false );
 
+	window.addEventListener( 'mousedown', onMouseDown, false );
+	window.addEventListener( 'mouseup', onMouseUp, false );
+
 }
 
 function onWindowResize() {
@@ -137,6 +150,14 @@ function onWindowResize() {
 
 }
 
+function onMouseDown() {
+	spinSpeed = 0;
+}
+
+function onMouseUp() {
+	spinSpeed = 0.002;
+}
+
 function animate() {
 
 	requestAnimationFrame( animate );
@@ -146,9 +167,9 @@ function animate() {
 
 function render() {
 
-	group.rotation.x += .002;
-	group.rotation.y += .002;
-	group.rotation.z += .002;
+	group.rotation.x += spinSpeed;
+	group.rotation.y += spinSpeed;
+	group.rotation.z += spinSpeed;
 
 
 	renderer.render(scene, camera);
