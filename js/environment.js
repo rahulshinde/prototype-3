@@ -134,6 +134,64 @@ function init() {
 
 	scene.add( group );
 
+	/////////////////////
+	////adding walls/////
+	/////////////////////
+
+	//wall 1
+
+	var wall1Group = new THREE.Group();
+
+	var geometry4 = new THREE.BoxGeometry( 60, 40, 1 );
+	var wallMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, wireframe: true } );
+	var wall1 = new THREE.Mesh( geometry4, wallMaterial );
+
+	wall1Group.add( wall1 );
+
+	var imageFrame = new THREE.BoxGeometry( 35, 25, 0.1 );
+	var image1Material = new THREE.MeshBasicMaterial( { map:THREE.ImageUtils.loadTexture('img/1.jpg') , side: THREE.DoubleSide} );
+	var image1 = new THREE.Mesh( imageFrame, image1Material );
+
+	image1.position.y = 2;
+	image1.position.z = 0.5;
+
+	wall1Group.add( image1 );
+
+
+	scene.add(wall1Group);
+	wall1Group.position.x = -40;
+	wall1Group.rotation.y = 0.8;
+
+	//wall 2
+
+	var wall2Group = new THREE.Group();
+
+	var geometry5 = new THREE.BoxGeometry( 25, 18, 1 );
+	var wall2 = new THREE.Mesh( geometry5, wallMaterial );
+
+	wall2Group.add( wall2 );
+
+	var image2Frame = new THREE.BoxGeometry( 15, 10, 0.1 );
+	var image2Material = new THREE.MeshBasicMaterial( { map:THREE.ImageUtils.loadTexture('img/2.jpg') , side: THREE.DoubleSide} );
+	var image2 = new THREE.Mesh( image2Frame, image2Material );
+
+	image2.position.y = 1;
+	image2.position.z = 0.5;
+
+	wall2Group.add( image2 );
+
+
+	scene.add(wall2Group);
+	wall2Group.position.x = 10;
+	wall2Group.position.y = -20;
+	wall2Group.position.z = 30;
+	wall2Group.rotation.x = -1.5;
+	wall2Group.rotation.y = -1;
+	wall2Group.rotation.z = -1.5;
+
+	group.add (wall1Group);
+	group.add (wall2Group);
+
 	window.addEventListener( 'resize', onWindowResize, false );
 
 	window.addEventListener( 'mousedown', onMouseDown, false );
