@@ -1,5 +1,5 @@
 /* 	================= 
-		MAIN.CSS
+		ABOUT.CSS
 	================= */
 
 
@@ -64,88 +64,13 @@ body {
 	/*outline: 1px solid rgb(0,0,255);*/
 }
 
-.container {
-	height: 100%;
-	width: 100%;
-}
-
-.information {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	padding-top: 20px;
-	padding-left: 3%;
-	width: 27%;
-	z-index: 20;
-
-	border-right: 1px solid white;
-	background-color: black;
-	overflow-y: hidden;
-}
-
-.information h1 {
+.text {
+	margin-top: 40px;
+	margin-left: 40px;
+	margin-right: 30px;
 	color: white;
 	font-family: 'Halant', serif;
 	font-weight: 600;
-	font-size: 30px;
+	font-size: 50px;
 }
 
-.information p {
-	margin-top: 15px;
-	padding-left: 40px;
-	font-family: 'Halant', serif;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 13px;
-	color: white;
-}
-
-.information h2 {
-	padding: 6px;
-	padding-left: 40px;
-	font-family: 'Rubik', serif;
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 13px;
-}
-
-.san-italic {
-	font-size: 10px;
-	font-family: 'Rubik';
-	font-weight: 300;
-	font-style: italic;
-}
-
-.instructions {
-	margin-bottom: 20px;
-}
-
-.links h2 {
-	margin-bottom: 7px;
-	
-	border-top: 1px solid white;
-	border-bottom: 1px solid white;
-	border-left: 1px solid white;
-	color:white;
-}
-
-.link-hover:hover {
-	cursor: pointer;
-	background-color: white;
-	color:black;
-}
-
-.link-hover.active {
-	background: white;
-	color: black;
-}
-
-#content {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	width: 70%;
-	overflow-y:scroll;
-}

@@ -18,24 +18,44 @@
 				<h1>
 					Welcome to Prototype 3
 				</h1>
-
-				<p>
-					This site is currently under construction.
-					<br>
-					<br>
-					Orbit controls enabled.
-					<br>
-					<span class="san-italic">Click and drag to rotate /<br> Pinch or scroll to zoom.</span>
-				</p>
 				
+				<div class="instructions">
+					<p>
+						This site is currently under construction.
+						<br>
+						<br>
+						Orbit controls enabled.
+						<br>
+						<span class="san-italic">Click and drag to rotate /<br> Pinch or scroll to zoom.</span>
+					</p>
+				</div>
+				
+				<div class="links">
+					<h2 class="active link-hover" id="about">
+						ABOUT
+					</h2>
+
+					<h2 class="link-hover" id="orbit">
+						EX. 1.0
+					</h2>
+
+					<h2 class="link-hover" id="pov">
+						EX. 2.0
+					</h2>
+				</div>
+
 			</div>
 
-			<div id="three-container"></div>
+			<div id="content"></div>
 		</div> <!-- end container -->
 	</body>
-	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 	<script src="js/three.min.js"></script>
+	<script src="js/PointerLockControls.js"></script>
 	<script src="js/OrbitControls.js"></script>
-	<script src="js/environment.js"></script>
+	<script src="js/stats.min.js"></script>
+
+	<script src="js/load.js"></script>
 </html>
