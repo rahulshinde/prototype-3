@@ -185,6 +185,16 @@ function init() {
 
 	raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, - 1, 0 ), 0, 10 );
 
+	var flagFrame = new THREE.BoxGeometry( 20,15, 0.1 );
+	var flagMaterial = new THREE.MeshBasicMaterial( { map:THREE.ImageUtils.loadTexture('img/2/1.jpg') , side: THREE.DoubleSide} );
+	var flag = new THREE.Mesh( flagFrame, flagMaterial );
+
+	flag.position.x = 5;
+	flag.position.y = 10;
+	flag.position.z = -15;
+
+	scene.add(flag);
+
 	////////////////////////
 	//////////scene/////////
 	////////////////////////
@@ -208,21 +218,34 @@ function init() {
 	wall2.position.y = 12;
 	wall2.position.z = -51;
 
-	// S Y M B O L
+	// P O S T E R S
 
-	var snakeTexture = new THREE.ImageUtils.loadTexture( 'img/2/snake-01.png' );
+	var posterTexture1 = new THREE.ImageUtils.loadTexture( 'img/2/2.jpg' );
 
-	var snakeMaterial = new THREE.MeshBasicMaterial( { map: snakeTexture, side:THREE.DoubleSide } );
+	var posterMaterial1 = new THREE.MeshBasicMaterial( { map: posterTexture1, side:THREE.DoubleSide } );
 
-	var geometrySnake = new THREE.PlaneGeometry( 12, 7 );
-	var snake = new THREE.Mesh( geometrySnake, snakeMaterial );
-	scene.add( snake );
+	var geometryPoster = new THREE.PlaneGeometry( 4, 6 );
+	var poster1 = new THREE.Mesh( geometryPoster, posterMaterial1 );
+	scene.add( poster1 );
 
-	snake.rotation.y = 29.8;
+	poster1.rotation.y = 29.8;
 
-	snake.position.y = 12;
-	snake.position.x = 12.2;
-	snake.position.z = -40;
+	poster1.position.y = 12;
+	poster1.position.x = 12.2;
+	poster1.position.z = -42.5;
+
+	var posterTexture2 = new THREE.ImageUtils.loadTexture( 'img/2/3.jpg' );
+
+	var posterMaterial2 = new THREE.MeshBasicMaterial( { map: posterTexture2, side:THREE.DoubleSide } );
+
+	var poster2 = new THREE.Mesh( geometryPoster, posterMaterial2 );
+	scene.add( poster2 );
+
+	poster2.rotation.y = 29.8;
+
+	poster2.position.y = 12;
+	poster2.position.x = 12.2;
+	poster2.position.z = -37.5;
 
 	// C O U C H
 

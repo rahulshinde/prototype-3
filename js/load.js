@@ -7,6 +7,8 @@ $(document).ready( function() {
         $("#content").load("about.html");
         $('.link-hover').removeClass('active');
         $(this).addClass('active');
+        $('.info-text').removeClass('visible');
+        $('#about-info').addClass('visible');
 
         //scroll
         $('body,html').animate({scrollTop: 0 ,}, 0);
@@ -17,6 +19,8 @@ $(document).ready( function() {
         $("#content").load("orbit.html");
         $('.link-hover').removeClass('active');
         $(this).addClass('active');
+        $('.info-text').removeClass('visible');
+        $('#ex1-info').addClass('visible');
 
         //scroll
         $('body,html').animate({scrollTop: 0 ,}, 0);
@@ -27,6 +31,8 @@ $(document).ready( function() {
         $("#content").load("walkthrough.html");
         $('.link-hover').removeClass('active');
         $(this).addClass('active');
+        $('.info-text').removeClass('visible');
+        $('#ex2-info').addClass('visible');
 
         //scroll
         $('body,html').animate({scrollTop: 0 ,}, 0);
