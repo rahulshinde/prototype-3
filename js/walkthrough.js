@@ -1,4 +1,3 @@
-
 var camera, scene, renderer;
 var geometry, material, mesh;
 var controls;
@@ -9,7 +8,6 @@ var raycaster;
 
 var blocker = document.getElementById( 'blocker' );
 var instructions = document.getElementById( 'instructions' );
-var click = document.getElementById( 'click' );
 
 // http://www.html5rocks.com/en/tutorials/pointerlock/intro/
 
@@ -40,13 +38,13 @@ if ( havePointerLock ) {
 
 		}
 
-	}
+	};
 
 	var pointerlockerror = function ( event ) {
 
 		instructions.style.display = '';
 
-	}
+	};
 
 	// Hook pointer lock state change events
 	document.addEventListener( 'pointerlockchange', pointerlockchange, false );
@@ -57,7 +55,7 @@ if ( havePointerLock ) {
 	document.addEventListener( 'mozpointerlockerror', pointerlockerror, false );
 	document.addEventListener( 'webkitpointerlockerror', pointerlockerror, false );
 
-	click.addEventListener( 'click', function ( event ) {
+	instructions.addEventListener( 'click', function ( event ) {
 
 		instructions.style.display = 'none';
 
@@ -76,7 +74,7 @@ if ( havePointerLock ) {
 					element.requestPointerLock();
 				}
 
-			}
+			};
 
 			document.addEventListener( 'fullscreenchange', fullscreenchange, false );
 			document.addEventListener( 'mozfullscreenchange', fullscreenchange, false );
@@ -99,9 +97,6 @@ if ( havePointerLock ) {
 
 }
 
-var clock = new THREE.Clock();
-var annie;
-
 init();
 animate();
 
@@ -111,12 +106,12 @@ var moveForward = false;
 var moveBackward = false;
 var moveLeft = false;
 var moveRight = false;
+var canJump = false;
 
 var prevTime = performance.now();
 var velocity = new THREE.Vector3();
 
 function init() {
-
 
 	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1000 );
 
@@ -190,21 +185,6 @@ function init() {
 
 	raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, - 1, 0 ), 0, 10 );
 
-	/////////////////////////////////////
-	//A N I M A T E D - T E X T U R E S//
-	/////////////////////////////////////
-	
-	var flagTexture = new THREE.ImageUtils.loadTexture( 'img/sujata-gif-01.png' );
-	annie = new TextureAnimator( flagTexture, 19, 2, 38, 75 ); // texture, #horiz, #vert, #total, duration.
-	var flagMaterial = new THREE.MeshBasicMaterial( { map: flagTexture, side:THREE.DoubleSide } );
-
-	var flagGeometry = new THREE.PlaneGeometry( 13, 8 );
-	var cube1 = new THREE.Mesh( flagGeometry, flagMaterial );
-	scene.add( cube1 );
-	cube1.position.y = 13;
-	cube1.position.z = -10;
-	scene.add(cube1);
-
 	////////////////////////
 	//////////scene/////////
 	////////////////////////
@@ -230,7 +210,7 @@ function init() {
 
 	// S Y M B O L
 
-	var snakeTexture = new THREE.ImageUtils.loadTexture( 'img/snake-01.png' );
+	var snakeTexture = new THREE.ImageUtils.loadTexture( 'img/2/snake-01.png' );
 
 	var snakeMaterial = new THREE.MeshBasicMaterial( { map: snakeTexture, side:THREE.DoubleSide } );
 
@@ -501,58 +481,7 @@ function animate() {
 
 	}
 
-	render();		
-	update();
-
-}
-
-function render() 
-{
 	renderer.render( scene, camera );
+
 }
 
-function update()
-{
-	var delta = clock.getDelta(); 
-
-	annie.update(1000 * delta);
-}
-
-function TextureAnimator(texture, tilesHoriz, tilesVert, numTiles, tileDispDuration) 
-{	
-	// note: texture passed by reference, will be updated by the update function.
-		
-	this.tilesHorizontal = tilesHoriz;
-	this.tilesVertical = tilesVert;
-	// how many images does this spritesheet contain?
-	//  usually equals tilesHoriz * tilesVert, but not necessarily,
-	//  if there at blank tiles at the bottom of the spritesheet. 
-	this.numberOfTiles = numTiles;
-	texture.wrapS = texture.wrapT = THREE.RepeatWrapping; 
-	texture.repeat.set( 1 / this.tilesHorizontal, 1 / this.tilesVertical );
-
-	// how long should each image be displayed?
-	this.tileDisplayDuration = tileDispDuration;
-
-	// how long has the current image been displayed?
-	this.currentDisplayTime = 0;
-
-	// which image is currently being displayed?
-	this.currentTile = 0;
-		
-	this.update = function( milliSec )
-	{
-		this.currentDisplayTime += milliSec;
-		while (this.currentDisplayTime > this.tileDisplayDuration)
-		{
-			this.currentDisplayTime -= this.tileDisplayDuration;
-			this.currentTile++;
-			if (this.currentTile == this.numberOfTiles)
-				this.currentTile = 0;
-			var currentColumn = this.currentTile % this.tilesHorizontal;
-			texture.offset.x = currentColumn / this.tilesHorizontal;
-			var currentRow = Math.floor( this.currentTile / this.tilesHorizontal );
-			texture.offset.y = currentRow / this.tilesVertical;
-		}
-	};
-}

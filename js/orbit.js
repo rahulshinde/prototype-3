@@ -214,7 +214,7 @@ function init() {
 	wall1Group.add( wall1 );
 
 	var imageFrame = new THREE.BoxGeometry( 40, 28, 0.1 );
-	var image1Material = new THREE.MeshBasicMaterial( { map:THREE.ImageUtils.loadTexture('img/1.jpg') , side: THREE.DoubleSide} );
+	var image1Material = new THREE.MeshBasicMaterial( { map:THREE.ImageUtils.loadTexture('img/1/1.jpg') , side: THREE.DoubleSide} );
 	var image1 = new THREE.Mesh( imageFrame, image1Material );
 
 	image1.position.y = 2;
@@ -239,7 +239,7 @@ function init() {
 	wall2Group.add( wall2 );
 
 	var image2Frame = new THREE.BoxGeometry( 15, 10, 0.1 );
-	var image2Material = new THREE.MeshBasicMaterial( { map:THREE.ImageUtils.loadTexture('img/2.jpg') , side: THREE.DoubleSide} );
+	var image2Material = new THREE.MeshBasicMaterial( { map:THREE.ImageUtils.loadTexture('img/1/2.jpg') , side: THREE.DoubleSide} );
 	var image2 = new THREE.Mesh( image2Frame, image2Material );
 
 	image2.position.y = 1;
@@ -266,7 +266,7 @@ function init() {
 	wall3Group.add( wall3 );
 
 	var image3Frame = new THREE.BoxGeometry( 30,18, 0.1 );
-	var image3Material = new THREE.MeshBasicMaterial( { map:THREE.ImageUtils.loadTexture('img/3.jpg') , side: THREE.DoubleSide} );
+	var image3Material = new THREE.MeshBasicMaterial( { map:THREE.ImageUtils.loadTexture('img/1/3.jpg') , side: THREE.DoubleSide} );
 	var image3 = new THREE.Mesh( image3Frame, image3Material );
 
 	image3.position.y = 1;
