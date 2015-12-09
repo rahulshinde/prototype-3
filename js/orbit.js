@@ -17,6 +17,8 @@ var mesh1,
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
+var rotationSpeed = 0.001;
+
 //variables for movable light
 
 var mouseX = 0, mouseY = 0;
@@ -31,13 +33,13 @@ animate();
 
 function init() {
 	scene = new THREE.Scene();
-	camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 1000 );
+	camera = new THREE.PerspectiveCamera( 50, window.innerWidth*0.7 / window.innerHeight, 1, 1000 );
 	camera.position.z = 125;
 
 	var cameraControls;
 
 	renderer = new THREE.WebGLRenderer();
-	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize( window.innerWidth*0.7, window.innerHeight );
 	container.appendChild( renderer.domElement );
 
 	cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -312,9 +314,9 @@ function animate() {
 
 function render() {
 
-	lightGroup.rotation.x += 0.003;
-	lightGroup.rotation.y += 0.003;
-	lightGroup.rotation.z += 0.003;
+	lightGroup.rotation.x += rotationSpeed;
+	lightGroup.rotation.y += rotationSpeed;
+	lightGroup.rotation.z += rotationSpeed;
 
 	renderer.render(scene, camera);
 };
