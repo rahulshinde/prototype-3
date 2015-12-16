@@ -190,15 +190,18 @@ function init() {
 	//////////flag//////////
 	////////////////////////
 
-	// var flagFrame = new THREE.BoxGeometry( 20,15, 0.1 );
-	// var flagMaterial = new THREE.MeshBasicMaterial( { map:THREE.ImageUtils.loadTexture('img/2/1.jpg') , side: THREE.DoubleSide} );
-	// var flag = new THREE.Mesh( flagFrame, flagMaterial );
+	var flagFrame = new THREE.BoxGeometry( 20,15, 0.1 );
+	var flagMaterial = new THREE.MeshBasicMaterial( { map:THREE.ImageUtils.loadTexture('img/2/1.jpg') , side: THREE.DoubleSide} );
+	var flag = new THREE.Mesh( flagFrame, flagMaterial );
 
-	// flag.position.x = 5;
-	// flag.position.y = 10;
-	// flag.position.z = -15;
 
-	// scene.add(flag);
+	scene.add(flag);
+
+	flag.position.x = -15;
+	flag.position.y = 10;
+	flag.position.z = -20;
+	flag.rotation.y = 1.5708;
+	flag.scale.set(0.7,0.7,0.7);
 
 	// S C U L P T U R E S
 
@@ -233,7 +236,7 @@ function init() {
 
 	mesh1 = new THREE.Mesh( geometry1, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
-	mesh1.scale.set(0.2,0.2,0.2);
+	mesh1.scale.set(0.1,0.1,0.1);
 	mesh1.position.x = -20;
 	mesh1.position.y = 5;
 	mesh1.position.z = -20;
@@ -345,11 +348,12 @@ function init() {
 	mesh4.position.z = -20;
 
 	scene.add( mesh4 );
-	////////////////////////
-	//////////scene/////////
-	////////////////////////
 
+	///////////////////////////
+	//////////section1/////////
+	///////////////////////////
 
+	var domesticGroup = new THREE.Group();
 
 	var material = new THREE.MeshPhongMaterial( { color: 0xffffff, wireframe: true } );
 
@@ -358,6 +362,7 @@ function init() {
 	var geometry2 = new THREE.BoxGeometry( 2, 15, 20 );
 	var wall1 = new THREE.Mesh( geometry2, material );
 	scene.add( wall1 );
+	domesticGroup.add(wall1);
 	wall1.position.y = 12;
 	wall1.position.x = 13.33;
 	wall1.position.z = -40;
@@ -370,6 +375,8 @@ function init() {
 	wall2.position.y = 12;
 	wall2.position.z = -51;
 
+	domesticGroup.add(wall2);
+
 	// P O S T E R S
 
 	var posterTexture1 = new THREE.ImageUtils.loadTexture( 'img/2/2.jpg' );
@@ -379,9 +386,9 @@ function init() {
 	var geometryPoster = new THREE.PlaneGeometry( 4, 6 );
 	var poster1 = new THREE.Mesh( geometryPoster, posterMaterial1 );
 	scene.add( poster1 );
+	domesticGroup.add(poster1);
 
 	poster1.rotation.y = 29.8;
-
 	poster1.position.y = 12;
 	poster1.position.x = 12.2;
 	poster1.position.z = -42.5;
@@ -392,6 +399,7 @@ function init() {
 
 	var poster2 = new THREE.Mesh( geometryPoster, posterMaterial2 );
 	scene.add( poster2 );
+	domesticGroup.add(poster2);
 
 	poster2.rotation.y = 29.8;
 
@@ -400,11 +408,13 @@ function init() {
 	poster2.position.z = -37.5;
 
 	// C O U C H
+	var couchGroup = new THREE.Group();
 
 	// base
 	var geometry4 = new THREE.BoxGeometry( 3.5, 0.5, 7 );
 	var couchBase = new THREE.Mesh( geometry4, material );
 	scene.add( couchBase );
+	couchGroup.add(couchBase);
 
 	couchBase.position.x = 10.5;
 	couchBase.position.y = 5.9;
@@ -414,7 +424,7 @@ function init() {
 	var geometry5 = new THREE.CylinderGeometry( .6, .6, 3.2, 7 );
 	var cushion1 = new THREE.Mesh( geometry5, material );
 	scene.add( cushion1 );
-
+	couchGroup.add(cushion1);
 	cushion1.rotation.x = 20.42;
 
 	cushion1.position.x = 11.5;
@@ -423,7 +433,7 @@ function init() {
 
 	var cushion2 = new THREE.Mesh( geometry5, material );
 	scene.add( cushion2 );
-
+	couchGroup.add(cushion2);
 	cushion2.rotation.x = 20.42;
 
 	cushion2.position.x = 11.5;
@@ -435,38 +445,40 @@ function init() {
 	var geometryLeg = new THREE.CylinderGeometry( .1, .05, 1.2, 7 );
 	var leg1 = new THREE.Mesh( geometryLeg, material );
 	scene.add( leg1 );
-
+	couchGroup.add(leg1);
 	leg1.position.x = 9;
 	leg1.position.y = 4.95;
 	leg1.position.z = -37;
 
 	var leg2 = new THREE.Mesh( geometryLeg, material );
 	scene.add( leg2 );
-
+	couchGroup.add(leg2);
 	leg2.position.x = 9;
 	leg2.position.y = 4.95;
 	leg2.position.z = -43;
 
 	var leg3 = new THREE.Mesh( geometryLeg, material );
 	scene.add( leg3 );
-
+	couchGroup.add(leg3);
 	leg3.position.x = 12;
 	leg3.position.y = 4.95;
 	leg3.position.z = -43;
 
 	var leg4 = new THREE.Mesh( geometryLeg, material );
 	scene.add( leg4 );
-
+	couchGroup.add(leg4);
 	leg4.position.x = 12;
 	leg4.position.y = 4.95;
 	leg4.position.z = -37;
+
+	domesticGroup.add(couchGroup);
 
 	// S H E L F
 
 	var geometryShelf = new THREE.BoxGeometry( 5, 0.1, 2 );
 	var shelf = new THREE.Mesh( geometryShelf, material );
 	scene.add( shelf );
-
+	domesticGroup.add(shelf);
 	shelf.position.x = 9;
 	shelf.position.y = 9.5;
 	shelf.position.z = -49;
@@ -487,7 +499,8 @@ function init() {
 
 	var geometryVase = new THREE.LatheGeometry( points );
 	var vase1 = new THREE.Mesh( geometryVase, material );
-	scene.add( vase1 );
+	// scene.add( vase1 );
+	domesticGroup.add(vase1);
 
 	vase1.rotation.x = 20.42;
 
@@ -560,7 +573,8 @@ function init() {
 	var paperBottom = new THREE.Line( geometryPaper4, paperMaterial );
 	paperGroup.add( paperBottom );
 
-	scene.add (paperGroup);
+	// scene.add (paperGroup);
+	domesticGroup.add(paperGroup);
 
 
 	paperGroup.rotation.y = -1;
@@ -591,7 +605,7 @@ function init() {
 	book3.position.z = 0.1;
 	bookGroup.add(book3);
 
-	scene.add( bookGroup );
+	domesticGroup.add(bookGroup);
 
 	bookGroup.position.x = 10.5;
 	bookGroup.position.y = 9.7;
@@ -599,6 +613,11 @@ function init() {
 
 
 
+	scene.add(domesticGroup);
+
+	domesticGroup.position.x = 35;
+	domesticGroup.position.z = -30;
+	domesticGroup.rotation.y = 1.5708;
 
 
 
@@ -655,6 +674,8 @@ function animate() {
 		prevTime = time;
 
 	}
+
+	mesh1.rotation.y += 0.003;
 
 	renderer.render( scene, camera );
 
