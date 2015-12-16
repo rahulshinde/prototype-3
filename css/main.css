@@ -159,10 +159,20 @@ body {
 }
 
 .info h1 {
-	margin-top: 10px;
-	margin-left: 10px;
+	margin-left: 20px;
+	margin-top: 20px;
 	font-family: 'Halant';
-	font-size: 24px;
+	font-weight: 400;
+	font-size: 19px;
+	line-height: 22px;
+}
+
+.info-san {
+	font-size: 16px;
+	font-family: 'Rubik';
+	font-weight: 300;
+	font-style: italic;
+	line-height: 21px;
 }
 
 .info-text {
