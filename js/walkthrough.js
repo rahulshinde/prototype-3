@@ -116,7 +116,6 @@ function init() {
 	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1000 );
 
 	scene = new THREE.Scene();
-	scene.fog = new THREE.Fog( 0xffffff, 0, 750 );
 
 	var light = new THREE.HemisphereLight( 0xeeeeff, 0x777788, 0.75 );
 	light.position.set( 0.5, 1, 0.75 );
@@ -199,7 +198,7 @@ function init() {
 
 	flag.position.x = -15;
 	flag.position.y = 10;
-	flag.position.z = -20;
+	flag.position.z = -18;
 	flag.rotation.y = 1.5708;
 	flag.scale.set(0.7,0.7,0.7);
 
@@ -237,9 +236,6 @@ function init() {
 	mesh1 = new THREE.Mesh( geometry1, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
 	mesh1.scale.set(0.1,0.1,0.1);
-	mesh1.position.x = -20;
-	mesh1.position.y = 5;
-	mesh1.position.z = -20;
 
 	scene.add( mesh1 );
 
@@ -265,10 +261,7 @@ function init() {
 
 	mesh2 = new THREE.Mesh( geometry2, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
-	mesh2.scale.set(0.3,0.3,0.3);
-	mesh2.position.x = 0;
-	mesh2.position.y = 5;
-	mesh2.position.z = -20;
+	mesh2.scale.set(0.2,0.2,0.2);
 
 	scene.add( mesh2 );
 
@@ -294,10 +287,7 @@ function init() {
 
 	mesh3 = new THREE.Mesh( geometry3, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
-	mesh3.scale.set(0.3,0.3,0.3);
-	mesh3.position.x = 5;
-	mesh3.position.y = 5;
-	mesh3.position.z = -20;
+	mesh3.scale.set(0.2,0.2,0.2);
 
 	scene.add( mesh3 );
 
@@ -342,7 +332,7 @@ function init() {
 
 	mesh4 = new THREE.Mesh( geometry4, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
-	mesh4.scale.set(0.2,0.2,0.2);
+	mesh4.scale.set(0.1,0.1,0.1);
 	mesh4.position.x = 10;
 	mesh4.position.y = 7;
 	mesh4.position.z = -20;
@@ -361,7 +351,6 @@ function init() {
 
 	var geometry2 = new THREE.BoxGeometry( 2, 15, 20 );
 	var wall1 = new THREE.Mesh( geometry2, material );
-	scene.add( wall1 );
 	domesticGroup.add(wall1);
 	wall1.position.y = 12;
 	wall1.position.x = 13.33;
@@ -369,7 +358,6 @@ function init() {
 
 	var geometry3 = new THREE.BoxGeometry( 10, 15, 2 );
 	var wall2 = new THREE.Mesh( geometry3, material );
-	scene.add( wall2 );
 
 	wall2.position.x = 9.3;
 	wall2.position.y = 12;
@@ -385,7 +373,6 @@ function init() {
 
 	var geometryPoster = new THREE.PlaneGeometry( 4, 6 );
 	var poster1 = new THREE.Mesh( geometryPoster, posterMaterial1 );
-	scene.add( poster1 );
 	domesticGroup.add(poster1);
 
 	poster1.rotation.y = 29.8;
@@ -398,7 +385,6 @@ function init() {
 	var posterMaterial2 = new THREE.MeshBasicMaterial( { map: posterTexture2, side:THREE.DoubleSide } );
 
 	var poster2 = new THREE.Mesh( geometryPoster, posterMaterial2 );
-	scene.add( poster2 );
 	domesticGroup.add(poster2);
 
 	poster2.rotation.y = 29.8;
@@ -413,7 +399,6 @@ function init() {
 	// base
 	var geometry4 = new THREE.BoxGeometry( 3.5, 0.5, 7 );
 	var couchBase = new THREE.Mesh( geometry4, material );
-	scene.add( couchBase );
 	couchGroup.add(couchBase);
 
 	couchBase.position.x = 10.5;
@@ -423,7 +408,6 @@ function init() {
 	// cushions
 	var geometry5 = new THREE.CylinderGeometry( .6, .6, 3.2, 7 );
 	var cushion1 = new THREE.Mesh( geometry5, material );
-	scene.add( cushion1 );
 	couchGroup.add(cushion1);
 	cushion1.rotation.x = 20.42;
 
@@ -432,7 +416,6 @@ function init() {
 	cushion1.position.z = -41.8;
 
 	var cushion2 = new THREE.Mesh( geometry5, material );
-	scene.add( cushion2 );
 	couchGroup.add(cushion2);
 	cushion2.rotation.x = 20.42;
 
@@ -444,28 +427,24 @@ function init() {
 
 	var geometryLeg = new THREE.CylinderGeometry( .1, .05, 1.2, 7 );
 	var leg1 = new THREE.Mesh( geometryLeg, material );
-	scene.add( leg1 );
 	couchGroup.add(leg1);
 	leg1.position.x = 9;
 	leg1.position.y = 4.95;
 	leg1.position.z = -37;
 
 	var leg2 = new THREE.Mesh( geometryLeg, material );
-	scene.add( leg2 );
 	couchGroup.add(leg2);
 	leg2.position.x = 9;
 	leg2.position.y = 4.95;
 	leg2.position.z = -43;
 
 	var leg3 = new THREE.Mesh( geometryLeg, material );
-	scene.add( leg3 );
 	couchGroup.add(leg3);
 	leg3.position.x = 12;
 	leg3.position.y = 4.95;
 	leg3.position.z = -43;
 
 	var leg4 = new THREE.Mesh( geometryLeg, material );
-	scene.add( leg4 );
 	couchGroup.add(leg4);
 	leg4.position.x = 12;
 	leg4.position.y = 4.95;
@@ -477,7 +456,6 @@ function init() {
 
 	var geometryShelf = new THREE.BoxGeometry( 5, 0.1, 2 );
 	var shelf = new THREE.Mesh( geometryShelf, material );
-	scene.add( shelf );
 	domesticGroup.add(shelf);
 	shelf.position.x = 9;
 	shelf.position.y = 9.5;
@@ -499,7 +477,6 @@ function init() {
 
 	var geometryVase = new THREE.LatheGeometry( points );
 	var vase1 = new THREE.Mesh( geometryVase, material );
-	// scene.add( vase1 );
 	domesticGroup.add(vase1);
 
 	vase1.rotation.x = 20.42;
@@ -573,7 +550,6 @@ function init() {
 	var paperBottom = new THREE.Line( geometryPaper4, paperMaterial );
 	paperGroup.add( paperBottom );
 
-	// scene.add (paperGroup);
 	domesticGroup.add(paperGroup);
 
 
@@ -619,7 +595,122 @@ function init() {
 	domesticGroup.position.z = -30;
 	domesticGroup.rotation.y = 1.5708;
 
+	///////////////////////////
+	//////////pedestals////////
+	///////////////////////////
 
+	var pedestalGroup = new THREE.Group();
+
+	var pedestalGeometry = new THREE.BoxGeometry( 3, 6, 3 );
+	var pedestal1 = new THREE.Mesh( pedestalGeometry, material );
+	pedestalGroup.add(pedestal1);
+	pedestalGroup.add(mesh1);
+	pedestal1.position.y = 6;
+
+	mesh1.position.y = 12.8;
+	mesh1.position.x = -1;
+	mesh1.position.z = 0.3;
+	mesh1.rotation.x = 0.4;
+	mesh1.rotation.z = -0.6;
+
+	var pedestal2 = new THREE.Mesh( pedestalGeometry, material );
+	pedestalGroup.add(pedestal2);
+	pedestalGroup.add(mesh2);
+	pedestal2.position.x = 8;
+	pedestal2.position.y = 6;
+
+	mesh2.position.y = 12.8;
+	mesh2.position.x =7.5;
+	mesh2.position.z = -2;
+	mesh2.rotation.x = -0.6;
+	mesh2.rotation.y = -0.6;
+
+	var pedestal3 = new THREE.Mesh( pedestalGeometry, material );
+	pedestalGroup.add(pedestal3);
+	pedestalGroup.add(mesh3);
+	pedestal3.position.x = 8;
+	pedestal3.position.y = 6;
+	pedestal3.position.z = 8;
+
+	mesh3.position.x = 6.7;
+	mesh3.position.z = 8;
+	mesh3.position.y = 10;
+	mesh3.rotation.x = -1;
+
+	var pedestal4 = new THREE.Mesh( pedestalGeometry, material );
+	pedestalGroup.add(pedestal4);
+	pedestalGroup.add(mesh4);
+	pedestal4.position.y = 6;
+	pedestal4.position.z = 8;
+
+	mesh4.position.x = -1.5;
+	mesh4.position.z = 6;
+	mesh4.position.y = 10.9;
+	mesh4.rotation.y = -1;
+
+
+	scene.add( pedestalGroup );
+
+	pedestalGroup.position.x = 13;
+	pedestalGroup.position.z = -23;
+
+	pedestalGroup.rotation.y = -2;
+
+	///////////////////////////
+	//////////section2/////////
+	///////////////////////////
+
+	var photoGroup = new THREE.Group();
+
+	var wallGeometry1 = new THREE.BoxGeometry( 2, 15, 27 );
+	var wall3 = new THREE.Mesh( wallGeometry1, material );
+
+	photoGroup.add(wall3);
+	wall3.position.y = 12;
+	wall3.position.x = 13.33;
+	wall3.position.z = -45;
+
+	var photoTexture1 = new THREE.ImageUtils.loadTexture( 'img/2/4.jpg' );
+
+	var photoMaterial1 = new THREE.MeshBasicMaterial( { map: photoTexture1, side:THREE.DoubleSide } );
+
+	var geometryPhoto = new THREE.PlaneGeometry( 6, 4 );
+	var photo1 = new THREE.Mesh( geometryPhoto, photoMaterial1 );
+	photoGroup.add(photo1);
+
+	photo1.rotation.y = 29.8;
+	photo1.position.y = 12;
+	photo1.position.x = 12.2;
+	photo1.position.z = -44.7;
+
+	var photoTexture2 = new THREE.ImageUtils.loadTexture( 'img/2/5.jpg' );
+
+	var photoMaterial2 = new THREE.MeshBasicMaterial( { map: photoTexture2, side:THREE.DoubleSide } );
+	var photo2 = new THREE.Mesh( geometryPhoto, photoMaterial2 );
+	photoGroup.add(photo2);
+
+	photo2.rotation.y = 29.8;
+	photo2.position.y = 12;
+	photo2.position.x = 12.2;
+	photo2.position.z = -53.5;
+
+	var photoTexture3 = new THREE.ImageUtils.loadTexture( 'img/2/6.jpg' );
+
+	var photoMaterial3 = new THREE.MeshBasicMaterial( { map: photoTexture2, side:THREE.DoubleSide } );
+	var photo3 = new THREE.Mesh( geometryPhoto, photoMaterial2 );
+	photoGroup.add(photo3);
+
+	photo3.rotation.y = 29.8;
+	photo3.position.y = 12;
+	photo3.position.x = 12.2;
+	photo3.position.z = -36.5;
+
+
+	scene.add(photoGroup);
+
+	photoGroup.position.x = 30;
+	photoGroup.position.z = 17;
+	photoGroup.rotation.y = 0.4;
 
 
 
@@ -675,7 +766,10 @@ function animate() {
 
 	}
 
-	mesh1.rotation.y += 0.003;
+	// mesh1.rotation.y += 0.003;
+	// mesh2.rotation.y += 0.003;
+	// mesh3.rotation.y += 0.003;
+	// mesh4.rotation.y += 0.003;
 
 	renderer.render( scene, camera );
 
