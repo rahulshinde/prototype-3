@@ -158,9 +158,15 @@ body {
 	color: white;
 }
 
-.info h1 {
-	margin-left: 20px;
+.info div {
 	margin-top: 20px;
+	margin-right: 20px;
+	margin-left: 20px;
+
+}
+
+.info-serif {
+	margin-bottom: 10px;
 	font-family: 'Halant';
 	font-weight: 400;
 	font-size: 19px;
@@ -168,11 +174,21 @@ body {
 }
 
 .info-san {
+	margin-bottom: 10px;
 	font-size: 16px;
 	font-family: 'Rubik';
 	font-weight: 300;
 	font-style: italic;
 	line-height: 21px;
+}
+
+.bold {
+	font-weight: 600;
+}
+
+.indent {
+	padding-left: 10px;
+	text-indent: -15px;
 }
 
 .info-text {
