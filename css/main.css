@@ -58,6 +58,10 @@ table {
 		BEGIN AUTHOR STYLING
 	============================================== */
 
+h1 {
+	color: blue;
+}
+
 
 body {
 	background-color: black;
