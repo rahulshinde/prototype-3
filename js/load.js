@@ -45,7 +45,7 @@ $(document).ready( function() {
     enquire.register("screen and (max-width: 800px)", {
         setup : function() {
             $(".nav-open").hide();
-            $(".nav").hide();
+            $(".nav").show();
         },    
         match : function() {
             $(".nav-open").show();

@@ -149,6 +149,10 @@ body {
 	color: black;
 }
 
+.nav {
+	display: block;
+}
+
 /* ============================
 	EXAMPLE INFO
    ============================ */
