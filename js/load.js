@@ -42,4 +42,19 @@ $(document).ready( function() {
         $('.nav').slideToggle();
     });
 
+    enquire.register("screen and (max-width: 800px)", {
+        setup : function() {
+            $(".nav-open").hide();
+            $(".nav").hide();
+        },    
+        match : function() {
+            $(".nav-open").show();
+            $(".nav").hide();
+        },  
+        unmatch : function() {
+            $(".nav-open").hide();
+            $(".nav").show();
+        }
+    });
+
 });

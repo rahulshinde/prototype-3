@@ -239,9 +239,9 @@ body {
 	.nav-open {
 		display: block;
 		position: fixed;
-		top: 10px;
+		top: 12px;
 		right: 10px;
-		width: 10%;
+		width: 55px;
 		cursor: pointer;
 	}
 
