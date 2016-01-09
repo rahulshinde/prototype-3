@@ -58,9 +58,6 @@ table {
 		BEGIN AUTHOR STYLING
 	============================================== */
 
-h1 {
-	color: blue;
-}
 
 
 body {
@@ -259,7 +256,7 @@ body {
 	.nav {
 		display: none;
 		position: fixed;
-		top: 135px;
+		top: 145px;
 		left: 0px;
 		right: 0px;
 		bottom:0;
@@ -291,4 +288,20 @@ body {
 		margin: 140px 0 0 0;
 		overflow-y:scroll;
 	}
+}
+
+@media screen and (max-width: 520px) { 
+
+	.nav {
+		position: fixed;
+		top: 145px;
+		left: 0px;
+		right: 0px;
+		bottom:0;
+		width: 100%;
+		height: 100vh;
+		background-color: black;
+		z-index: 100;
+	}
+
 }
