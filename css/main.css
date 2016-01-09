@@ -85,6 +85,10 @@ body {
 	overflow-y: hidden;
 }
 
+.nav-open {
+	display: none;
+}
+
 .nav-left h1 {
 	color: white;
 	font-family: 'Halant', serif;
