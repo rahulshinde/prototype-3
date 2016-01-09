@@ -38,4 +38,8 @@ $(document).ready( function() {
         $('body,html').animate({scrollTop: 0 ,}, 0);
     });
 
+    $(".nav-open").on("click", function() {
+        $('.nav').toggle();
+    });
+
 });

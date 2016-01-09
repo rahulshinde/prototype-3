@@ -211,3 +211,78 @@ body {
 	width: 70%;
 	overflow-y:scroll;
 }
+
+/* ============================
+	MEDIA QUERIES
+   ============================ */
+
+@media screen and (max-width: 800px) { 
+
+	/* NAV LEFT */
+	
+	.nav-left {
+		width: 100%;
+		height: 120px;
+		background: black; /* For browsers that do not support gradients */
+	    background: -webkit-linear-gradient(black 80%, rgba(0,0,0,0)); /* For Safari 5.1 to 6.0 */
+	    background: -o-linear-gradient(black 80%, rgba(0,0,0,0)); /* For Opera 11.1 to 12.0 */
+	    background: -moz-linear-gradient(black 80%, rgba(0,0,0,0)); /* For Firefox 3.6 to 15 */
+	    background: linear-gradient(black 80%, rgba(0,0,0,0)); /* Standard syntax */
+	}
+
+	.nav-left h1 {
+	}
+
+	.instructions {
+	}
+
+	.nav-open {
+		display: block;
+		position: fixed;
+		top: 10px;
+		right: 10px;
+		width: 10%;
+		cursor: pointer;
+	}
+
+	.nav-open img {
+		width: 100%;
+	}
+
+	/* NAV */
+
+	.nav {
+		display: none;
+		position: fixed;
+		top: 115px;
+		left: 0px;
+		right: 0px;
+		bottom:0;
+		width: 100%;
+		background-color: black;
+	}
+
+	.links h2 {
+		margin-bottom: 7px;
+		border-right: 1px solid white;
+		width: 80%;
+		margin-left: 7%;
+	}
+
+	.links:first-child {
+		margin-top: 30px;
+	}
+
+	.info {
+		display: none;
+	}
+
+	/* CONTENT */
+
+	#content {
+		position: relative;
+		width: 100%;
+		margin: 125px 0 0 0;
+		overflow-y:scroll;
+	}
+}

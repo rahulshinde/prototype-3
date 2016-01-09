@@ -73,5 +73,25 @@ body {
 	font-family: 'Halant', serif;
 	font-weight: 600;
 	font-size: 50px;
+	line-height: 55px;
 }
 
+@media screen and (max-width: 900px) { 
+	.text {
+		margin-left: 20px;
+		margin-right: 20px;
+		font-size: 40px;
+		line-height: 45px;
+	}
+
+}
+
+@media screen and (max-width: 800px) { 
+	.text {
+		margin-left: 20px;
+		margin-right: 20px;
+		font-size: 40px;
+		line-height: 45px;
+	}
+
+}
