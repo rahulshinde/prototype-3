@@ -39,7 +39,7 @@ $(document).ready( function() {
     });
 
     $(".nav-open").on("click", function() {
-        $('.nav').slideToggle();
+        $('.nav').toggle();
     });
 
     enquire.register("screen and (max-width: 800px)", {

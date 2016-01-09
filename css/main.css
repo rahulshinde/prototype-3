@@ -241,12 +241,15 @@ body {
 	}
 
 	.nav-open {
-		display: block;
+		/*display: block;
 		position: fixed;
 		top: 12px;
 		right: 10px;
 		width: 55px;
-		cursor: pointer;
+		cursor: pointer;*/
+		visibility: hidden;
+		cursor: default;
+
 	}
 
 	.nav-open img {
@@ -259,12 +262,12 @@ body {
 		display: none;
 		position: fixed;
 		top: 145px;
-		left: 0px;
-		right: 0px;
-		bottom:0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		width: 100%;
 		background-color: black;
-		z-index: 100;
+		z-index: 1000;
 	}
 
 	.links h2 {
@@ -272,6 +275,7 @@ body {
 		border-right: 1px solid white;
 		width: 80%;
 		margin-left: 7%;
+		z-index: 200;
 	}
 
 	.links:first-child {
@@ -285,7 +289,6 @@ body {
 	/* CONTENT */
 
 	#content {
-		position: relative;
 		width: 100%;
 		margin: 140px 0 0 0;
 		overflow-y:scroll;
@@ -294,9 +297,5 @@ body {
 
 @media screen and (max-width: 620px) { 
 
-	.nav-open {
-		visibility: hidden;
-		cursor: default;
-	}
 
 }
