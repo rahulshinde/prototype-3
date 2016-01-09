@@ -39,7 +39,7 @@ $(document).ready( function() {
     });
 
     $(".nav-open").on("click", function() {
-        $('.nav').toggle();
+        $('.nav').slideToggle();
     });
 
 });
