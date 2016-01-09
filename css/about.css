@@ -86,12 +86,11 @@ body {
 
 }
 
-@media screen and (max-width: 800px) { 
+@media screen and (max-width: 520px) { 
+
 	.text {
-		margin-left: 20px;
-		margin-right: 20px;
-		font-size: 40px;
-		line-height: 45px;
+		font-size: 30px;
+		line-height: 35px;
 	}
 
 }
