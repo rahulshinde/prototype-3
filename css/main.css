@@ -292,7 +292,7 @@ body {
 	}
 }
 
-@media screen and (max-width: 520px) { 
+@media screen and (max-width: 620px) { 
 
 	.nav-open {
 		visibility: hidden;
