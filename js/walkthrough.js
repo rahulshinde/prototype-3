@@ -697,7 +697,7 @@ function init() {
 	var photoTexture3 = new THREE.ImageUtils.loadTexture( 'img/2/6.jpg' );
 
 	var photoMaterial3 = new THREE.MeshBasicMaterial( { map: photoTexture2, side:THREE.DoubleSide } );
-	var photo3 = new THREE.Mesh( geometryPhoto, photoMaterial2 );
+	var photo3 = new THREE.Mesh( geometryPhoto, photoMaterial3 );
 	photoGroup.add(photo3);
 
 	photo3.rotation.y = 29.8;
