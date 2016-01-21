@@ -696,7 +696,7 @@ function init() {
 
 	var photoTexture3 = new THREE.ImageUtils.loadTexture( 'img/2/6.jpg' );
 
-	var photoMaterial3 = new THREE.MeshBasicMaterial( { map: photoTexture2, side:THREE.DoubleSide } );
+	var photoMaterial3 = new THREE.MeshBasicMaterial( { map: photoTexture3, side:THREE.DoubleSide } );
 	var photo3 = new THREE.Mesh( geometryPhoto, photoMaterial3 );
 	photoGroup.add(photo3);
 
